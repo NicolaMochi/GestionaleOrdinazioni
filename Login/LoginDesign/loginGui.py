@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'uiLogin.ui'
+# Form implementation generated from reading ui file 'LoginGui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,32 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Login.LoginDesign import icons
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(306, 356)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        Dialog.setFont(font)
-        Dialog.setStyleSheet("background-color: #fff;\n"
-"")
-        self.imageBackgroundLogin = QtWidgets.QLabel(Dialog)
-        self.imageBackgroundLogin.setGeometry(QtCore.QRect(-10, -20, 441, 391))
-        self.imageBackgroundLogin.setStyleSheet("background-image: url(:/images/background-image-login.jpg);\n"
-"")
-        self.imageBackgroundLogin.setText("")
-        self.imageBackgroundLogin.setPixmap(QtGui.QPixmap(":/images/background-image-login.jpg"))
-        self.imageBackgroundLogin.setScaledContents(True)
-        self.imageBackgroundLogin.setObjectName("imageBackgroundLogin")
-        self.widgetLogin = QtWidgets.QWidget(Dialog)
-        self.widgetLogin.setGeometry(QtCore.QRect(20, 40, 261, 241))
+
+class Login_Gui(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(320, 369)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.widgetLogin = QtWidgets.QWidget(self.centralwidget)
+        self.widgetLogin.setGeometry(QtCore.QRect(40, 50, 261, 231))
         self.widgetLogin.setStyleSheet("background-color: white;\n"
 "border-radius: 15px;")
         self.widgetLogin.setObjectName("widgetLogin")
         self.loginLabel = QtWidgets.QLabel(self.widgetLogin)
-        self.loginLabel.setGeometry(QtCore.QRect(30, 40, 141, 31))
+        self.loginLabel.setGeometry(QtCore.QRect(30, 30, 141, 31))
         font = QtGui.QFont()
         font.setFamily("Dubai")
         font.setPointSize(-1)
@@ -45,7 +34,7 @@ class Ui_Dialog(object):
 "background-color: transparent")
         self.loginLabel.setObjectName("loginLabel")
         self.groupUser = QtWidgets.QGroupBox(self.widgetLogin)
-        self.groupUser.setGeometry(QtCore.QRect(30, 90, 201, 41))
+        self.groupUser.setGeometry(QtCore.QRect(30, 80, 201, 41))
         self.groupUser.setStyleSheet("border: none;\n"
 "background-color: #cdcdd2;\n"
 "border-radius: 10px;")
@@ -85,27 +74,8 @@ class Ui_Dialog(object):
 "font-size: 16px;")
         self.labelPassword.setEchoMode(QtWidgets.QLineEdit.Password)
         self.labelPassword.setObjectName("labelPassword")
-        self.RecoverPasswordButton = QtWidgets.QPushButton(self.widgetLogin)
-        self.RecoverPasswordButton.setGeometry(QtCore.QRect(30, 180, 121, 31))
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        self.RecoverPasswordButton.setFont(font)
-        self.RecoverPasswordButton.setStyleSheet("border: none;\n"
-"background: none;\n"
-"color: #gray")
-        self.RecoverPasswordButton.setObjectName("RecoverPasswordButton")
-        self.RegisterButton = QtWidgets.QToolButton(self.widgetLogin)
-        self.RegisterButton.setGeometry(QtCore.QRect(210, 20, 31, 31))
-        self.RegisterButton.setStyleSheet("border: none;\n"
-"background-color: transparent")
-        self.RegisterButton.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/images/plusUser-login.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.RegisterButton.setIcon(icon)
-        self.RegisterButton.setIconSize(QtCore.QSize(32, 32))
-        self.RegisterButton.setObjectName("RegisterButton")
-        self.EnterButton = QtWidgets.QPushButton(Dialog)
-        self.EnterButton.setGeometry(QtCore.QRect(50, 260, 201, 41))
+        self.EnterButton = QtWidgets.QPushButton(self.centralwidget)
+        self.EnterButton.setGeometry(QtCore.QRect(70, 260, 201, 41))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(-1)
@@ -129,17 +99,20 @@ class Ui_Dialog(object):
         self.EnterButton.setDefault(False)
         self.EnterButton.setFlat(False)
         self.EnterButton.setObjectName("EnterButton")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.loginLabel.setText(_translate("Dialog", "Bentornato"))
-        self.userLabel_3.setText(_translate("Dialog", "Utente"))
-        self.userLabel_3.setPlaceholderText(_translate("Dialog", "Utente"))
-        self.labelPassword.setText(_translate("Dialog", "Password"))
-        self.labelPassword.setPlaceholderText(_translate("Dialog", "Password"))
-        self.RecoverPasswordButton.setText(_translate("Dialog", "Recupera password"))
-        self.EnterButton.setText(_translate("Dialog", "Entra"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.loginLabel.setText(_translate("MainWindow", "Bentornato"))
+        self.userLabel_3.setText(_translate("MainWindow", "Utente"))
+        self.userLabel_3.setPlaceholderText(_translate("MainWindow", "Utente"))
+        self.labelPassword.setText(_translate("MainWindow", "Password"))
+        self.labelPassword.setPlaceholderText(_translate("MainWindow", "Password"))
+        self.EnterButton.setText(_translate("MainWindow", "Entra"))

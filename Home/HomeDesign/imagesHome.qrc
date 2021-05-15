@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="immagini">
+    <file>../../../../Downloads/icons8-negozio-online-preferito-50.png</file>
+    <file>../../../../Downloads/icons8-menu-26.png</file>
+  </qresource>
+</RCC>
