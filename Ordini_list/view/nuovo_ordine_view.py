@@ -2,20 +2,22 @@ import datetime
 
 from PySide2.QtCore import Qt, QCoreApplication
 from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView, QLabel, QCheckBox
+from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView, QLabel, QCheckBox, QPushButton
 
 from Ordine.model.ordine import ordine
 from Ordini_list.view.label_ordine import label_ordine
 
 
 class nuovo_ordine_view:
-    def __init__(self, lista_categorie, utility, home, lista_ordini, lista_tavoli, menu):
+    def __init__(self, categorie_view, lista_categorie, utility, home, lista_ordini, lista_tavoli, menu, menu_vista):
         self.home = home
+        self.categorie_view = categorie_view
         self.lista_ordini = lista_ordini
         self.lista_tavoli = lista_tavoli
         self.lista_categorie = lista_categorie
         self.menu = menu
         self.utility = utility
+        self.menu_vista = menu_vista
 
         self.lista_label_ordine = []
         self.conta_label = 0
@@ -23,14 +25,8 @@ class nuovo_ordine_view:
         self.prezzo_ordine = 0
         self.ultima_aggiunta = None
         self.codice_ordine = 0
-        self.checkBox_categorie_caricate = []
+        self.btn_categorie_caricate = []
 
-
-    #Ogni volta che si aggiunge una categoria, aggiungo un checkbox che la identifica
-    #al click sul checkbox dovrebbero comparire i piatti di quella sola categoria
-    #tramite la funzione fill_menu_from_categoria
-    #non funziona
-    #non ho trovato un modo per far partire una funzione al click del checkbox
 
     def check_categoria_portata_to_add(self, categoria):
         for x in range(len(self.lista_label_ordine)):
@@ -110,80 +106,45 @@ class nuovo_ordine_view:
         print(prezzo)
         print(data_ora)
 
+    def show_categorie_in_table(self):
+        clicked = self.home.table_categorie.currentItem()
+        if clicked.text() == "Vedi Tutti":
+            self.menu_vista.fill_menu_to_order()
+            return
 
-    def fill_menu_to_order(self):
+        categoria_selected = self.lista_categorie.get_categoria_from_text(clicked.text())
+        nome_categoria = categoria_selected.get_nome_categoria()
+        row = 0
+        column = 0
+        self.home.tableWidget.clear()
+
+        ## Visualizzo le portate della categoria cliccata sulla tabella
+        for x in range(len(self.menu.get_menu())):
+            print(self.menu.get_menu()[x].get_categoria())
+            if self.menu.get_menu()[x].get_categoria() == nome_categoria:
+                nome_portata = self.menu.get_menu()[x].get_nome_portata()
+                nuovo_item = QTableWidgetItem()
+                nuovo_item.setText(nome_portata)
+                nuovo_item.setTextAlignment(Qt.AlignHCenter)
+                font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
+                nuovo_item.setFont(font_nuovo_item)
+                self.home.tableWidget.setItem(row, column, nuovo_item)
+                column += 1
+                if column % 5 == 0:
+                    row += 1
+                    column = 0
+
+    def view(self):
+        self.home.Pages_widget.setCurrentWidget(self.home.OrdiniPage)
+        ## Riempio il box di scelta per i tavoli
         for i in range(len(self.lista_tavoli.get_lista())):
             self.home.comboBox_seleziona_tavolo.addItem(
                 "Tavolo" + ' ' + str(self.lista_tavoli.get_lista()[i].get_codice_tavolo() + 1))
 
-        row = 0
-        column = 0
-        if len(self.menu.get_menu()) / 5 <= 1:
-            self.home.tableWidget.setColumnCount(len(self.menu.get_menu()))
-        else:
-            self.home.tableWidget.setColumnCount(5)
-        self.home.tableWidget.setRowCount((len(self.menu.get_menu()) / 5) + 1)
-        font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
+        self.menu_vista.fill_table_to_order()
+        self.categorie_view.fill_categorie_to_order()
+        self.home.table_categorie.cellClicked.connect(self.show_categorie_in_table)
 
-        self.home.tableWidget.clear()
-        self.home.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
-        for x in range(len(self.menu.get_menu())):
-           nome_portata = self.menu.get_menu()[x].get_nome_portata()
-           nuovo_item = QTableWidgetItem()
-           nuovo_item.setText(nome_portata)
-           nuovo_item.setTextAlignment(Qt.AlignHCenter)
-           nuovo_item.setFont(font_nuovo_item)
-           self.home.tableWidget.setItem(row, column, nuovo_item)
-           column += 1
-           if column % 5 == 0:
-              row += 1
-              column = 0
-
-
-    def fill_categorie_to_order(self):
-        #Questo if è sbagliato
-        #Devo fare: if le due liste (checkBox caricate e lista_categorie.get_lista sono uguali o meno)
-        if len(self.checkBox_categorie_caricate) == 0:
-            for x in range(len(self.lista_categorie.get_lista())):
-                nome_categoria = self.lista_categorie.get_lista()[x].get_nome_categoria()
-                nuovo_checkBox = QCheckBox(self.home.frame_seleziona_categoria)
-                self.checkBox_categorie_caricate.append(nuovo_checkBox)
-                self.home.horizontalLayout_8.addWidget(nuovo_checkBox, 0, Qt.AlignHCenter)
-                nuovo_checkBox.setText(QCoreApplication.translate("MainWindow", nome_categoria, None))
-                nuovo_checkBox.setStyleSheet(
-                    "QCheckBox {spacing: 5px;border: 2px solid white;padding:"
-                    "4px;border-radius: 10px;background-color: rgb(255, 85, 0);font: 500 12pt 'Dubai';}"
-                    "QCheckBox::indicator {width: 13px;height: 13px;}"
-                    "QCheckBox::indicator:unchecked {background-color: white;}"            
-                    "QCheckBox::indicator:unchecked:hover {background-color: black;}"
-                    "QCheckBox::indicator:unchecked:pressed {background-color: green;}")
-               ## if nuovo_checkBox.isChecked(): self.prova()
-        else:
-            numero_categorie_caricate = len(self.checkBox_categorie_caricate)
-            numero_categorie_totali = len(self.lista_categorie.get_lista())
-            x = numero_categorie_totali-numero_categorie_caricate
-            while x<numero_categorie_totali:
-                nome_categoria = self.lista_categorie.get_lista()[x].get_nome_categoria()
-                #self.categorie_caricate.append(self.lista_categorie.get_lista()[x])
-                nuovo_checkBox = QCheckBox(self.home.frame_seleziona_categoria)
-                self.checkBox_categorie_caricate.append(nuovo_checkBox)
-                self.home.horizontalLayout_8.addWidget(nuovo_checkBox, 0, Qt.AlignHCenter)
-                nuovo_checkBox.setText(QCoreApplication.translate("MainWindow", nome_categoria, None))
-                nuovo_checkBox.setStyleSheet(
-                    "QCheckBox {spacing: 5px;border: 2px solid white;padding:"
-                    "4px;border-radius: 10px;background-color: rgb(255, 85, 0);font: 500 12pt 'Dubai';}"
-                    "QCheckBox::indicator {width: 13px;height: 13px;}"
-                    "QCheckBox::indicator:unchecked {background-color: white;}"
-                    "QCheckBox::indicator:unchecked:hover {background-color: black;}"
-                    "QCheckBox::indicator:unchecked:pressed {background-color: green;}")
-               ## nuovo_checkBox.clicked(self.prova)
-                x += 1
-
-    def view(self):
-        self.home.Pages_widget.setCurrentWidget(self.home.OrdiniPage)
-        self.fill_menu_to_order()
-        #self.fill_categorie_to_order()
 
 
 

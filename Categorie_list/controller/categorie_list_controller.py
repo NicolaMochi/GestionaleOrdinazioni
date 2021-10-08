@@ -26,5 +26,12 @@ class categorie_list_controller:
             if self.list_model.get_lista()[x].get_nome_categoria() == categoria: return True
         return False
 
+    def get_categoria_from_text(self, nome_categoria):
+        categoria = None
+        for x in range(len(self.list_model.get_lista())):
+            if self.list_model.get_lista()[x].nome == nome_categoria:
+                categoria = self.list_model.get_lista()[x]
+        return categoria
+
 
 

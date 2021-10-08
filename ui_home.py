@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomeQAJUaN.ui'
+## Form generated from reading UI file 'interfaceHomeMYMYWS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -17,7 +17,7 @@ class ui_home(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 502)
+        MainWindow.resize(1000, 500)
         MainWindow.setMinimumSize(QSize(1000, 500))
         MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);")
         self.centralwidget = QWidget(MainWindow)
@@ -448,7 +448,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 460, 286))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 460, 284))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -523,6 +523,45 @@ class ui_home(object):
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.frame_categorie_menu = QFrame(self.frame_list_and_new_piatto)
+        self.frame_categorie_menu.setObjectName(u"frame_categorie_menu")
+        self.frame_categorie_menu.setMinimumSize(QSize(0, 0))
+        self.frame_categorie_menu.setMaximumSize(QSize(16777215, 60))
+        self.frame_categorie_menu.setFrameShape(QFrame.NoFrame)
+        self.frame_categorie_menu.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_11 = QHBoxLayout(self.frame_categorie_menu)
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.table_categorie_menu = QTableWidget(self.frame_categorie_menu)
+        if (self.table_categorie_menu.rowCount() < 1):
+            self.table_categorie_menu.setRowCount(1)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.table_categorie_menu.setVerticalHeaderItem(0, __qtablewidgetitem)
+        self.table_categorie_menu.setObjectName(u"table_categorie_menu")
+        self.table_categorie_menu.setStyleSheet(u"QTableView::item {\n"
+"    border:2px solid  rgb(255, 170, 0);\n"
+"	border-radius: 10px;\n"
+"	background-color: transparent;\n"
+"	margin-left: 10px;\n"
+"	height: 20px!important;\n"
+"	color: white;\n"
+"	margin-top: 10px;\n"
+"}\n"
+"\n"
+"QTableView::item:focus {background-color: rgb(255, 170, 0);}\n"
+"QTableView::item:hover {background-color: rgb(255, 170, 0);}")
+        self.table_categorie_menu.setFrameShape(QFrame.NoFrame)
+        self.table_categorie_menu.setGridStyle(Qt.NoPen)
+        self.table_categorie_menu.horizontalHeader().setVisible(False)
+        self.table_categorie_menu.verticalHeader().setVisible(False)
+        self.table_categorie_menu.verticalHeader().setDefaultSectionSize(60)
+
+        self.horizontalLayout_11.addWidget(self.table_categorie_menu)
+
+
+        self.verticalLayout_18.addWidget(self.frame_categorie_menu)
+
         self.list_piatti = QListWidget(self.frame_list_and_new_piatto)
         self.list_piatti.setObjectName(u"list_piatti")
         self.list_piatti.setStyleSheet(u"\n"
@@ -765,6 +804,37 @@ class ui_home(object):
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.table_categorie = QTableWidget(self.frame_seleziona_categoria)
+        if (self.table_categorie.rowCount() < 1):
+            self.table_categorie.setRowCount(1)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.table_categorie.setVerticalHeaderItem(0, __qtablewidgetitem1)
+        self.table_categorie.setObjectName(u"table_categorie")
+        self.table_categorie.setStyleSheet(u"QTableView::item {\n"
+"    border:2px solid  rgb(255, 170, 0);\n"
+"	border-radius: 10px;\n"
+"	background-color: transparent;\n"
+"	margin-left: 10px;\n"
+"	height: 20px!important;\n"
+"	color: white;\n"
+"	margin-top: 10px;\n"
+"}\n"
+"\n"
+"QTableView::item:focus {background-color: rgb(255, 170, 0);}\n"
+"QTableView::item:hover {background-color: rgb(255, 170, 0);}")
+        self.table_categorie.setFrameShape(QFrame.NoFrame)
+        self.table_categorie.setDefaultDropAction(Qt.IgnoreAction)
+        self.table_categorie.setShowGrid(False)
+        self.table_categorie.setGridStyle(Qt.NoPen)
+        self.table_categorie.horizontalHeader().setVisible(False)
+        self.table_categorie.horizontalHeader().setMinimumSectionSize(34)
+        self.table_categorie.horizontalHeader().setDefaultSectionSize(100)
+        self.table_categorie.verticalHeader().setVisible(False)
+        self.table_categorie.verticalHeader().setDefaultSectionSize(50)
+        self.table_categorie.verticalHeader().setStretchLastSection(False)
+
+        self.horizontalLayout_8.addWidget(self.table_categorie)
+
 
         self.verticalLayout_12.addWidget(self.frame_seleziona_categoria)
 
@@ -861,7 +931,7 @@ class ui_home(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 338))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 336))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -938,7 +1008,7 @@ class ui_home(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_widget.setCurrentIndex(4)
+        self.Pages_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -963,6 +1033,8 @@ class ui_home(object):
         self.label_ordine_tavolo.setText("")
         self.label_datetime_ordine_tavolo.setText(QCoreApplication.translate("MainWindow", u"Data e Ora dell'ordine:", None))
         self.btn_stampa_scontrino.setText(QCoreApplication.translate("MainWindow", u"Totale: 0\u20ac", None))
+        ___qtablewidgetitem = self.table_categorie_menu.verticalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         self.btn_new_piatto.setText(QCoreApplication.translate("MainWindow", u"Aggiungi nuovo piatto", None))
         self.label_id.setText(QCoreApplication.translate("MainWindow", u"ID Portata", None))
         self.label_categoria.setText(QCoreApplication.translate("MainWindow", u"Categoria Portata", None))
@@ -976,6 +1048,8 @@ class ui_home(object):
         self.label_ordini.setText(QCoreApplication.translate("MainWindow", u"ORDINI", None))
         self.label_statistiche.setText(QCoreApplication.translate("MainWindow", u"STATISTICHE", None))
         self.label_tavolo.setText(QCoreApplication.translate("MainWindow", u"Seleziona Tavolo", None))
+        ___qtablewidgetitem1 = self.table_categorie.verticalHeaderItem(0)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         self.btn_elimina_ordine.setText(QCoreApplication.translate("MainWindow", u"Elimina ultima aggiunta", None))
         self.btn_invio_ordine.setText(QCoreApplication.translate("MainWindow", u"Invia Ordine", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))

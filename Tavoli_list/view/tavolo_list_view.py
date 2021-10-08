@@ -1,6 +1,6 @@
 from PySide2.QtCore import Qt
 from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QTableWidgetItem, QTableWidget
+from PySide2.QtWidgets import QTableWidgetItem, QTableWidget, QAbstractItemView
 
 
 class tavolo_list_view:
@@ -74,6 +74,7 @@ class tavolo_list_view:
 
 
     def fill_list_tavoli_widget(self, lista_tavoli):
+        self.home.tableWidget_tavoli.setEditTriggers(QAbstractItemView.NoEditTriggers)
         for x in range(len(lista_tavoli)):
             print(lista_tavoli[x].get_codice_tavolo())
         self.home.tableWidget_tavoli.setColumnCount(3)

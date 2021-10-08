@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow
 
 from Categorie_list.controller.categorie_list_controller import categorie_list_controller
+from Categorie_list.view.categorie_list_view import categorie_list_view
 from Ingredienti_list.controller.ingredienti_list_controller import ingredienti_list_controller
 from Menu.controller.menu_controller import menu_controller
 from Menu.view.menu_view import menu_view
@@ -32,12 +33,13 @@ class home_view(QMainWindow):
         self.lista_categorie = categorie_list_controller()
         self.lista_ingredienti = ingredienti_list_controller()
         self.menu = menu_controller()
-        self.menu_vista = menu_view(self.home, self.menu)
+        self.categorie_view = categorie_list_view(self.lista_categorie, self.home, self.menu)
+        self.menu_vista = menu_view(self.home, self.menu, self.categorie_view)
         self.nuova_portata_view = new_portata_view(self.menu_vista, self.menu, self.lista_ingredienti, self.lista_categorie)
 
         self.lista_ordini = ordini_list_controller()
         self.utility = utilities(self.home, self.lista_tavoli_controller)
-        self.vista_nuovo_ordine = nuovo_ordine_view(self.lista_categorie, self.utility, self.home, self.lista_ordini, self.lista_tavoli_controller, self.menu)
+        self.vista_nuovo_ordine = nuovo_ordine_view(self.categorie_view, self.lista_categorie, self.utility, self.home, self.lista_ordini, self.lista_tavoli_controller, self.menu, self.menu_vista)
 
 
         self.partenza()
@@ -64,8 +66,8 @@ class home_view(QMainWindow):
         password = self.vista_login.login.lineEdit_password.text()
         controllo_result = self.controller_lista_personale.controllo_login(username, password)
 
-        #if True:
-        if controllo_result != 0:
+        if True:
+        #if controllo_result != 0:
             self.home.setupUi(self)
             self.show()
 
