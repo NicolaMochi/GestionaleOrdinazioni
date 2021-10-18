@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomeMYMYWS.ui'
+## Form generated from reading UI file 'interfaceHomeebfzmG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -40,7 +40,7 @@ class ui_home(object):
         self.toggle = QFrame(self.top_bar)
         self.toggle.setObjectName(u"toggle")
         self.toggle.setMaximumSize(QSize(50, 50))
-        self.toggle.setStyleSheet(u"background-color: rgb(123, 114, 255);")
+        self.toggle.setStyleSheet(u"background-color:rgb(99, 159, 171)")
         self.toggle.setFrameShape(QFrame.StyledPanel)
         self.toggle.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.toggle)
@@ -119,37 +119,49 @@ class ui_home(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.btn_add_tavolo = QPushButton(self.top_menu)
         self.btn_add_tavolo.setObjectName(u"btn_add_tavolo")
-        self.btn_add_tavolo.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: transparent\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(123, 114, 255);\n"
-"}")
+        self.btn_add_tavolo.setStyleSheet(u"QPushButton{ border: none;\n"
+"background-color: transparent;\n"
+"font: 500 10pt \"Dubai\";\n"
+"padding: 9px;\n"
+"letter-spacing:0.2px ;\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;}\n"
+"QPushButton:focus:pressed{font: 500 9.5pt \"Dubai\";\n"
+"	background-color: rgb(99, 159, 171);}\n"
+"QPushButton:hover{background-color:rgb(99, 159, 171);}\n"
+"/*rgb(99, 159, 171)*/")
 
         self.horizontalLayout_4.addWidget(self.btn_add_tavolo)
 
         self.btn_add_ordine = QPushButton(self.top_menu)
         self.btn_add_ordine.setObjectName(u"btn_add_ordine")
-        self.btn_add_ordine.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: transparent\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(123, 114, 255);\n"
-"}")
+        self.btn_add_ordine.setStyleSheet(u"QPushButton{ border: none;\n"
+"background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));\n"
+"font: 500 10pt \"Dubai\";\n"
+"padding: 9px;\n"
+"letter-spacing:0.2px ;\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;}\n"
+"QPushButton:focus:pressed{font: 500 9.5pt \"Dubai\";\n"
+"	background-color: rgb(99, 159, 171);}\n"
+"QPushButton:hover{background-color:rgb(99, 159, 171);}\n"
+"/*rgb(99, 159, 171)*/")
 
         self.horizontalLayout_4.addWidget(self.btn_add_ordine)
 
         self.btn_logout = QPushButton(self.top_menu)
         self.btn_logout.setObjectName(u"btn_logout")
-        self.btn_logout.setStyleSheet(u"QPushButton {\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: transparent\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(123, 114, 255);\n"
-"}")
+        self.btn_logout.setStyleSheet(u"QPushButton{ border: none;\n"
+"background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));\n"
+"font: 500 10pt \"Dubai\";\n"
+"padding: 9px;\n"
+"letter-spacing:0.2px ;\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;}\n"
+"QPushButton:focus:pressed{font: 500 9.5pt \"Dubai\";\n"
+"	background-color: rgb(99, 159, 171);}\n"
+"QPushButton:hover{background-color:rgb(99, 159, 171);}\n"
+"/*rgb(99, 159, 171)*/")
 
         self.horizontalLayout_4.addWidget(self.btn_logout)
 
@@ -516,7 +528,7 @@ class ui_home(object):
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.frame_list_and_new_piatto = QFrame(self.MenuPage)
         self.frame_list_and_new_piatto.setObjectName(u"frame_list_and_new_piatto")
-        self.frame_list_and_new_piatto.setMaximumSize(QSize(380, 16777215))
+        self.frame_list_and_new_piatto.setMaximumSize(QSize(500, 16777215))
         self.frame_list_and_new_piatto.setFrameShape(QFrame.StyledPanel)
         self.frame_list_and_new_piatto.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_list_and_new_piatto)
@@ -594,10 +606,18 @@ class ui_home(object):
         self.btn_new_piatto = QPushButton(self.frame_list_and_new_piatto)
         self.btn_new_piatto.setObjectName(u"btn_new_piatto")
         self.btn_new_piatto.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_new_piatto.setStyleSheet(u"font: 700 14pt \"Dubai\";\n"
-"background-color: transparent;\n"
-"text-decoration: underline;\n"
-"")
+        self.btn_new_piatto.setStyleSheet(u"QPushButton{ border: none;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 170, 0, 255), stop:1 rgba(230, 179, 79, 255));\n"
+"font: 500 15pt \"Dubai\";\n"
+"padding: 9px;\n"
+"letter-spacing:0.2px ;\n"
+"/*border: 2px solid rgb(255, 170, 0);*/\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;}\n"
+"QPushButton:focus:pressed{font: 500 13.5pt \"Dubai\";\n"
+"	background-color: rgb(255, 170, 0);}\n"
+"QPushButton:focus{/*uguale allo stile normale*/}\n"
+"QPushButton:hover{background-color: rgb(255, 170, 0);}")
 
         self.verticalLayout_18.addWidget(self.btn_new_piatto)
 
@@ -609,7 +629,9 @@ class ui_home(object):
         self.frame_view_ingridients_delete.setFrameShape(QFrame.StyledPanel)
         self.frame_view_ingridients_delete.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.frame_view_ingridients_delete)
+        self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.frame_portata_on_click = QFrame(self.frame_view_ingridients_delete)
         self.frame_portata_on_click.setObjectName(u"frame_portata_on_click")
         self.frame_portata_on_click.setFrameShape(QFrame.NoFrame)
@@ -690,7 +712,7 @@ class ui_home(object):
 
         self.frame_delete_portata = QFrame(self.frame_view_ingridients_delete)
         self.frame_delete_portata.setObjectName(u"frame_delete_portata")
-        self.frame_delete_portata.setMaximumSize(QSize(16777215, 30))
+        self.frame_delete_portata.setMaximumSize(QSize(16777215, 50))
         self.frame_delete_portata.setFrameShape(QFrame.NoFrame)
         self.frame_delete_portata.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_19 = QHBoxLayout(self.frame_delete_portata)
@@ -700,10 +722,18 @@ class ui_home(object):
         self.btn_delete_piatto = QPushButton(self.frame_delete_portata)
         self.btn_delete_piatto.setObjectName(u"btn_delete_piatto")
         self.btn_delete_piatto.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_delete_piatto.setStyleSheet(u"font: 700 14pt \"Dubai\";\n"
-"background-color: transparent;\n"
-"text-decoration: underline;\n"
-"")
+        self.btn_delete_piatto.setStyleSheet(u"QPushButton{ border: none;\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 170, 0, 255), stop:1 rgba(230, 179, 79, 255));\n"
+"font: 500 15pt \"Dubai\";\n"
+"padding: 9px;\n"
+"letter-spacing:0.2px ;\n"
+"/*border: 2px solid rgb(255, 170, 0);*/\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;}\n"
+"QPushButton:focus:pressed{font: 500 13.5pt \"Dubai\";\n"
+"	background-color: rgb(255, 170, 0);}\n"
+"QPushButton:focus{/*uguale allo stile normale*/}\n"
+"QPushButton:hover{background-color: rgb(255, 170, 0);}")
         self.btn_delete_piatto.setAutoRepeat(False)
 
         self.horizontalLayout_19.addWidget(self.btn_delete_piatto)
@@ -931,7 +961,7 @@ class ui_home(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 336))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 100, 30))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1008,7 +1038,7 @@ class ui_home(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_widget.setCurrentIndex(1)
+        self.Pages_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

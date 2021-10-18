@@ -30,8 +30,9 @@ class menu_controller:
     def get_portata_from_name(self, nome):
         portata = None
         for x in range(len(self.lista_portate.get_menu())):
-            if self.lista_portate.get_menu()[x].nome == nome:
+           if self.lista_portate.get_menu()[x].nome == nome:
                 portata = self.lista_portate.get_menu()[x]
         return portata
+
 
 

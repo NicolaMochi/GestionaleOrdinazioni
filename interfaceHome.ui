@@ -82,7 +82,7 @@ font: 10pt &quot;Dubai&quot;;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(123, 114, 255);</string>
+          <string notr="true">background-color:rgb(99, 159, 171)</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -240,13 +240,17 @@ QPushButton:hover {
              <item>
               <widget class="QPushButton" name="btn_add_tavolo">
                <property name="styleSheet">
-                <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: transparent
-}
-QPushButton:hover {
-	background-color: rgb(123, 114, 255);
-}</string>
+                <string notr="true">QPushButton{ border: none;
+background-color: transparent;
+font: 500 10pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
+	background-color: rgb(99, 159, 171);}
+QPushButton:hover{background-color:rgb(99, 159, 171);}
+/*rgb(99, 159, 171)*/</string>
                </property>
                <property name="text">
                 <string>Aggiungi Tavolo</string>
@@ -256,13 +260,17 @@ QPushButton:hover {
              <item>
               <widget class="QPushButton" name="btn_add_ordine">
                <property name="styleSheet">
-                <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: transparent
-}
-QPushButton:hover {
-	background-color: rgb(123, 114, 255);
-}</string>
+                <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
+font: 500 10pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
+	background-color: rgb(99, 159, 171);}
+QPushButton:hover{background-color:rgb(99, 159, 171);}
+/*rgb(99, 159, 171)*/</string>
                </property>
                <property name="text">
                 <string>Aggiungi Ordine</string>
@@ -272,13 +280,17 @@ QPushButton:hover {
              <item>
               <widget class="QPushButton" name="btn_logout">
                <property name="styleSheet">
-                <string notr="true">QPushButton {
-	color: rgb(255, 255, 255);
-	background-color: transparent
-}
-QPushButton:hover {
-	background-color: rgb(123, 114, 255);
-}</string>
+                <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
+font: 500 10pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
+	background-color: rgb(99, 159, 171);}
+QPushButton:hover{background-color:rgb(99, 159, 171);}
+/*rgb(99, 159, 171)*/</string>
                </property>
                <property name="text">
                 <string>LOGOUT</string>
@@ -589,7 +601,7 @@ font: 500 10pt &quot;Dubai&quot;;</string>
           <item>
            <widget class="QStackedWidget" name="Pages_widget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="TavoliPage">
              <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -881,7 +893,7 @@ QScrollBar::handle {
                          <x>0</x>
                          <y>0</y>
                          <width>460</width>
-                         <height>284</height>
+                         <height>328</height>
                         </rect>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -928,17 +940,6 @@ padding: 10px;</string>
                         </item>
                        </layout>
                       </widget>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_datetime_ordine_tavolo">
-                      <property name="styleSheet">
-                       <string notr="true">font: 10pt &quot;Dubai&quot;;
-padding: 8px;</string>
-                      </property>
-                      <property name="text">
-                       <string>Data e Ora dell'ordine:</string>
-                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -1009,7 +1010,7 @@ QPushButton:hover{background-color: rgb(255, 170, 0);}</string>
                <widget class="QFrame" name="frame_list_and_new_piatto">
                 <property name="maximumSize">
                  <size>
-                  <width>380</width>
+                  <width>500</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -1152,10 +1153,18 @@ QScrollBar::handle {
                     <cursorShape>PointingHandCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font: 700 14pt &quot;Dubai&quot;;
-background-color: transparent;
-text-decoration: underline;
-</string>
+                    <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 170, 0, 255), stop:1 rgba(230, 179, 79, 255));
+font: 500 15pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+/*border: 2px solid rgb(255, 170, 0);*/
+border-radius: 5px;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 13.5pt &quot;Dubai&quot;;
+	background-color: rgb(255, 170, 0);}
+QPushButton:focus{/*uguale allo stile normale*/}
+QPushButton:hover{background-color: rgb(255, 170, 0);}</string>
                    </property>
                    <property name="text">
                     <string>Aggiungi nuovo piatto</string>
@@ -1174,6 +1183,21 @@ text-decoration: underline;
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QFrame" name="frame_portata_on_click">
                    <property name="frameShape">
@@ -1325,7 +1349,7 @@ text-decoration: underline;
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>30</height>
+                     <height>50</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -1356,10 +1380,18 @@ text-decoration: underline;
                        <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">font: 700 14pt &quot;Dubai&quot;;
-background-color: transparent;
-text-decoration: underline;
-</string>
+                       <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 170, 0, 255), stop:1 rgba(230, 179, 79, 255));
+font: 500 15pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+/*border: 2px solid rgb(255, 170, 0);*/
+border-radius: 5px;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 13.5pt &quot;Dubai&quot;;
+	background-color: rgb(255, 170, 0);}
+QPushButton:focus{/*uguale allo stile normale*/}
+QPushButton:hover{background-color: rgb(255, 170, 0);}</string>
                       </property>
                       <property name="text">
                        <string>Elimina Piatto</string>
@@ -1837,8 +1869,8 @@ QScrollBar::handle {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>300</width>
-                            <height>336</height>
+                            <width>100</width>
+                            <height>30</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_22">

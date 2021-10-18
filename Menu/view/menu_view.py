@@ -20,7 +20,7 @@ class menu_view:
 
     def delete_portata(self):
         self.menu.delete_portata(self.portata_selected)
-        portata_deleted = self.home.list_piatti.takeItem(self.portata_id)
+        portata_deleted = self.home.list_piatti.takeItem(self.portata_selected.piatto_id)
         self.home.label_ingredienti_portata.clear()
         self.home.label_id_portata.clear()
         self.home.label_prezzo_portata.clear()
@@ -29,14 +29,15 @@ class menu_view:
     def show_portata(self):
         ## HO SBAGLIATO A CONSIDERARE LA RIGA PER PRENDERE LA PORTATA CLICCATA
         ## Vorrei che ci fosse un modo per prendere il testo
-        self.portata_id = self.home.list_piatti.currentRow()
-        self.portata_selected = self.menu.get_portata_from_id(self.portata_id)
+        self.portata_id = self.home.list_piatti.currentItem().text()
+        self.portata_selected = self.menu.get_portata_from_name(self.portata_id)
         self.home.label_id_portata.setText(str(self.portata_selected.piatto_id))
         self.home.label_prezzo_portata.setText(str(self.portata_selected.prezzo))
         self.home.label_categoria_portata.setText(self.portata_selected.categoria)
         self.home.label_ingredienti_portata.setText(self.stampa_ingredienti_portata(self.portata_selected))
         self.home.btn_delete_piatto.clicked.connect(self.delete_portata)
 
+    ## Questa funzione riempie la tabella delle portate con i dati
     def fill_menu_to_order(self):
         self.row = 0
         self.column = 0
@@ -53,6 +54,8 @@ class menu_view:
                 self.row += 1
                 self.column = 0
 
+    ## Questa funzione setta le impostazioni grafiche della tabella e
+    ## fa partire la funzione di inserimento dei dati
     def fill_table_to_order(self):
         if len(self.menu.get_menu()) / 5 <= 1: self.home.tableWidget.setColumnCount(len(self.menu.get_menu()))
         else: self.home.tableWidget.setColumnCount(5)

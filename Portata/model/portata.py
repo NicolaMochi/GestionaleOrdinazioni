@@ -16,3 +16,6 @@ class portata:
     def get_prezzo(self):
         return self.prezzo
 
+    def get_piatto_id(self):
+        return self.piatto_id
+
