@@ -22,27 +22,27 @@ class new_portata_view(QDialog):
 
     def ingredienti_are_not_in_list(self, ingrediente):
         if len(self.lista_ingredienti_controller.get_lista_ingredienti()) == 0: return True
-        for x in range(len(self.lista_ingredienti_controller.get_lista_ingredienti())):
+        for x in self.lista_ingredienti_controller.get_lista_ingredienti():
             print(self.lista_ingredienti_controller.get_lista_ingredienti()[x].nome)
             print(ingrediente.nome)
-            if self.lista_ingredienti_controller.get_lista_ingredienti()[x].nome != ingrediente.nome:
+            if x.nome != ingrediente.nome:
                 return True
             else: return False
 
     def add_nuovi_ingredienti(self, lista):
-        for x in range(len(lista)):
+        for x in lista:
             flag = False
             if len(self.lista_ingredienti_controller.get_lista_ingredienti()) == 0: flag = True
-            for i in range(len(self.lista_ingredienti_controller.get_lista_ingredienti())):
-                if lista[x].nome == self.lista_ingredienti_controller.get_lista_ingredienti()[i].nome:
+            for i in self.lista_ingredienti_controller.get_lista_ingredienti():
+                if x.nome == i.nome:
                     flag = False
                     break
                 else:
                     flag = True
             if flag:
                 id_ingr = len(self.lista_ingredienti_controller.get_lista_ingredienti())+1
-                lista[x].id = id_ingr
-                self.lista_ingredienti_controller.add_to_lista_ingredienti(lista[x])
+                x.id = id_ingr
+                self.lista_ingredienti_controller.add_to_lista_ingredienti(x)
 
         #self.lista_ingredienti.SALVALISTASUFILEPICKLE
 

@@ -1,5 +1,6 @@
 class label_ordine:
-    def __init__(self, nome, prezzo, label):
+    def __init__(self, codice, nome, prezzo, label):
+        self.codice = codice
         self.nome_categoria = nome
         self.label = label
         self.prezzo = prezzo

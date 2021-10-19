@@ -25,15 +25,15 @@ class nuovo_ordine_view:
         self.prezzo_ordine = 0
         self.ultima_aggiunta = None
         self.codice_ordine = 0
+        self.codice_label_ordine = 0
         self.btn_categorie_caricate = []
 
 
     def check_categoria_portata_to_add(self, categoria):
-        for x in range(len(self.lista_label_ordine)):
-            if self.lista_label_ordine[x].get_nome() == categoria:
-                return self.lista_label_ordine[x]
+        for x in self.lista_label_ordine:
+            if x.get_nome() == categoria:
+                return x
         return False
-
 
     def add_to_order(self):
         portata = self.menu.get_portata_from_name(self.home.tableWidget.currentItem().text())
@@ -53,7 +53,8 @@ class nuovo_ordine_view:
             nuova_label.setTextFormat(Qt.AutoText)
             nuova_label.setAlignment(Qt.AlignLeft|Qt.AlignTop)
 
-            nuova_label_ordine = label_ordine(portata.get_categoria(), portata.get_prezzo(), nuova_label)
+            nuova_label_ordine = label_ordine(self.codice_label_ordine, portata.get_categoria(), portata.get_prezzo(), nuova_label)
+            self.codice_label_ordine += 1
             self.lista_label_ordine.append(nuova_label_ordine)
 
             nuova_label.setText(portata.get_categoria()+':')
@@ -65,11 +66,16 @@ class nuovo_ordine_view:
     def elimina_ultima_aggiunta(self):
         try:
             testo_da_modificare = self.ultima_aggiunta.get_label().text()
+            print(testo_da_modificare)
             self.ultima_aggiunta.get_label().setText(testo_da_modificare[:testo_da_modificare.rfind('\n')])
-            if self.ultima_aggiunta.get_label().text().count('\n') <= 1:
+            print("testo da modificare nuovo: " + testo_da_modificare[:testo_da_modificare.rfind('\n')])
+            if self.ultima_aggiunta.get_label().text().count('\n') < 1:
+                print("entrato nell'if")
                 self.ultima_aggiunta.get_label().setText("")
                 self.home.verticalLayout_22.removeWidget(self.ultima_aggiunta.get_label())
+                appoggio = self.lista_label_ordine[self.ultima_aggiunta.codice - 1]
                 self.lista_label_ordine.remove(self.ultima_aggiunta)
+                self.ultima_aggiunta = appoggio
         except:
             label_elimina_exception = QLabel(self.home.scrollAreaWidgetContents_2)
             self.home.verticalLayout_22.addWidget(label_elimina_exception)
@@ -81,8 +87,8 @@ class nuovo_ordine_view:
 
     def testo_ordine_from_labels(self):
         testo_ordine = ''
-        for x in range(len(self.lista_label_ordine)):
-            testo_ordine = testo_ordine + '\n' + self.lista_label_ordine[x].get_label().text()
+        for x in self.lista_label_ordine:
+            testo_ordine = testo_ordine + '\n' + x.get_label().text()
         return testo_ordine
 
 
@@ -119,10 +125,10 @@ class nuovo_ordine_view:
         self.home.tableWidget.clear()
 
         ## Visualizzo le portate della categoria cliccata sulla tabella
-        for x in range(len(self.menu.get_menu())):
-            print(self.menu.get_menu()[x].get_categoria())
-            if self.menu.get_menu()[x].get_categoria() == nome_categoria:
-                nome_portata = self.menu.get_menu()[x].get_nome_portata()
+        for x in self.menu.get_menu():
+            print(x.get_categoria())
+            if x.get_categoria() == nome_categoria:
+                nome_portata = x.get_nome_portata()
                 nuovo_item = QTableWidgetItem()
                 nuovo_item.setText(nome_portata)
                 nuovo_item.setTextAlignment(Qt.AlignHCenter)
@@ -137,9 +143,9 @@ class nuovo_ordine_view:
     def view(self):
         self.home.Pages_widget.setCurrentWidget(self.home.OrdiniPage)
         ## Riempio il box di scelta per i tavoli
-        for i in range(len(self.lista_tavoli.get_lista())):
+        for i in self.lista_tavoli.get_lista():
             self.home.comboBox_seleziona_tavolo.addItem(
-                "Tavolo" + ' ' + str(self.lista_tavoli.get_lista()[i].get_codice_tavolo() + 1))
+                "Tavolo" + ' ' + str(i.get_codice_tavolo() + 1))
 
         self.menu_vista.fill_table_to_order()
         self.categorie_view.fill_categorie_to_order()

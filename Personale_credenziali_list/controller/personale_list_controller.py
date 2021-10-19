@@ -9,4 +9,4 @@ class personale_list_controller:
             if username == cred.utente and password == cred.password:
                 return cred.codice
             else:
-                return 0
+                return False

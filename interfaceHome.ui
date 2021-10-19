@@ -601,7 +601,7 @@ font: 500 10pt &quot;Dubai&quot;;</string>
           <item>
            <widget class="QStackedWidget" name="Pages_widget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="TavoliPage">
              <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -1412,24 +1412,137 @@ QPushButton:hover{background-color: rgb(255, 170, 0);}</string>
             <widget class="QWidget" name="PersonalePage">
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
-               <widget class="QLabel" name="label_ordini">
-                <property name="font">
-                 <font>
-                  <family>Dubai</family>
-                  <pointsize>10</pointsize>
-                  <italic>false</italic>
-                  <bold>false</bold>
-                 </font>
+               <widget class="QFrame" name="main_frame_personal_page">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">color:white;</string>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
                 </property>
-                <property name="text">
-                 <string>ORDINI</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="content_frame_personal_page">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_23">
+                       <item>
+                        <widget class="QFrame" name="frame_3">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <widget class="QLabel" name="label_titolo_personal_page">
+                          <property name="geometry">
+                           <rect>
+                            <x>20</x>
+                            <y>10</y>
+                            <width>912</width>
+                            <height>52</height>
+                           </rect>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 700 16pt &quot;Dubai&quot;;
+color: white;
+letter-spacing: 1px;
+margin-left: 20px;</string>
+                          </property>
+                          <property name="text">
+                           <string>Team</string>
+                          </property>
+                         </widget>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_4">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <widget class="QPushButton" name="add_nuovo_personale">
+                          <property name="geometry">
+                           <rect>
+                            <x>-20</x>
+                            <y>30</y>
+                            <width>447</width>
+                            <height>30</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>PushButton</string>
+                          </property>
+                         </widget>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="frame_2">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1869,8 +1982,8 @@ QScrollBar::handle {
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>100</width>
-                            <height>30</height>
+                            <width>300</width>
+                            <height>336</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_22">

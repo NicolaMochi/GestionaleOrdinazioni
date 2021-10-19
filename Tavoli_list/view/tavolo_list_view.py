@@ -73,21 +73,24 @@ class tavolo_list_view:
         #self.home.label_ordine_tavolo.setText("Devi prima aggiungere un nuovo Tavolo")
 
 
-    def fill_list_tavoli_widget(self, lista_tavoli):
+    def fill_list_tavoli_widget(self, lista_tavoli, flag):
         self.home.tableWidget_tavoli.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        for x in range(len(lista_tavoli)):
-            print(lista_tavoli[x].get_codice_tavolo())
+        for x in lista_tavoli:
+            print(x.get_codice_tavolo())
         self.home.tableWidget_tavoli.setColumnCount(3)
         if len(lista_tavoli) == 0 : self.home.tableWidget_tavoli.setRowCount(0)
         elif len(lista_tavoli) <= 3 : self.home.tableWidget_tavoli.setRowCount(1)
         elif len(lista_tavoli) / 3 == 0: self.home.tableWidget_tavoli.setRowCount(len(lista_tavoli) / 3)
         else: self.home.tableWidget_tavoli.setRowCount((len(lista_tavoli) / 3) + 1)
         font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
-        for tavolo in range((len(lista_tavoli))):
+        if flag:
+            self.row = 0
+            self.column = 0
+        for tavolo in lista_tavoli:
             nuovo_item = QTableWidgetItem()
             nuovo_item.setFont(font_nuovo_item)
             nuovo_item.setTextAlignment(Qt.AlignHCenter)
-            nuovo_item.setText('Tavolo' + ' ' + str(lista_tavoli[tavolo].get_codice_tavolo()+1))
+            nuovo_item.setText('Tavolo' + ' ' + str(tavolo.get_codice_tavolo()+1))
             self.home.tableWidget_tavoli.setItem(self.row, self.column, nuovo_item)
             self.column += 1
             if self.column % 3 == 0:

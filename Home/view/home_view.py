@@ -24,6 +24,7 @@ class home_view(QMainWindow):
         QMainWindow.__init__(self)
         self.home = ui_home()
         self.vista_login = login_view()
+        self.flag_primo_login = True
         self.controller_lista_personale = personale_list_controller()
 
         self.lista_tavoli_controller = tavolo_list_controller()
@@ -67,12 +68,17 @@ class home_view(QMainWindow):
         controllo_result = self.controller_lista_personale.controllo_login(username, password)
 
         if True:
-        #if controllo_result != 0:
+        #if controllo_result != False:
             self.home.setupUi(self)
             self.show()
 
-            self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista())
-            #richiama funzione di menu_view che popola il widget con le portate presenti nel menu
+            if self.flag_primo_login:
+                self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), False)
+                self.flag_primo_login = False
+            else:
+                self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
+
+        #richiama funzione di menu_view che popola il widget con le portate presenti nel menu
 
             self.home.btn_logout.clicked.connect(self.partenza)
             self.home.btn_menu.clicked.connect(self.vista_menu)
