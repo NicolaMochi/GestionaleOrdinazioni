@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomeebfzmG.ui'
+## Form generated from reading UI file 'interfaceHomequoMDp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -17,8 +17,15 @@ class ui_home(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 500)
-        MainWindow.setMinimumSize(QSize(1000, 500))
+        MainWindow.setEnabled(True)
+        MainWindow.resize(1038, 520)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMinimumSize(QSize(1038, 520))
+        MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -49,9 +56,6 @@ class ui_home(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.btn_toggle = QPushButton(self.toggle)
         self.btn_toggle.setObjectName(u"btn_toggle")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btn_toggle.sizePolicy().hasHeightForWidth())
         self.btn_toggle.setSizePolicy(sizePolicy)
         self.btn_toggle.setStyleSheet(u"color: rgb(255, 255, 255);\n"
@@ -460,7 +464,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 460, 284))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 479, 348))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -478,13 +482,6 @@ class ui_home(object):
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_13.addWidget(self.scrollArea_2)
-
-        self.label_datetime_ordine_tavolo = QLabel(self.frame_tavolo_ordine)
-        self.label_datetime_ordine_tavolo.setObjectName(u"label_datetime_ordine_tavolo")
-        self.label_datetime_ordine_tavolo.setStyleSheet(u"font: 10pt \"Dubai\";\n"
-"padding: 8px;")
-
-        self.verticalLayout_13.addWidget(self.label_datetime_ordine_tavolo)
 
 
         self.verticalLayout_6.addWidget(self.frame_tavolo_ordine)
@@ -749,18 +746,212 @@ class ui_home(object):
         self.PersonalePage.setObjectName(u"PersonalePage")
         self.verticalLayout_8 = QVBoxLayout(self.PersonalePage)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.label_ordini = QLabel(self.PersonalePage)
-        self.label_ordini.setObjectName(u"label_ordini")
-        font = QFont()
-        font.setFamily(u"Dubai")
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        self.label_ordini.setFont(font)
-        self.label_ordini.setStyleSheet(u"color:white;")
-        self.label_ordini.setAlignment(Qt.AlignCenter)
+        self.frame_top = QFrame(self.PersonalePage)
+        self.frame_top.setObjectName(u"frame_top")
+        self.frame_top.setMinimumSize(QSize(0, 20))
+        self.frame_top.setMaximumSize(QSize(16777215, 70))
+        self.frame_top.setFrameShape(QFrame.StyledPanel)
+        self.frame_top.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_12 = QHBoxLayout(self.frame_top)
+        self.horizontalLayout_12.setSpacing(0)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.frame_title = QFrame(self.frame_top)
+        self.frame_title.setObjectName(u"frame_title")
+        self.frame_title.setMaximumSize(QSize(150, 16777215))
+        self.frame_title.setFrameShape(QFrame.NoFrame)
+        self.frame_title.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_title)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(15, 0, 0, 0)
+        self.label_titolo_personal_page = QLabel(self.frame_title)
+        self.label_titolo_personal_page.setObjectName(u"label_titolo_personal_page")
+        self.label_titolo_personal_page.setStyleSheet(u"font: 700 25pt \"Dubai\";\n"
+"color: white;\n"
+"letter-spacing: 1px;\n"
+"")
 
-        self.verticalLayout_8.addWidget(self.label_ordini)
+        self.horizontalLayout_15.addWidget(self.label_titolo_personal_page, 0, Qt.AlignLeft)
+
+
+        self.horizontalLayout_12.addWidget(self.frame_title, 0, Qt.AlignLeft)
+
+        self.frame_add_new = QFrame(self.frame_top)
+        self.frame_add_new.setObjectName(u"frame_add_new")
+        self.frame_add_new.setMaximumSize(QSize(110, 16777215))
+        self.frame_add_new.setStyleSheet(u"")
+        self.frame_add_new.setFrameShape(QFrame.StyledPanel)
+        self.frame_add_new.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frame_add_new)
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.add_nuovo_personale = QPushButton(self.frame_add_new)
+        self.add_nuovo_personale.setObjectName(u"add_nuovo_personale")
+        self.add_nuovo_personale.setStyleSheet(u"QPushButton{ border: 3px solid rgb(99, 159, 171); \n"
+"font: 500 12pt \"Dubai\";\n"
+"padding: 4px;\n"
+"letter-spacing:0.2px ;\n"
+"border-radius: 5px;\n"
+"margin-right: 5px;\n"
+"}\n"
+"QPushButton:focus:pressed{font: 500 9.5pt \"Dubai\";\n"
+"	background-color: rgb(99, 159, 171);}\n"
+"QPushButton:hover{background-color:rgb(99, 159, 171);}\n"
+"/*rgb(99, 159, 171)*/")
+
+        self.horizontalLayout_17.addWidget(self.add_nuovo_personale)
+
+
+        self.horizontalLayout_12.addWidget(self.frame_add_new)
+
+
+        self.verticalLayout_8.addWidget(self.frame_top)
+
+        self.main_frame_personal_page = QFrame(self.PersonalePage)
+        self.main_frame_personal_page.setObjectName(u"main_frame_personal_page")
+        self.main_frame_personal_page.setFrameShape(QFrame.NoFrame)
+        self.main_frame_personal_page.setFrameShadow(QFrame.Raised)
+        self.gridLayout_2 = QGridLayout(self.main_frame_personal_page)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.content_frame_personal_page = QFrame(self.main_frame_personal_page)
+        self.content_frame_personal_page.setObjectName(u"content_frame_personal_page")
+        self.content_frame_personal_page.setFrameShape(QFrame.StyledPanel)
+        self.content_frame_personal_page.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_21 = QHBoxLayout(self.content_frame_personal_page)
+        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.frame_top_content = QFrame(self.content_frame_personal_page)
+        self.frame_top_content.setObjectName(u"frame_top_content")
+        self.frame_top_content.setFrameShape(QFrame.StyledPanel)
+        self.frame_top_content.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_23 = QVBoxLayout(self.frame_top_content)
+        self.verticalLayout_23.setSpacing(0)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.frame_search = QFrame(self.frame_top_content)
+        self.frame_search.setObjectName(u"frame_search")
+        self.frame_search.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_search.setFrameShape(QFrame.NoFrame)
+        self.frame_search.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_22 = QHBoxLayout(self.frame_search)
+        self.horizontalLayout_22.setSpacing(0)
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.frame_lineEdit = QFrame(self.frame_search)
+        self.frame_lineEdit.setObjectName(u"frame_lineEdit")
+        self.frame_lineEdit.setMinimumSize(QSize(100, 0))
+        self.frame_lineEdit.setFrameShape(QFrame.StyledPanel)
+        self.frame_lineEdit.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_23 = QHBoxLayout(self.frame_lineEdit)
+        self.horizontalLayout_23.setSpacing(0)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.horizontalLayout_23.setContentsMargins(-1, 0, 0, 0)
+        self.lineEdit = QLineEdit(self.frame_lineEdit)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setStyleSheet(u"border: solid rgb(99, 159, 171);\n"
+"border-bottom: 2px solid rgb(99, 159, 171);\n"
+"padding: 3px;\n"
+"padding-left: 9px;\n"
+"font: 500 12pt \"Dubai\";")
+
+        self.horizontalLayout_23.addWidget(self.lineEdit)
+
+
+        self.horizontalLayout_22.addWidget(self.frame_lineEdit)
+
+        self.frame_btn_search = QFrame(self.frame_search)
+        self.frame_btn_search.setObjectName(u"frame_btn_search")
+        self.frame_btn_search.setMinimumSize(QSize(50, 0))
+        self.frame_btn_search.setFrameShape(QFrame.StyledPanel)
+        self.frame_btn_search.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_24 = QHBoxLayout(self.frame_btn_search)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.horizontalLayout_24.setContentsMargins(9, 0, 0, 0)
+        self.btn_search = QToolButton(self.frame_btn_search)
+        self.btn_search.setObjectName(u"btn_search")
+        self.btn_search.setStyleSheet(u"")
+
+        self.horizontalLayout_24.addWidget(self.btn_search)
+
+
+        self.horizontalLayout_22.addWidget(self.frame_btn_search)
+
+
+        self.verticalLayout_23.addWidget(self.frame_search, 0, Qt.AlignLeft)
+
+        self.table_personale = QTableWidget(self.frame_top_content)
+        if (self.table_personale.columnCount() < 5):
+            self.table_personale.setColumnCount(5)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.table_personale.setHorizontalHeaderItem(0, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.table_personale.setHorizontalHeaderItem(1, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.table_personale.setHorizontalHeaderItem(2, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.table_personale.setHorizontalHeaderItem(3, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.table_personale.setHorizontalHeaderItem(4, __qtablewidgetitem5)
+        self.table_personale.setObjectName(u"table_personale")
+        self.table_personale.setStyleSheet(u"QScrollBar:vertical {\n"
+"width: 7px;\n"
+"		background-color: white;\n"
+"		margin: 0px 0px 0px 0px;\n"
+"		border-radius: 10px;\n"
+"    }\n"
+"QScrollBar::handle {\n"
+"        background: rgb(125, 125, 125);\n"
+"        border-radius: 2px;\n"
+"    }\n"
+"\n"
+"QTableView::item {\n"
+"	background-color: rgb(249, 249, 249);\n"
+"	border-radius: 10px;\n"
+"	color: white;\n"
+"	margin-left: 10px;\n"
+"	height: 20px!important;\n"
+"	margin-top: 10px;\n"
+"}\n"
+"\n"
+"QTableView::item:focus {background-color: rgb(255, 170, 0);}\n"
+"QTableView::item:hover {background-color: rgb(255, 170, 0);}")
+        self.table_personale.setFrameShape(QFrame.NoFrame)
+        self.table_personale.setFrameShadow(QFrame.Plain)
+        self.table_personale.setLineWidth(1)
+        self.table_personale.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.table_personale.setTabKeyNavigation(False)
+        self.table_personale.setProperty("showDropIndicator", False)
+        self.table_personale.setShowGrid(True)
+        self.table_personale.setGridStyle(Qt.SolidLine)
+        self.table_personale.setCornerButtonEnabled(False)
+        self.table_personale.setRowCount(0)
+        self.table_personale.horizontalHeader().setVisible(False)
+        self.table_personale.horizontalHeader().setCascadingSectionResizes(False)
+        self.table_personale.horizontalHeader().setMinimumSectionSize(34)
+        self.table_personale.horizontalHeader().setDefaultSectionSize(180)
+        self.table_personale.horizontalHeader().setHighlightSections(True)
+        self.table_personale.horizontalHeader().setProperty("showSortIndicator", False)
+        self.table_personale.horizontalHeader().setStretchLastSection(False)
+        self.table_personale.verticalHeader().setVisible(False)
+        self.table_personale.verticalHeader().setDefaultSectionSize(150)
+        self.table_personale.verticalHeader().setHighlightSections(True)
+        self.table_personale.verticalHeader().setStretchLastSection(False)
+
+        self.verticalLayout_23.addWidget(self.table_personale)
+
+
+        self.horizontalLayout_21.addWidget(self.frame_top_content)
+
+
+        self.gridLayout_2.addWidget(self.content_frame_personal_page, 0, 0, 1, 1)
+
+
+        self.verticalLayout_8.addWidget(self.main_frame_personal_page)
 
         self.Pages_widget.addWidget(self.PersonalePage)
         self.StatistichePage = QWidget()
@@ -769,6 +960,11 @@ class ui_home(object):
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.label_statistiche = QLabel(self.StatistichePage)
         self.label_statistiche.setObjectName(u"label_statistiche")
+        font = QFont()
+        font.setFamily(u"Dubai")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
         self.label_statistiche.setFont(font)
         self.label_statistiche.setStyleSheet(u"color:white;")
         self.label_statistiche.setAlignment(Qt.AlignCenter)
@@ -837,8 +1033,8 @@ class ui_home(object):
         self.table_categorie = QTableWidget(self.frame_seleziona_categoria)
         if (self.table_categorie.rowCount() < 1):
             self.table_categorie.setRowCount(1)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.table_categorie.setVerticalHeaderItem(0, __qtablewidgetitem1)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.table_categorie.setVerticalHeaderItem(0, __qtablewidgetitem6)
         self.table_categorie.setObjectName(u"table_categorie")
         self.table_categorie.setStyleSheet(u"QTableView::item {\n"
 "    border:2px solid  rgb(255, 170, 0);\n"
@@ -1038,7 +1234,7 @@ class ui_home(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_widget.setCurrentIndex(0)
+        self.Pages_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1061,7 +1257,6 @@ class ui_home(object):
         self.btn_delete_ordine_tavolo.setText(QCoreApplication.translate("MainWindow", u"Cancella Ordini", None))
         self.btn_cliente_tavolo.setText(QCoreApplication.translate("MainWindow", u"Visualizza Cliente del Tavolo", None))
         self.label_ordine_tavolo.setText("")
-        self.label_datetime_ordine_tavolo.setText(QCoreApplication.translate("MainWindow", u"Data e Ora dell'ordine:", None))
         self.btn_stampa_scontrino.setText(QCoreApplication.translate("MainWindow", u"Totale: 0\u20ac", None))
         ___qtablewidgetitem = self.table_categorie_menu.verticalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
@@ -1075,11 +1270,24 @@ class ui_home(object):
         self.label_ingredienti_portata.setText("")
         self.label_prezzo_portata.setText("")
         self.btn_delete_piatto.setText(QCoreApplication.translate("MainWindow", u"Elimina Piatto", None))
-        self.label_ordini.setText(QCoreApplication.translate("MainWindow", u"ORDINI", None))
+        self.label_titolo_personal_page.setText(QCoreApplication.translate("MainWindow", u"Team", None))
+        self.add_nuovo_personale.setText(QCoreApplication.translate("MainWindow", u"Aggiungi", None))
+        self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Cerca ", None))
+        self.btn_search.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        ___qtablewidgetitem1 = self.table_personale.horizontalHeaderItem(0)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem2 = self.table_personale.horizontalHeaderItem(1)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem3 = self.table_personale.horizontalHeaderItem(2)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem4 = self.table_personale.horizontalHeaderItem(3)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem5 = self.table_personale.horizontalHeaderItem(4)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
         self.label_statistiche.setText(QCoreApplication.translate("MainWindow", u"STATISTICHE", None))
         self.label_tavolo.setText(QCoreApplication.translate("MainWindow", u"Seleziona Tavolo", None))
-        ___qtablewidgetitem1 = self.table_categorie.verticalHeaderItem(0)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem6 = self.table_categorie.verticalHeaderItem(0)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         self.btn_elimina_ordine.setText(QCoreApplication.translate("MainWindow", u"Elimina ultima aggiunta", None))
         self.btn_invio_ordine.setText(QCoreApplication.translate("MainWindow", u"Invia Ordine", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"SETTINGS", None))

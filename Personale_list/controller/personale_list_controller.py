@@ -1,4 +1,4 @@
-from Personale_credenziali_list.model.personale_list import personale_list
+from Personale_list.model.personale_list import personale_list
 
 class personale_list_controller:
     def __init__(self):
@@ -10,3 +10,6 @@ class personale_list_controller:
                 return cred.codice
             else:
                 return False
+
+    def add_personale(self, personale):
+        self.lista.add_credenziale(personale)

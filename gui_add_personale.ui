@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>393</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">font: 700 16pt &quot;Dubai&quot;;
+color: black;
+letter-spacing: 0.5px;
+</string>
+        </property>
+        <property name="text">
+         <string>Nuovo Dipendente</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_top">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="checkBox">
+        <property name="styleSheet">
+         <string notr="true">font: 400 13pt &quot;Dubai&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Amministratore</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 5px;
+background-color:transparent;
+padding: 4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Username</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 5px;
+background-color:transparent;
+padding: 4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nome</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 5px;
+background-color:transparent;
+padding: 4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Cognome</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_4">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid black;
+border-radius: 5px;
+background-color:transparent;
+padding: 4px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Password</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_bottom">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="btn_confirm_new_personale">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
+font: 500 12pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+color:white;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
+	background-color: rgb(99, 159, 171);}
+QPushButton:hover{background-color:rgb(99, 159, 171);}
+/*rgb(99, 159, 171)*/</string>
+        </property>
+        <property name="text">
+         <string>Aggiungi</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_close_new_personale">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{ border: none;
+background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
+font: 500 12pt &quot;Dubai&quot;;
+padding: 9px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+color:white;
+margin-right: 5px;}
+QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
+	background-color: rgb(99, 159, 171);}
+QPushButton:hover{background-color:rgb(99, 159, 171);}
+/*rgb(99, 159, 171)*/</string>
+        </property>
+        <property name="text">
+         <string>Annulla</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
