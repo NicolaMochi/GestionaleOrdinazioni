@@ -5,10 +5,10 @@ class utilities:
         self.posti_totali = 0
         self.posti_rimanenti = 0
 
-    def posti(self):
-        for x in range(len(self.tavoli_list)):
-            self.posti_totali += int(self.tavoli_list[x].get_posti_tavolo())
-            self.home.label_posti.setText(str(self.posti_rimanenti) + '/' + str(self.posti_totali))
+    # def posti(self):
+    #     for x in range(len(self.tavoli_list)):
+    #         self.posti_totali += int(self.tavoli_list[x].get_posti_tavolo())
+    #         self.home.label_posti.setText(str(self.posti_rimanenti) + '/' + str(self.posti_totali))
 
     def posti_rimanenti(self):
         for x in range(len(self.tavoli_list)):

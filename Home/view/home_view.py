@@ -86,10 +86,10 @@ class home_view(QMainWindow):
             self.show()
 
             if self.flag_primo_login:
-                self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), False)
-                self.flag_primo_login = False
+                 self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), False)
+                 self.flag_primo_login = False
             else:
-                self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
+                 self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
 
         #richiama funzione di menu_view che popola il widget con le portate presenti nel menu
 
@@ -107,7 +107,7 @@ class home_view(QMainWindow):
             self.home.btn_elimina_ordine.clicked.connect(self.vista_nuovo_ordine.elimina_ultima_aggiunta)
             self.home.btn_invio_ordine.clicked.connect(self.send_order)
             self.home.btn_delete_ordine_tavolo.clicked.connect(self.tavolo_view.delete_ordine)
-            self.utility.posti()
+            #self.utility.posti()
 
         else:
             self.vista_login.login.label_message.setText("Dati non validi, riprova")

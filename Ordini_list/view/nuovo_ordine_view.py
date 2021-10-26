@@ -129,12 +129,11 @@ class nuovo_ordine_view:
         for x in self.menu.get_menu():
             print(x.get_categoria())
             if x.get_categoria() == nome_categoria:
-                nome_portata = x.get_nome_portata()
+                nome_portata = x.__str__()
                 nuovo_item = QTableWidgetItem()
                 nuovo_item.setText(nome_portata)
                 nuovo_item.setTextAlignment(Qt.AlignHCenter)
-                font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
-                nuovo_item.setFont(font_nuovo_item)
+                nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
                 self.home.tableWidget.setItem(row, column, nuovo_item)
                 column += 1
                 if column % 5 == 0:

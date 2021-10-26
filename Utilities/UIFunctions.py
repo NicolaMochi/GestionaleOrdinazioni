@@ -34,17 +34,17 @@ class UIFunctions():
 
     def inizialize_ui_table(self, nome_tabella, numero_colonne, lista_da_usare, flag):
         if len(lista_da_usare) / numero_colonne <= 1: nome_tabella.setColumnCount(len(lista_da_usare))
+        elif len(lista_da_usare) == 0: nome_tabella.setColumnCount(1)
         else: nome_tabella.setColumnCount(numero_colonne)
         nome_tabella.setRowCount((len(lista_da_usare) / numero_colonne) + 1)
         nome_tabella.clear()
         nome_tabella.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        font_nuovo_item = QFont("Poppins", 14, QFont.Medium)
         if flag:
             self.row = 0
             self.column = 0
         for x in lista_da_usare:
             nuovo_item = QTableWidgetItem()
-            nuovo_item.setFont(font_nuovo_item)
+            nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
             nuovo_item.setTextAlignment(Qt.AlignHCenter)
             nuovo_item.setText(x.__str__())
             nome_tabella.setItem(self.row, self.column, nuovo_item)
@@ -52,3 +52,17 @@ class UIFunctions():
             if self.column % 3 == 0:
                 self.row += 1
                 self.column = 0
+
+    def add_to_widget(self, tabella_da_usare, oggetto_da_aggiungere, flag):
+        if flag == True: tabella_da_usare.setRowCount(tabella_da_usare.rowCount()+1)
+        nuovo_item = QTableWidgetItem()
+        nuovo_item.setText(oggetto_da_aggiungere.__str__())
+        nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
+        nuovo_item.setTextAlignment(Qt.AlignHCenter)
+        tabella_da_usare.setItem(self.row, self.column, nuovo_item)
+        nuovo_item = None
+        self.column += 1
+        if self.column % 3 == 0:
+            self.row += 1
+            self.flag = True
+            self.column = 0

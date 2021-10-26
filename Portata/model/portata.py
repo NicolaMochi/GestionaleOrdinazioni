@@ -7,15 +7,5 @@ class portata:
         # ingredienti dovrà essere una lista []
         self.ingredienti = ingredienti
 
-    def __str__(self):
-        return self.nome
 
-    def get_categoria(self):
-        return self.categoria
-
-    def get_prezzo(self):
-        return self.prezzo
-
-    def get_piatto_id(self):
-        return self.piatto_id
 

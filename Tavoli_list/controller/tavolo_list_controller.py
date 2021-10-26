@@ -24,12 +24,12 @@ class tavolo_list_controller:
     # aggiungo l'ordine al tavolo corretto
     def add_ordine_from_id(self, id, ordine):
         for x in self.tavolo_list.get_lista():
-            if x.codice_tavolo == id:
+            if x.get_codice_tavolo() == id:
                 x.add_ordine(ordine)
 
     def total_price_from_id(self, id):
-        for x in range(len(self.tavolo_list.get_lista())):
-            if self.tavolo_list.get_lista()[x].codice_tavolo == id:
-                prezzo = self.tavolo_list.get_lista()[x].total_price()
+        for x in self.tavolo_list.get_lista():
+            if x.get_codice_tavolo() == id:
+                prezzo = x.total_price()
         return prezzo
 

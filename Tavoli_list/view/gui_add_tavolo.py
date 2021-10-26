@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gui_add_tavoloRJaTCk.ui'
+## Form generated from reading UI file 'gui_add_tavoloJAyQdt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -30,7 +30,7 @@ class gui_add_tavolo(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(self.frame_insert)
         self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"font: 500 11pt \"Dubai\";")
+        self.label.setStyleSheet(u"font: 500 11pt \"Poppins\";")
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout.addWidget(self.label, 0, Qt.AlignHCenter)
@@ -42,9 +42,9 @@ class gui_add_tavolo(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.lineEdit_posti_tavolo.sizePolicy().hasHeightForWidth())
         self.lineEdit_posti_tavolo.setSizePolicy(sizePolicy)
-        self.lineEdit_posti_tavolo.setStyleSheet(u"QLineEdit{border-bottom: 2px solid rgb(255, 85, 0);\n"
+        self.lineEdit_posti_tavolo.setStyleSheet(u"QLineEdit{border-bottom: 2px solid #ff8c00;\n"
 "border-radius: 0px;\n"
-"font: 11pt \"Dubai\";\n"
+"font: 11pt \"Poppins\";\n"
 "color: rgb(31, 31, 31);}")
         self.lineEdit_posti_tavolo.setAlignment(Qt.AlignCenter)
 
@@ -62,15 +62,16 @@ class gui_add_tavolo(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.btn_ok_add_tavolo = QPushButton(self.frame_buttons)
         self.btn_ok_add_tavolo.setObjectName(u"btn_ok_add_tavolo")
-        self.btn_ok_add_tavolo.setStyleSheet(u"QPushButton {background-color: rgb(255, 85, 0);\n"
+        self.btn_ok_add_tavolo.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_ok_add_tavolo.setStyleSheet(u"QPushButton {background-color: #ff8c00;\n"
 "color: white;\n"
-"padding: 5px;\n"
-"border: 2px solid rgb(255, 85, 0);\n"
+"padding: 10px;\n"
 "border-radius: 10px;\n"
-"font: 500 11.5pt \"Dubai\";}\n"
+"font: 500 11.5pt \"Poppins\";}\n"
 "\n"
 "QPushButton:hover {\n"
-"font: 500 11pt \"Dubai\"; \n"
+"font: 500 11pt \"Poppins\"; \n"
+"padding: 10px;\n"
 "}\n"
 "")
 
@@ -78,12 +79,13 @@ class gui_add_tavolo(object):
 
         self.btn_close_dialog = QPushButton(self.frame_buttons)
         self.btn_close_dialog.setObjectName(u"btn_close_dialog")
-        self.btn_close_dialog.setStyleSheet(u"background-color: rgb(229, 76, 0);\n"
-"color: white;\n"
-"padding: 5px;\n"
-"border: 2px solid rgb(229, 76, 0);\n"
+        self.btn_close_dialog.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_close_dialog.setStyleSheet(u"background-color: #fff;\n"
+"border: 2px solid #000;\n"
 "border-radius: 10px;\n"
-"font: 500 11.5pt \"Dubai\";")
+"color: black;\n"
+"padding: 10px;\n"
+"font: 500 11.5pt \"Poppins\";")
 
         self.horizontalLayout_2.addWidget(self.btn_close_dialog)
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomehQEaod.ui'
+## Form generated from reading UI file 'interfaceHomeDZqabe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -18,8 +18,8 @@ class ui_home(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1198, 613)
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        MainWindow.resize(1194, 633)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
@@ -102,8 +102,7 @@ class ui_home(object):
 "background-color: transparent;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	text-decoration: underline;\n"
-"	font: 700 14pt \"Poppins\";\n"
+"	color: #ff8c00;\n"
 "}\n"
 "")
 
@@ -200,11 +199,8 @@ class ui_home(object):
         __qtablewidgetitem3 = QTableWidgetItem()
         self.tableWidget_tavoli.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.tableWidget_tavoli.setObjectName(u"tableWidget_tavoli")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tableWidget_tavoli.sizePolicy().hasHeightForWidth())
-        self.tableWidget_tavoli.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.tableWidget_tavoli.sizePolicy().hasHeightForWidth())
+        self.tableWidget_tavoli.setSizePolicy(sizePolicy)
         self.tableWidget_tavoli.setBaseSize(QSize(0, 0))
         self.tableWidget_tavoli.setStyleSheet(u"QTableView {\n"
 "	margin-left: 20px;\n"
@@ -352,7 +348,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 414))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 434))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -369,7 +365,7 @@ class ui_home(object):
 
         self.label_datetime_ordine_tavolo = QLabel(self.scrollAreaWidgetContents)
         self.label_datetime_ordine_tavolo.setObjectName(u"label_datetime_ordine_tavolo")
-        self.label_datetime_ordine_tavolo.setMaximumSize(QSize(16777215, 30))
+        self.label_datetime_ordine_tavolo.setMaximumSize(QSize(16777215, 40))
         self.label_datetime_ordine_tavolo.setStyleSheet(u"font: 10pt \"Poppins\";\n"
 "margin-top: 10px;\n"
 "margin-bottom: 10px;\n"
@@ -488,8 +484,8 @@ class ui_home(object):
 
         self.btn_new_piatto = QPushButton(self.frame_list_menu)
         self.btn_new_piatto.setObjectName(u"btn_new_piatto")
-        sizePolicy1.setHeightForWidth(self.btn_new_piatto.sizePolicy().hasHeightForWidth())
-        self.btn_new_piatto.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_new_piatto.sizePolicy().hasHeightForWidth())
+        self.btn_new_piatto.setSizePolicy(sizePolicy)
         self.btn_new_piatto.setMinimumSize(QSize(0, 40))
         self.btn_new_piatto.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_new_piatto.setStyleSheet(u"QPushButton{ border: none;\n"
@@ -632,8 +628,8 @@ class ui_home(object):
         self.horizontalLayout_19.setContentsMargins(10, 0, 10, 10)
         self.btn_delete_piatto = QPushButton(self.frame_delete_portata)
         self.btn_delete_piatto.setObjectName(u"btn_delete_piatto")
-        sizePolicy1.setHeightForWidth(self.btn_delete_piatto.sizePolicy().hasHeightForWidth())
-        self.btn_delete_piatto.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_delete_piatto.sizePolicy().hasHeightForWidth())
+        self.btn_delete_piatto.setSizePolicy(sizePolicy)
         self.btn_delete_piatto.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_delete_piatto.setStyleSheet(u"QPushButton{ border: none;\n"
 "background-color: #ff8c00;\n"
@@ -1011,8 +1007,8 @@ class ui_home(object):
 
         self.comboBox_seleziona_tavolo = QComboBox(self.frame_seleziona_tavolo)
         self.comboBox_seleziona_tavolo.setObjectName(u"comboBox_seleziona_tavolo")
-        sizePolicy1.setHeightForWidth(self.comboBox_seleziona_tavolo.sizePolicy().hasHeightForWidth())
-        self.comboBox_seleziona_tavolo.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.comboBox_seleziona_tavolo.sizePolicy().hasHeightForWidth())
+        self.comboBox_seleziona_tavolo.setSizePolicy(sizePolicy)
         self.comboBox_seleziona_tavolo.setMinimumSize(QSize(150, 30))
         self.comboBox_seleziona_tavolo.setMaximumSize(QSize(16777215, 16777215))
         self.comboBox_seleziona_tavolo.setStyleSheet(u"border: 2px solid #ff8c00;\n"
@@ -1092,11 +1088,11 @@ class ui_home(object):
         __qtablewidgetitem35 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem35)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(200)
-        sizePolicy2.setVerticalStretch(200)
-        sizePolicy2.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy2)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(200)
+        sizePolicy1.setVerticalStretch(200)
+        sizePolicy1.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy1)
         self.tableWidget.setLayoutDirection(Qt.LeftToRight)
         self.tableWidget.setStyleSheet(u"QScrollBar:vertical {\n"
 "width: 7px;\n"
@@ -1185,7 +1181,7 @@ class ui_home(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 451))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 100, 30))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1264,8 +1260,8 @@ class ui_home(object):
 
         self.frame_left_menu = QFrame(self.centralwidget)
         self.frame_left_menu.setObjectName(u"frame_left_menu")
-        sizePolicy1.setHeightForWidth(self.frame_left_menu.sizePolicy().hasHeightForWidth())
-        self.frame_left_menu.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.frame_left_menu.sizePolicy().hasHeightForWidth())
+        self.frame_left_menu.setSizePolicy(sizePolicy)
         self.frame_left_menu.setMinimumSize(QSize(60, 0))
         self.frame_left_menu.setMaximumSize(QSize(60, 16777215))
         self.frame_left_menu.setStyleSheet(u"background-color: white;\n"
@@ -1278,8 +1274,8 @@ class ui_home(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.btn_toggle = QPushButton(self.frame_left_menu)
         self.btn_toggle.setObjectName(u"btn_toggle")
-        sizePolicy1.setHeightForWidth(self.btn_toggle.sizePolicy().hasHeightForWidth())
-        self.btn_toggle.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_toggle.sizePolicy().hasHeightForWidth())
+        self.btn_toggle.setSizePolicy(sizePolicy)
         self.btn_toggle.setMinimumSize(QSize(0, 40))
         self.btn_toggle.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
@@ -1293,8 +1289,8 @@ class ui_home(object):
 
         self.btn_home = QPushButton(self.frame_left_menu)
         self.btn_home.setObjectName(u"btn_home")
-        sizePolicy1.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
+        self.btn_home.setSizePolicy(sizePolicy)
         self.btn_home.setMinimumSize(QSize(0, 0))
         self.btn_home.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
@@ -1310,8 +1306,8 @@ class ui_home(object):
 
         self.btn_menu = QPushButton(self.frame_left_menu)
         self.btn_menu.setObjectName(u"btn_menu")
-        sizePolicy1.setHeightForWidth(self.btn_menu.sizePolicy().hasHeightForWidth())
-        self.btn_menu.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_menu.sizePolicy().hasHeightForWidth())
+        self.btn_menu.setSizePolicy(sizePolicy)
         self.btn_menu.setMinimumSize(QSize(0, 0))
         self.btn_menu.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
@@ -1327,8 +1323,8 @@ class ui_home(object):
 
         self.btn_personale = QPushButton(self.frame_left_menu)
         self.btn_personale.setObjectName(u"btn_personale")
-        sizePolicy1.setHeightForWidth(self.btn_personale.sizePolicy().hasHeightForWidth())
-        self.btn_personale.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_personale.sizePolicy().hasHeightForWidth())
+        self.btn_personale.setSizePolicy(sizePolicy)
         self.btn_personale.setMinimumSize(QSize(0, 0))
         self.btn_personale.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
@@ -1342,8 +1338,8 @@ class ui_home(object):
 
         self.btn_statistiche = QPushButton(self.frame_left_menu)
         self.btn_statistiche.setObjectName(u"btn_statistiche")
-        sizePolicy1.setHeightForWidth(self.btn_statistiche.sizePolicy().hasHeightForWidth())
-        self.btn_statistiche.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_statistiche.sizePolicy().hasHeightForWidth())
+        self.btn_statistiche.setSizePolicy(sizePolicy)
         self.btn_statistiche.setMinimumSize(QSize(0, 0))
         self.btn_statistiche.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
@@ -1357,8 +1353,8 @@ class ui_home(object):
 
         self.btn_settings = QPushButton(self.frame_left_menu)
         self.btn_settings.setObjectName(u"btn_settings")
-        sizePolicy1.setHeightForWidth(self.btn_settings.sizePolicy().hasHeightForWidth())
-        self.btn_settings.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.btn_settings.sizePolicy().hasHeightForWidth())
+        self.btn_settings.setSizePolicy(sizePolicy)
         self.btn_settings.setMinimumSize(QSize(0, 0))
         self.btn_settings.setContextMenuPolicy(Qt.PreventContextMenu)
         self.btn_settings.setStyleSheet(u"QPushButton {\n"

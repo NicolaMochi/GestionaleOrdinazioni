@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QDialog
 
 from Categorie.model.categoria_model import categoria_model
 from Menu.view.gui_add_piatto import gui_add_piatto
+from Portata.controller.portataController import portataController
 from Portata.model.portata import portata
 
 
@@ -86,7 +87,7 @@ class new_portata_view(QDialog):
                 print(self.lista_categorie_controller.get_lista()[x].get_nome_categoria())
 
         id_piatto = len(self.menu_controller.get_menu())
-        nuova_portata = portata(id_piatto, nome_portata, categoria, prezzo, lista_nuovi_ingredienti)
+        nuova_portata = portataController(portata(id_piatto, nome_portata, categoria, prezzo, lista_nuovi_ingredienti))
         id_piatto += 1
         self.menu_controller.add_portata(nuova_portata)
         #self.menu.SALVAMENU

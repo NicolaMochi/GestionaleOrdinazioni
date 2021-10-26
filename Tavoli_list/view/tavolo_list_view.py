@@ -14,19 +14,19 @@ class tavolo_list_view:
         self.flag = False
 
     def add_tavolo_to_widget(self, tavolo_to_add):
-        if self.flag == True: self.home.tableWidget_tavoli.setRowCount(self.home.tableWidget_tavoli.rowCount()+1)
-        self.nuovo_item = QTableWidgetItem()
-        self.nuovo_item.setText('Tavolo' + ' ' + str(tavolo_to_add))
-        font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
-        self.nuovo_item.setFont(font_nuovo_item)
-        self.nuovo_item.setTextAlignment(Qt.AlignHCenter)
-        self.home.tableWidget_tavoli.setItem(self.row, self.column, self.nuovo_item)
-        self.nuovo_item = None
-        self.column += 1
-        if self.column % 3 == 0:
-            self.row += 1
-            self.flag = True
-            self.column = 0
+        self.uifunctions.add_to_widget(self.home.tableWidget_tavoli, tavolo_to_add, self.flag)
+        # if self.flag == True: self.home.tableWidget_tavoli.setRowCount(self.home.tableWidget_tavoli.rowCount()+1)
+        # self.nuovo_item = QTableWidgetItem()
+        # self.nuovo_item.setText('Tavolo' + ' ' + str(tavolo_to_add))
+        # self.nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
+        # self.nuovo_item.setTextAlignment(Qt.AlignHCenter)
+        # self.home.tableWidget_tavoli.setItem(self.row, self.column, self.nuovo_item)
+        # self.nuovo_item = None
+        # self.column += 1
+        # if self.column % 3 == 0:
+        #     self.row += 1
+        #     self.flag = True
+        #     self.column = 0
 
     def delete_ordine(self):
         try:
@@ -45,7 +45,6 @@ class tavolo_list_view:
     def show_tavolo(self):
        # try:
             item_clicked = self.home.tableWidget_tavoli.currentItem()
-            print(item_clicked.text())
             tavolo = self.tavoli_controller.get_tavolo_by_index(int(item_clicked.text().split()[1]) - 1)
             ordine_tavolo = 0
             self.home.label_ordine_tavolo.clear()
@@ -84,7 +83,7 @@ class tavolo_list_view:
         # elif len(lista_tavoli) <= 3 : self.home.tableWidget_tavoli.setRowCount(1)
         # elif len(lista_tavoli) / 3 == 0: self.home.tableWidget_tavoli.setRowCount(len(lista_tavoli) / 3)
         # else: self.home.tableWidget_tavoli.setRowCount((len(lista_tavoli) / 3) + 1)
-        font_nuovo_item = QFont("Poppins", 14, QFont.Medium)
+        # font_nuovo_item = QFont("Poppins", 14, QFont.Medium)
         self.uifunctions.inizialize_ui_table(self.home.tableWidget_tavoli, 3, lista_tavoli, flag)
         # if flag:
         #     self.row = 0

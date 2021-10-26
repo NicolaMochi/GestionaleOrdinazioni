@@ -35,7 +35,7 @@
       <item alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">font: 500 11pt &quot;Dubai&quot;;</string>
+         <string notr="true">font: 500 11pt &quot;Poppins&quot;;</string>
         </property>
         <property name="text">
          <string>Scrivi i posti disponibili sul nuovo tavolo</string>
@@ -54,9 +54,9 @@
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLineEdit{border-bottom: 2px solid rgb(255, 85, 0);
+         <string notr="true">QLineEdit{border-bottom: 2px solid #ff8c00;
 border-radius: 0px;
-font: 11pt &quot;Dubai&quot;;
+font: 11pt &quot;Poppins&quot;;
 color: rgb(31, 31, 31);}</string>
         </property>
         <property name="text">
@@ -87,16 +87,19 @@ color: rgb(31, 31, 31);}</string>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="btn_ok_add_tavolo">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton {background-color: rgb(255, 85, 0);
+         <string notr="true">QPushButton {background-color: #ff8c00;
 color: white;
-padding: 5px;
-border: 2px solid rgb(255, 85, 0);
+padding: 10px;
 border-radius: 10px;
-font: 500 11.5pt &quot;Dubai&quot;;}
+font: 500 11.5pt &quot;Poppins&quot;;}
 
 QPushButton:hover {
-font: 500 11pt &quot;Dubai&quot;; 
+font: 500 11pt &quot;Poppins&quot;; 
+padding: 10px;
 }
 </string>
         </property>
@@ -107,13 +110,16 @@ font: 500 11pt &quot;Dubai&quot;;
       </item>
       <item>
        <widget class="QPushButton" name="btn_close_dialog">
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(229, 76, 0);
-color: white;
-padding: 5px;
-border: 2px solid rgb(229, 76, 0);
+         <string notr="true">background-color: #fff;
+border: 2px solid #000;
 border-radius: 10px;
-font: 500 11.5pt &quot;Dubai&quot;;</string>
+color: black;
+padding: 10px;
+font: 500 11.5pt &quot;Poppins&quot;;</string>
         </property>
         <property name="text">
          <string>Annulla</string>

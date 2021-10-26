@@ -70,7 +70,7 @@ class menu_view:
 
     ## funzione che prende il controller_menu e fa vedere la lista sul widget
     def add_to_menu_widget_list(self, nuova_portata):
-        self.home.list_piatti.addItem(str(nuova_portata.nome))
+        self.home.list_piatti.addItem(str(nuova_portata.__str__()))
         self.categoria_view.fill_categorie_to_order()
 
     def stampa_ingredienti_portata(self, portata):
