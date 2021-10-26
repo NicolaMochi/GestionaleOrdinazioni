@@ -2,8 +2,8 @@ from Personale.model.personale_model import personale_model
 
 
 class personale_controller:
-    def __init__(self):
-        self.personale = personale_model()
+    def __init__(self, personale):
+        self.personale = personale
 
     def get_nome_personale(self):
         return self.personale.get_nome()

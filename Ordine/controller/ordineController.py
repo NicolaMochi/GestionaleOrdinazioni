@@ -1,22 +1,22 @@
 
 class ordineController:
     def __init__(self, ordine):
-        self.ordine = ordine()
+        self.ordine = ordine
 
     def get_codice_ordine(self):
-        return self.ordine.get_codice_ordine()
+        return self.ordine.codice_ordine
 
     def get_stato(self):
-        return self.ordine.get_stato()
+        return self.ordine.stato
 
     def get_prezzo_ordine(self):
-        return self.ordine.get_prezzo_ordine()
+        return self.ordine.prezzo_ordine
 
     def get_descrizione_ordine(self):
-        return self.ordine.get_descrizione_ordine()
+        return self.ordine.descrizione
 
     def get_data_ora_ordine(self):
-        return self.ordine.get_data_ora_ordine()
+        return self.ordine.data_ora_ordine
 
     def get_tipo_ordine(self):
-        return self.ordine.get_tipo_ordine()
+        return self.ordine.tipo

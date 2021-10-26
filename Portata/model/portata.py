@@ -7,7 +7,7 @@ class portata:
         # ingredienti dovrà essere una lista []
         self.ingredienti = ingredienti
 
-    def get_nome_portata(self):
+    def __str__(self):
         return self.nome
 
     def get_categoria(self):

@@ -4,6 +4,7 @@ from PySide2.QtCore import Qt, QCoreApplication
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView, QLabel, QCheckBox, QPushButton
 
+from Ordine.controller.ordineController import ordineController
 from Ordine.model.ordine import ordine
 from Ordini_list.view.label_ordine import label_ordine
 
@@ -40,7 +41,7 @@ class nuovo_ordine_view:
         check = self.check_categoria_portata_to_add(portata.get_categoria())
         if check!=False:
                 nome_label = check.get_label()
-                nome_label.setText(nome_label.text() + '\n' + "    " + portata.get_nome_portata() + "             " + portata.get_prezzo() + '€')
+                nome_label.setText(nome_label.text() + '\n' + "    " + portata.__str__() + "             " + portata.get_prezzo() + '€')
                 self.prezzo_ordine += float(portata.get_prezzo())
                 self.ultima_aggiunta = check
         else:
@@ -58,7 +59,7 @@ class nuovo_ordine_view:
             self.lista_label_ordine.append(nuova_label_ordine)
 
             nuova_label.setText(portata.get_categoria()+':')
-            nuova_label.setText(nuova_label.text() + '\n' + "    " + portata.get_nome_portata() + "             " + portata.get_prezzo() + '€')
+            nuova_label.setText(nuova_label.text() + '\n' + "    " + portata.__str__() + "             " + portata.get_prezzo() + '€')
             self.prezzo_ordine += float(portata.get_prezzo())
             self.ultima_aggiunta = nuova_label_ordine
 
@@ -103,7 +104,7 @@ class nuovo_ordine_view:
         data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
         tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
         nuovo_ordine = ordine(self.codice_ordine, stato, prezzo, descrizione, data_ora, tipo)
-        self.lista_tavoli.add_ordine_from_id(tavolo_id, nuovo_ordine)
+        self.lista_tavoli.add_ordine_from_id(tavolo_id, ordineController(nuovo_ordine))
         self.codice_ordine += 1
 
         #TypeError: 'int' object is not callable

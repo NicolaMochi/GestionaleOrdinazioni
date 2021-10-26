@@ -4,9 +4,9 @@ class personale_list_controller:
     def __init__(self):
         self.lista =personale_list()
 
-    def controllo_login(self, username, password):
+    def controllo_login(self, nome, password):
         for cred in self.lista.lista_personale:
-            if username == cred.utente and password == cred.password:
+            if nome == cred.nome and password == cred.password:
                 return cred.codice
             else:
                 return False

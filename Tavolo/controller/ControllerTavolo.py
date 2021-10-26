@@ -4,8 +4,11 @@ class ControllerTavolo:
         self.tavolo = tavolo()
 
     ## GETTER ##
+    # def get_nome(self):
+    #     return self.tavolo.codice_tavolo
     def get_codice_tavolo(self):
-        return self.tavolo.codice_tavolo
+        return self.tavolo.get_codice_tavolo()
+
 
     def get_lista_ordini_tavolo(self):
         return self.tavolo.get_lista_ordini_tavolo()

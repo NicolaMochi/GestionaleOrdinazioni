@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gui_add_personalePgYWXi.ui'
+## Form generated from reading UI file 'gui_add_personaleyWKKVX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -9,7 +9,7 @@
 ################################################################################
 
 from PySide2.QtCore import *
-from PySide6.QtGui import *
+from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
@@ -47,56 +47,45 @@ class gui_add_personale(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.checkBox = QCheckBox(self.frame_top)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setStyleSheet(u"font: 400 13pt \"Dubai\";")
-        self.checkBox.setIconSize(QSize(30, 30))
+        self.checkBox_amministratore = QCheckBox(self.frame_top)
+        self.checkBox_amministratore.setObjectName(u"checkBox_amministratore")
+        self.checkBox_amministratore.setStyleSheet(u"font: 400 13pt \"Dubai\";")
+        self.checkBox_amministratore.setIconSize(QSize(30, 30))
 
-        self.gridLayout.addWidget(self.checkBox, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.checkBox_amministratore, 4, 0, 1, 1)
 
-        self.lineEdit_3 = QLineEdit(self.frame_top)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setMinimumSize(QSize(50, 0))
-        self.lineEdit_3.setMaximumSize(QSize(150, 16777215))
-        self.lineEdit_3.setStyleSheet(u"border: 2px solid black;\n"
+        self.lineEdit_nome_personale = QLineEdit(self.frame_top)
+        self.lineEdit_nome_personale.setObjectName(u"lineEdit_nome_personale")
+        self.lineEdit_nome_personale.setMinimumSize(QSize(50, 0))
+        self.lineEdit_nome_personale.setMaximumSize(QSize(150, 16777215))
+        self.lineEdit_nome_personale.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 5px;\n"
 "background-color:transparent;\n"
 "padding: 4px;")
 
-        self.gridLayout.addWidget(self.lineEdit_3, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_nome_personale, 0, 0, 1, 1)
 
-        self.lineEdit = QLineEdit(self.frame_top)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setMinimumSize(QSize(50, 0))
-        self.lineEdit.setMaximumSize(QSize(150, 16777215))
-        self.lineEdit.setStyleSheet(u"border: 2px solid black;\n"
+        self.lineEdit_cognome_personale = QLineEdit(self.frame_top)
+        self.lineEdit_cognome_personale.setObjectName(u"lineEdit_cognome_personale")
+        self.lineEdit_cognome_personale.setMinimumSize(QSize(50, 0))
+        self.lineEdit_cognome_personale.setMaximumSize(QSize(150, 16777215))
+        self.lineEdit_cognome_personale.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 5px;\n"
 "background-color:transparent;\n"
 "padding: 4px;")
 
-        self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_cognome_personale, 0, 1, 1, 1)
 
-        self.lineEdit_2 = QLineEdit(self.frame_top)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setMinimumSize(QSize(50, 0))
-        self.lineEdit_2.setMaximumSize(QSize(150, 16777215))
-        self.lineEdit_2.setStyleSheet(u"border: 2px solid black;\n"
+        self.lineEdit_password_personale = QLineEdit(self.frame_top)
+        self.lineEdit_password_personale.setObjectName(u"lineEdit_password_personale")
+        self.lineEdit_password_personale.setMinimumSize(QSize(50, 0))
+        self.lineEdit_password_personale.setMaximumSize(QSize(150, 16777215))
+        self.lineEdit_password_personale.setStyleSheet(u"border: 2px solid black;\n"
 "border-radius: 5px;\n"
 "background-color:transparent;\n"
 "padding: 4px;")
 
-        self.gridLayout.addWidget(self.lineEdit_2, 0, 1, 1, 1)
-
-        self.lineEdit_4 = QLineEdit(self.frame_top)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setMinimumSize(QSize(50, 0))
-        self.lineEdit_4.setMaximumSize(QSize(150, 16777215))
-        self.lineEdit_4.setStyleSheet(u"border: 2px solid black;\n"
-"border-radius: 5px;\n"
-"background-color:transparent;\n"
-"padding: 4px;")
-
-        self.gridLayout.addWidget(self.lineEdit_4, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.lineEdit_password_personale, 1, 0, 1, 1)
 
 
         self.verticalLayout.addWidget(self.frame_top)
@@ -154,11 +143,11 @@ class gui_add_personale(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"Nuovo Dipendente", None))
-        self.checkBox.setText(QCoreApplication.translate("Dialog", u"Amministratore", None))
-        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Dialog", u"Username", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("Dialog", u"Nome", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("Dialog", u"Cognome", None))
-        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("Dialog", u"Password", None))
+        self.checkBox_amministratore.setText(QCoreApplication.translate("Dialog", u"Amministratore", None))
+        self.lineEdit_nome_personale.setPlaceholderText(QCoreApplication.translate("Dialog", u"Nome", None))
+        self.lineEdit_cognome_personale.setPlaceholderText(QCoreApplication.translate("Dialog", u"Cognome", None))
+        self.lineEdit_password_personale.setText(QCoreApplication.translate("Dialog", u"Prima password", None))
+        self.lineEdit_password_personale.setPlaceholderText(QCoreApplication.translate("Dialog", u"Password", None))
         self.btn_confirm_new_personale.setText(QCoreApplication.translate("Dialog", u"Aggiungi", None))
         self.btn_close_new_personale.setText(QCoreApplication.translate("Dialog", u"Annulla", None))
     # retranslateUi

@@ -16,3 +16,5 @@ class personale_list_view:
         self.home.Pages_widget.setCurrentWidget(self.home.PersonalePage)
         #self.fill_table_personale(flag)
         self.home.add_nuovo_personale.clicked.connect(self.add_personale_view.show)
+
+

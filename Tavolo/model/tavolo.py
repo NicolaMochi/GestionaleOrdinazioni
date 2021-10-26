@@ -7,6 +7,9 @@ class tavolo:
         self.ordini_tavolo = []
         self.cliente_tavolo = cliente()
 
+    def __str__(self):
+        return 'Tavolo' +  ' ' + str(self.codice_tavolo+1)
+
     def get_codice_tavolo(self):
         return self.codice_tavolo
 

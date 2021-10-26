@@ -70,7 +70,7 @@ letter-spacing: 0.5px;
        <number>0</number>
       </property>
       <item row="4" column="0">
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QCheckBox" name="checkBox_amministratore">
         <property name="styleSheet">
          <string notr="true">font: 400 13pt &quot;Dubai&quot;;</string>
         </property>
@@ -85,33 +85,8 @@ letter-spacing: 0.5px;
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLineEdit" name="lineEdit_3">
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 5px;
-background-color:transparent;
-padding: 4px;</string>
-        </property>
-        <property name="placeholderText">
-         <string>Username</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="lineEdit_nome_personale">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -136,7 +111,7 @@ padding: 4px;</string>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="lineEdit_cognome_personale">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -148,6 +123,11 @@ padding: 4px;</string>
           <width>150</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">border: 2px solid black;
@@ -160,8 +140,8 @@ padding: 4px;</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_4">
+      <item row="1" column="0">
+       <widget class="QLineEdit" name="lineEdit_password_personale">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -179,6 +159,9 @@ padding: 4px;</string>
 border-radius: 5px;
 background-color:transparent;
 padding: 4px;</string>
+        </property>
+        <property name="text">
+         <string>Prima password</string>
         </property>
         <property name="placeholderText">
          <string>Password</string>

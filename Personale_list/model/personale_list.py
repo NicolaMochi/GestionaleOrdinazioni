@@ -10,7 +10,7 @@ class personale_list:
         with open('Personale_list/data/personale.json') as f:
             lista_credenziali = json.load(f)
         for credenziale in lista_credenziali:
-            self.add_credenziale(personale_model(credenziale["nome"], credenziale["cognome"], credenziale["utente"], credenziale["password"], credenziale["codice"]))
+            self.add_credenziale(personale_model(credenziale["nome"], credenziale["cognome"], credenziale["password"], credenziale["codice"]))
 
     def add_credenziale(self, personale):
         self.lista_personale.append(personale)

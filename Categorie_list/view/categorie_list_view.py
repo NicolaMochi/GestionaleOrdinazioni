@@ -10,7 +10,7 @@ class categorie_list_view:
         self.lista_categorie = lista_categorie
         self.home = home
         self.menu = menu
-        self.menu_vista = menu_view(self.home, menu, self)
+        self.menu_vista = menu_view(self.home, menu, self, self)
 
         self.table = ""
         self.menu_to_view = ""

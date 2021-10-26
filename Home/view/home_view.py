@@ -20,6 +20,10 @@ from Login.view.login_view import login_view
 from Personale_list.controller.personale_list_controller import personale_list_controller
 from PySide2.QtWidgets import *
 
+## Cambiare concettualmente i controller e model di ogni entità come fatto con ordine.
+## C'è un problema con le portate, fixarlo
+## Resize della schermata all'avvio da aggiungere e nuovo design pronto da upgreidare
+## Rivedere la home partendo dal progetto esempio
 
 class home_view(QMainWindow):
     def __init__(self):
@@ -27,19 +31,20 @@ class home_view(QMainWindow):
         self.home = ui_home()
         self.vista_login = login_view()
         self.flag_primo_login = True
+        self.uifunctions = UIFunctions()
         self.controller_lista_personale = personale_list_controller()
         self.add_personale_view = new_personale_view(self.home, self.controller_lista_personale)
         self.personale_view = personale_list_view(self.home, self.controller_lista_personale, self.add_personale_view)
 
         self.lista_tavoli_controller = tavolo_list_controller()
-        self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller)
+        self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller, self.uifunctions)
         self.add_tavolo_view = new_tavolo_view(self.home, self.lista_tavoli_controller, self.tavolo_view)
 
         self.lista_categorie = categorie_list_controller()
         self.lista_ingredienti = ingredienti_list_controller()
         self.menu = menu_controller()
         self.categorie_view = categorie_list_view(self.lista_categorie, self.home, self.menu)
-        self.menu_vista = menu_view(self.home, self.menu, self.categorie_view)
+        self.menu_vista = menu_view(self.home, self.menu, self.categorie_view, self.uifunctions)
         self.nuova_portata_view = new_portata_view(self.menu_vista, self.menu, self.lista_ingredienti, self.lista_categorie)
 
         self.lista_ordini = ordini_list_controller()
