@@ -1,10 +1,6 @@
-from PySide2.QtCore import Qt
-from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QDialog, QTableWidgetItem
+from PySide2.QtWidgets import QDialog
 
-from Tavoli_list.controller.tavolo_list_controller import tavolo_list_controller
-from Tavoli_list.view.gui_add_tavolo import gui_add_tavolo
-from Tavoli_list.view.tavolo_list_view import tavolo_list_view
+from Tavolo.view.gui_add_tavolo import gui_add_tavolo
 from Tavolo.controller.ControllerTavolo import ControllerTavolo
 from Tavolo.model.Tavolo import Tavolo
 

@@ -7,30 +7,31 @@ class categorie_list_controller:
 #override metodi del model
 
     def get_categoria_by_index(self, index):
-        return self.list_model.get_categoria_by_index(index)
+        return self.list_model.lista_categorie(index)
 
     def delete_categoria(self, categoria):
-        self.list_model.delete_categoria(categoria)
+        if categoria in self.list_model.lista_categorie:
+            self.list_model.lista_categorie.remove(categoria)
 
     def add_categoria(self, categoria):
-        self.list_model.add_categoria(categoria)
+        self.list_model.lista_categorie.append(categoria)
 
     def get_lista(self):
-        return self.list_model.get_lista()
+        return self.list_model.lista_categorie
 
     def save_categoria_list(self):
         self.list_model.salva_categoria_list()
 
     def categoria_esiste(self, categoria):
-        for x in range(len(self.list_model.get_lista())):
-            if self.list_model.get_lista()[x].get_nome_categoria() == categoria: return True
+        for x in self.list_model.lista_categorie:
+            if x.get_nome_categoria() == categoria: return True
         return False
 
     def get_categoria_from_text(self, nome_categoria):
         categoria = None
-        for x in range(len(self.list_model.get_lista())):
-            if self.list_model.get_lista()[x].nome == nome_categoria:
-                categoria = self.list_model.get_lista()[x]
+        for x in self.list_model.lista_categorie:
+            if x.get_nome_categoria() == nome_categoria:
+                categoria = x
         return categoria
 
 

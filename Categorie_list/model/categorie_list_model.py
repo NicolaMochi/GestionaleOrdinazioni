@@ -15,16 +15,3 @@ class categorie_list_model:
     def salva_categoria_list(self):
         with open('Categorie_list/data/data_lista_categorie.pickle', 'wb') as handle:
             pickle.dump(self.lista_categorie, handle, pickle.HIGHEST_PROTOCOL)
-
-    def add_categoria(self, categoria):
-        self.lista_categorie.append(categoria)
-
-    def delete_categoria(self, categoria):
-            if categoria in self.lista_categorie:
-                self.lista_categorie.remove(categoria)
-
-    def get_categoria_by_index(self, index):
-            return self.lista_categorie[index]
-
-    def get_lista(self):
-            return self.lista_categorie

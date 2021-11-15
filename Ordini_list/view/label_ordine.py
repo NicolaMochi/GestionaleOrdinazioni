@@ -5,6 +5,8 @@ class label_ordine:
         self.label = label
         self.prezzo = prezzo
 
+## Per ora mi servono solo label e nome_categoria
+## Il prezzo e il codice non mi servono a un cazzo
     def get_nome(self):
         return self.nome_categoria
 

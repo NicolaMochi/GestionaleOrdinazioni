@@ -4,7 +4,7 @@ from PySide2.QtCore import Qt, QCoreApplication
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView, QLabel, QCheckBox, QPushButton
 
-from Ordine.controller.ordineController import ordineController
+from Ordine.controller.ordine_controller import ordine_controller
 from Ordine.model.ordine import ordine
 from Ordini_list.view.label_ordine import label_ordine
 
@@ -29,7 +29,7 @@ class nuovo_ordine_view:
         self.codice_label_ordine = 0
         self.btn_categorie_caricate = []
 
-
+    ## Questa funzione può andare su utilities
     def check_categoria_portata_to_add(self, categoria):
         for x in self.lista_label_ordine:
             if x.get_nome() == categoria:
@@ -103,8 +103,8 @@ class nuovo_ordine_view:
         tipo = "Locale"
         data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
         tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
-        nuovo_ordine = ordine(self.codice_ordine, stato, prezzo, descrizione, data_ora, tipo)
-        self.lista_tavoli.add_ordine_from_id(tavolo_id, ordineController(nuovo_ordine))
+        nuovo_ordine = ordine_controller(ordine(self.codice_ordine, stato, prezzo, descrizione, data_ora, tipo))
+        self.lista_tavoli.add_ordine_from_id(tavolo_id, nuovo_ordine)
         self.codice_ordine += 1
 
         #TypeError: 'int' object is not callable
@@ -113,6 +113,7 @@ class nuovo_ordine_view:
         print(prezzo)
         print(data_ora)
 
+## Si può mettere nella UIFunctions
     def show_categorie_in_table(self):
         clicked = self.home.table_categorie.currentItem()
         if clicked.text() == "Vedi Tutti":

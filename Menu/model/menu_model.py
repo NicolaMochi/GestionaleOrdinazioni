@@ -15,13 +15,3 @@ class menu_model:
     def salva_menu(self):
         with open('Menu/data/menu.pickle', 'wb') as handle:
             pickle.dump(self.menu, handle, pickle.HIGHEST_PROTOCOL)
-
-    def add_portata(self, tavolo):
-        self.menu.append(tavolo)
-
-    def delete_portata(self, portata):
-            if portata in self.menu:
-                self.menu.remove(portata)
-
-    def get_menu(self):
-        return self.menu

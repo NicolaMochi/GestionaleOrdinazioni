@@ -1,20 +1,23 @@
-from PySide2.QtCore import Qt
-from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QTableWidgetItem, QTableWidget, QAbstractItemView
+from PySide2.QtWidgets import QDialog
+
+from Personale.view.personale_view import personale_view
 
 
 class personale_list_view:
-    def __init__(self, home, personale_controller, add_personale_view):
+    def __init__(self, home, personale_controller, add_personale_view, uifunctions):
         self.row = 0
         self.column = 0
         self.home = home
-        self.personale_controller = personale_controller.lista.lista_personale
+        self.lista_personale = personale_controller
         self.nuovo_item = None
-        self.add_personale_view = add_personale_view
+        self.add_personale_view = personale_view(home, personale_controller)
+        self.uifunctions = uifunctions
 
-    def view(self, flag):
+
+    def view(self):
         self.home.Pages_widget.setCurrentWidget(self.home.PersonalePage)
-        #self.fill_table_personale(flag)
-        self.home.add_nuovo_personale.clicked.connect(self.add_personale_view.show)
+        self.uifunctions.inizialize_ui_table(self.home.table_personale, 6, self.lista_personale.lista.lista_personale, True)
+        self.home.table_personale.cellClicked.connect(self.add_personale_view.display_edit_item)
+        self.home.add_nuovo_personale.clicked.connect(self.add_personale_view.display_new_personale)
 
 

@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow
+from PySide2.QtCore import QSize
 
 from Categorie_list.controller.categorie_list_controller import categorie_list_controller
 from Categorie_list.view.categorie_list_view import categorie_list_view
@@ -8,10 +9,10 @@ from Menu.view.menu_view import menu_view
 from Menu.view.new_portata_view import new_portata_view
 from Ordini_list.controller.ordini_list_controller import ordini_list_controller
 from Ordini_list.view.nuovo_ordine_view import nuovo_ordine_view
-from Personale.view.new_personale_view import new_personale_view
+from Personale.view.personale_view import personale_view
 from Personale_list.view.personale_list_view import personale_list_view
 from Tavoli_list.controller.tavolo_list_controller import tavolo_list_controller
-from Tavoli_list.view.new_tavolo_view import new_tavolo_view
+from Tavolo.view.new_tavolo_view import new_tavolo_view
 from Tavoli_list.view.tavolo_list_view import tavolo_list_view
 from Utilities.UIFunctions import UIFunctions
 from Utilities.utilities import utilities
@@ -33,8 +34,8 @@ class home_view(QMainWindow):
         self.flag_primo_login = True
         self.uifunctions = UIFunctions()
         self.controller_lista_personale = personale_list_controller()
-        self.add_personale_view = new_personale_view(self.home, self.controller_lista_personale)
-        self.personale_view = personale_list_view(self.home, self.controller_lista_personale, self.add_personale_view)
+        self.add_personale_view = personale_view(self.home, self.controller_lista_personale)
+        self.personale_view = personale_list_view(self.home, self.controller_lista_personale, self.add_personale_view, self.uifunctions)
 
         self.lista_tavoli_controller = tavolo_list_controller()
         self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller, self.uifunctions)
@@ -57,6 +58,7 @@ class home_view(QMainWindow):
     def partenza(self):
         self.vista_login.login.setupUi(self)
         self.vista_login.login.btn_enter.clicked.connect(self.controllo_login)
+        self.setMinimumSize(QSize(353, 326))
 
     def aggiungiTavolo(self):
         self.add_tavolo_view.show()
@@ -68,12 +70,11 @@ class home_view(QMainWindow):
          self.vista_nuovo_ordine.view()
 
     def vista_personale(self):
-        self.personale_view.view(self.flag_primo_login)
+        self.personale_view.view()
 
     def send_order(self):
         self.vista_nuovo_ordine.invia_ordine()
         #self.utility.posti_rimanenti()
-
 
     def controllo_login(self):
         username = self.vista_login.login.lineEdit_username.text()
@@ -84,9 +85,14 @@ class home_view(QMainWindow):
         #if controllo_result != False:
             self.home.setupUi(self)
             self.show()
+            ## Posiziono la schermata al centro del desktop
+            qr = self.frameGeometry()
+            cp = QDesktopWidget().availableGeometry().center()
+            qr.moveCenter(cp)
+            self.move(qr.topLeft())
 
             if self.flag_primo_login:
-                 self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), False)
+                 self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
                  self.flag_primo_login = False
             else:
                  self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
@@ -100,18 +106,18 @@ class home_view(QMainWindow):
             self.home.btn_home.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.TavoliPage))
             self.home.btn_home_top.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.TavoliPage))
             self.home.btn_personale.clicked.connect(self.vista_personale)
-            self.home.btn_settings.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.SettingsPage))
             self.home.btn_add_tavolo.clicked.connect(self.aggiungiTavolo)
-            #self.home.btn_toggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, self.home, True))
+            self.home.btn_toggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 80, self.home, True))
+
             self.home.tableWidget.itemClicked.connect(self.vista_nuovo_ordine.add_to_order)
             self.home.btn_elimina_ordine.clicked.connect(self.vista_nuovo_ordine.elimina_ultima_aggiunta)
             self.home.btn_invio_ordine.clicked.connect(self.send_order)
             self.home.btn_delete_ordine_tavolo.clicked.connect(self.tavolo_view.delete_ordine)
+            self.home.btn_delete_tavolo.clicked.connect(self.tavolo_view.delete_tavolo)
             #self.utility.posti()
 
         else:
             self.vista_login.login.label_message.setText("Dati non validi, riprova")
-            self.vista_login.login.label_message.setStyleSheet("color: #fd4902; font: 11pt 'Dubai';")
             self.vista_login.login.lineEdit_username.clear()
             self.vista_login.login.lineEdit_password.clear()
 

@@ -12,6 +12,9 @@ class portataController:
     def get_categoria(self):
         return self.portata.categoria
 
+    def get_ingredienti(self):
+        return self.portata.ingredienti
+
     def get_prezzo(self):
         return self.portata.prezzo
 

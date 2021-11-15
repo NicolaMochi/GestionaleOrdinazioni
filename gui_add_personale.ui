@@ -14,31 +14,75 @@
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QFrame" name="frame">
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>50</height>
+       <height>80</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>30</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_message">
         <property name="styleSheet">
-         <string notr="true">font: 700 16pt &quot;Dubai&quot;;
-color: black;
+         <string notr="true">font: 10pt &quot;Poppins&quot;;
+color: rgb(120, 120, 120);</string>
+        </property>
+        <property name="text">
+         <string>Crea</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_title">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 19pt &quot;Poppins&quot;;
+color: #1921FA;
 letter-spacing: 0.5px;
 </string>
         </property>
         <property name="text">
-         <string>Nuovo Dipendente</string>
+         <string>Nuovo utente</string>
         </property>
        </widget>
       </item>
@@ -47,21 +91,31 @@ letter-spacing: 0.5px;
    </item>
    <item>
     <widget class="QFrame" name="frame_top">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+     </property>
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -69,23 +123,7 @@ letter-spacing: 0.5px;
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="4" column="0">
-       <widget class="QCheckBox" name="checkBox_amministratore">
-        <property name="styleSheet">
-         <string notr="true">font: 400 13pt &quot;Dubai&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Amministratore</string>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QLineEdit" name="lineEdit_nome_personale">
         <property name="minimumSize">
          <size>
@@ -100,17 +138,17 @@ letter-spacing: 0.5px;
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 5px;
-background-color:transparent;
-padding: 4px;</string>
+         <string notr="true">color: #000;
+font: 400 12pt &quot;Poppins&quot;;
+border: solid;
+border-bottom: 2px solid black;</string>
         </property>
         <property name="placeholderText">
          <string>Nome</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="1">
        <widget class="QLineEdit" name="lineEdit_cognome_personale">
         <property name="minimumSize">
          <size>
@@ -127,20 +165,63 @@ padding: 4px;</string>
         <property name="font">
          <font>
           <family>Poppins</family>
+          <pointsize>12</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 5px;
-background-color:transparent;
-padding: 4px;</string>
+         <string notr="true">color: #000;
+font: 400 12pt &quot;Poppins&quot;;
+border: solid;
+border-bottom: 2px solid black;</string>
         </property>
         <property name="placeholderText">
          <string>Cognome</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="7" column="1">
+       <widget class="QPushButton" name="btn_close_new_personale">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+font: 600 12pt &quot;Poppins&quot;;
+padding: 6px;
+letter-spacing:0.2px ;
+border-radius: 5px;
+color:#1921FA;
+margin-right: 5px;}
+QPushButton:hover{text-decoration: underline}
+/*rgb(99, 159, 171)*/</string>
+        </property>
+        <property name="text">
+         <string>Annulla</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QCheckBox" name="checkBox_amministratore">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Amministratore</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
        <widget class="QLineEdit" name="lineEdit_password_personale">
         <property name="minimumSize">
          <size>
@@ -155,76 +236,38 @@ padding: 4px;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid black;
-border-radius: 5px;
-background-color:transparent;
-padding: 4px;</string>
+         <string notr="true">color: #000;
+font: 400 12pt &quot;Poppins&quot;;
+border: solid;
+border-bottom: 2px solid black;</string>
         </property>
         <property name="text">
-         <string>Prima password</string>
+         <string/>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
         </property>
         <property name="placeholderText">
          <string>Password</string>
         </property>
        </widget>
       </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QFrame" name="frame_bottom">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>70</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+      <item row="7" column="0">
        <widget class="QPushButton" name="btn_confirm_new_personale">
         <property name="styleSheet">
-         <string notr="true">QPushButton{ border: none;
-background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
-font: 500 12pt &quot;Dubai&quot;;
-padding: 9px;
+         <string notr="true">QPushButton{ border: 2px solid #1921FA;
+font: 600 12pt &quot;Poppins&quot;;
+padding: 6px;
 letter-spacing:0.2px ;
 border-radius: 5px;
-color:white;
+color:#1921FA;
 margin-right: 5px;}
-QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
-	background-color: rgb(99, 159, 171);}
-QPushButton:hover{background-color:rgb(99, 159, 171);}
+QPushButton:focus:pressed{background-color: #1921FA; color: #fff;}
+QPushButton:hover{border: none; background-color: #1921FA; color: #fff;}
 /*rgb(99, 159, 171)*/</string>
         </property>
         <property name="text">
          <string>Aggiungi</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btn_close_new_personale">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{ border: none;
-background-color: qlineargradient(spread:pad, x1:0.596045, y1:0.649, x2:1, y2:0.994, stop:0 rgba(99, 159, 171, 248), stop:1 rgba(255, 255, 255, 215));
-font: 500 12pt &quot;Dubai&quot;;
-padding: 9px;
-letter-spacing:0.2px ;
-border-radius: 5px;
-color:white;
-margin-right: 5px;}
-QPushButton:focus:pressed{font: 500 9.5pt &quot;Dubai&quot;;
-	background-color: rgb(99, 159, 171);}
-QPushButton:hover{background-color:rgb(99, 159, 171);}
-/*rgb(99, 159, 171)*/</string>
-        </property>
-        <property name="text">
-         <string>Annulla</string>
         </property>
        </widget>
       </item>

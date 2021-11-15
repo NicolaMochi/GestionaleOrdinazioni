@@ -13,13 +13,14 @@ class menu_view:
         self.portata_id = None
         self.categoria_view = categoria_view
         self.uifunctions = uifunctions
+        self.portata_gui = None
 
         self.row = 0
         self.column = 0
 
     def update_menu_widget_list(self):
-        for i in range(len(self.menu.get_menu())):
-            self.home.list_piatti.addItem(str(self.menu.get_menu()[i].nome))
+        for i in self.menu.get_menu():
+            self.home.list_piatti.addItem(str(i.__str__()))
 
     def delete_portata(self):
         self.menu.delete_portata(self.portata_selected)
@@ -34,11 +35,18 @@ class menu_view:
         ## Vorrei che ci fosse un modo per prendere il testo
         self.portata_id = self.home.list_piatti.currentItem().text()
         self.portata_selected = self.menu.get_portata_from_name(self.portata_id)
-        self.home.label_id_portata.setText(str(self.portata_selected.piatto_id))
-        self.home.label_prezzo_portata.setText(str(self.portata_selected.prezzo))
-        self.home.label_categoria_portata.setText(self.portata_selected.categoria)
+        #usare anche un modo per inviare un messaggio se non ci sono portate selezionate
+        #self.home.btn_new_piatto.clicked.connect(self.modifica_portata)
+        self.home.label_id_portata.setText(str(self.portata_selected.get_piatto_id()))
+        self.home.label_prezzo_portata.setText(str(self.portata_selected.get_prezzo()))
+        self.home.label_categoria_portata.setText(self.portata_selected.get_categoria())
         self.home.label_ingredienti_portata.setText(self.stampa_ingredienti_portata(self.portata_selected))
         self.home.btn_delete_piatto.clicked.connect(self.delete_portata)
+
+    def modifica_portata(self):
+        self.portata_gui.show()
+        #impostare quelle che non voglio con setReadOnly to False
+        # e le altre impostarle con self. portata selected
 
     ## Questa funzione riempie la tabella delle portate con i dati
     def fill_menu_to_order(self):
@@ -69,14 +77,15 @@ class menu_view:
         #self.fill_menu_to_order()
 
     ## funzione che prende il controller_menu e fa vedere la lista sul widget
+
     def add_to_menu_widget_list(self, nuova_portata):
         self.home.list_piatti.addItem(str(nuova_portata.__str__()))
         self.categoria_view.fill_categorie_to_order()
 
     def stampa_ingredienti_portata(self, portata):
         ingredienti_string = ''
-        for i in range(len(portata.ingredienti)):
-            ingredienti_string = ingredienti_string + portata.ingredienti[i].nome
+        for i in portata.get_ingredienti():
+            ingredienti_string = ingredienti_string + ' ' + i.get_ingrediente_nome()
         return ingredienti_string
 
     def show_portate_from_categorie_in_list(self):
@@ -86,10 +95,11 @@ class menu_view:
             self.update_menu_widget_list()
             return
         for i in range(len(self.menu.get_menu())):
-            if self.menu.get_menu()[i].categoria == categoria_clicked.text():
-                self.home.list_piatti.addItem(str(self.menu.get_menu()[i].nome))
+            if self.menu.get_menu()[i].get_categoria() == categoria_clicked.text():
+                self.home.list_piatti.addItem(str(self.menu.get_menu()[i].__str__()))
 
     def view(self, nuova_portata):
+        self.portata_gui = nuova_portata
         self.home.Pages_widget.setCurrentWidget(self.home.MenuPage)
         self.home.btn_new_piatto.clicked.connect(nuova_portata.show)
         self.home.list_piatti.itemClicked.connect(self.show_portata)

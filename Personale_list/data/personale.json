@@ -4,13 +4,15 @@
     "cognome": "mochi",
     "utente": "admin",
     "password": "admin",
-    "codice": 1
+    "codice": 1,
+    "ruolo": "Amministr."
   },
   {
     "nome": "ludovico",
     "cognome": "nollino",
     "utente": "utente",
     "password": "pass",
-    "codice": 2
+    "codice": 0,
+    "ruolo": "Dipendente"
   }
 ]

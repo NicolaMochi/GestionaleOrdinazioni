@@ -11,9 +11,9 @@ class utilities:
     #         self.home.label_posti.setText(str(self.posti_rimanenti) + '/' + str(self.posti_totali))
 
     def posti_rimanenti(self):
-        for x in range(len(self.tavoli_list)):
-            if len(self.tavoli_list[x].get_lista_ordini_tavolo()) != 0:
-                print("posti del tavolo con l'ordine:" + str(self.tavoli_list[x].get_posti_tavolo()))
-                self.posti_rimanenti = self.posti_totali - int(self.tavoli_list[x].get_posti_tavolo())
+        for x in self.tavoli_list:
+            if len(x.get_lista_ordini_tavolo()) != 0:
+                print("posti del tavolo con l'ordine:" + str(x.get_posti_tavolo()))
+                self.posti_rimanenti = self.posti_totali - int(x.get_posti_tavolo())
         self.home.label_posti.setText(str(self.posti_rimanenti)+'/'+str(self.posti_totali))
 

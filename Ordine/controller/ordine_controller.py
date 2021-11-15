@@ -1,5 +1,5 @@
 
-class ordineController:
+class ordine_controller:
     def __init__(self, ordine):
         self.ordine = ordine
 
