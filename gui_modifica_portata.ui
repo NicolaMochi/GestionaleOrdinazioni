@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>424</height>
+    <width>374</width>
+    <height>356</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:#fff;</string>
+   <string notr="true">background-color: white;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -24,13 +24,13 @@
     <number>10</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>10</number>
    </property>
    <property name="rightMargin">
     <number>10</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>10</number>
    </property>
    <item>
     <widget class="QFrame" name="frame">
@@ -48,27 +48,77 @@
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
       </property>
       <item>
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">font: 700 19pt &quot;Poppins&quot;;
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 700 19pt &quot;Poppins&quot;;
 color: rgb(255, 85, 0);
 letter-spacing: 0.5px;</string>
-        </property>
-        <property name="text">
-         <string>Nuova Portata</string>
-        </property>
+           </property>
+           <property name="text">
+            <string>Portata</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_message">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;Poppins&quot;;
+color: rgb(120, 120, 120);</string>
+           </property>
+           <property name="text">
+            <string>Modifica</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -80,6 +130,21 @@ letter-spacing: 0.5px;</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item alignment="Qt::AlignLeft">
           <widget class="QLabel" name="label_nome_piatto">
            <property name="styleSheet">
@@ -127,6 +192,21 @@ border-bottom: 2px solid black;</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item alignment="Qt::AlignLeft">
           <widget class="QLabel" name="label_categoria">
            <property name="styleSheet">
@@ -168,6 +248,21 @@ border-bottom: 2px solid black;</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item alignment="Qt::AlignLeft">
           <widget class="QLabel" name="label_prezzo">
            <property name="styleSheet">
@@ -201,69 +296,7 @@ border-bottom: 2px solid black;</string>
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_5">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>150</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>150</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_ingredienti">
-           <property name="styleSheet">
-            <string notr="true">font: 10pt &quot;Poppins&quot;;
-color: rgb(120, 120, 120);</string>
-           </property>
-           <property name="text">
-            <string>Scrivi gli ingredienti separati da uno spazio</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPlainTextEdit" name="text_ingredienti">
-           <property name="styleSheet">
-            <string notr="true">border: 2px solid black;
-border-radius: 5px;
-background-color:transparent;</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QFrame" name="frame_2">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>70</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="btn_add_to_menu">
+       <widget class="QPushButton" name="btn_modifica_portata">
         <property name="styleSheet">
          <string notr="true">QPushButton{ border: 2px solid rgb(255, 85, 0);;
 font: 600 12pt &quot;Poppins&quot;;
@@ -277,7 +310,7 @@ QPushButton:hover{border: none; background-color: rgb(255, 85, 0);; color: #fff;
 /*rgb(99, 159, 171)*/</string>
         </property>
         <property name="text">
-         <string>Aggiungi</string>
+         <string>Modifica</string>
         </property>
        </widget>
       </item>

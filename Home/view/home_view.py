@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PySide2.QtCore import QSize
 
 from Categorie_list.controller.categorie_list_controller import categorie_list_controller
-from Categorie_list.view.categorie_list_view import categorie_list_view
+#from Categorie_list.view.categorie_list_view import categorie_list_view
 from Ingredienti_list.controller.ingredienti_list_controller import ingredienti_list_controller
 from Menu.controller.menu_controller import menu_controller
 from Menu.view.menu_view import menu_view
@@ -38,20 +38,18 @@ class home_view(QMainWindow):
         self.personale_view = personale_list_view(self.home, self.controller_lista_personale, self.add_personale_view, self.uifunctions)
 
         self.lista_tavoli_controller = tavolo_list_controller()
-        self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller, self.uifunctions)
-        self.add_tavolo_view = new_tavolo_view(self.home, self.lista_tavoli_controller, self.tavolo_view)
 
         self.lista_categorie = categorie_list_controller()
         self.lista_ingredienti = ingredienti_list_controller()
         self.menu = menu_controller()
-        self.categorie_view = categorie_list_view(self.lista_categorie, self.home, self.menu)
-        self.menu_vista = menu_view(self.home, self.menu, self.categorie_view, self.uifunctions)
+        #self.categorie_view = categorie_list_view(self.lista_categorie, self.home, self.menu)
+        self.menu_vista = menu_view(self.home, self.menu, self.lista_categorie)
         self.nuova_portata_view = new_portata_view(self.menu_vista, self.menu, self.lista_ingredienti, self.lista_categorie)
 
         self.lista_ordini = ordini_list_controller()
-        self.utility = utilities(self.home, self.lista_tavoli_controller)
-        self.vista_nuovo_ordine = nuovo_ordine_view(self.categorie_view, self.lista_categorie, self.utility, self.home, self.lista_ordini, self.lista_tavoli_controller, self.menu, self.menu_vista)
-
+        self.vista_nuovo_ordine = nuovo_ordine_view(self.lista_categorie, self.home, self.lista_ordini, self.lista_tavoli_controller, self.menu)
+        self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller, self.vista_nuovo_ordine)
+        self.add_tavolo_view = new_tavolo_view(self.home, self.lista_tavoli_controller, self.tavolo_view)
 
         self.partenza()
 
@@ -66,8 +64,8 @@ class home_view(QMainWindow):
     def vista_menu(self):
         self.menu_vista.view(self.nuova_portata_view)
 
-    def vista_ordine(self):
-         self.vista_nuovo_ordine.view()
+    # def vista_ordine(self):
+    #      self.vista_nuovo_ordine.view()
 
     def vista_personale(self):
         self.personale_view.view()
@@ -91,6 +89,7 @@ class home_view(QMainWindow):
             qr.moveCenter(cp)
             self.move(qr.topLeft())
 
+            self.home.btn_add_ordine.clicked.connect(self.home.label_ordine_tavolo.setText("Devi prima selezionare un Tavolo"))
             if self.flag_primo_login:
                  self.tavolo_view.fill_list_tavoli_widget(self.lista_tavoli_controller.get_lista(), True)
                  self.flag_primo_login = False
@@ -101,7 +100,7 @@ class home_view(QMainWindow):
 
             self.home.btn_logout.clicked.connect(self.partenza)
             self.home.btn_menu.clicked.connect(self.vista_menu)
-            self.home.btn_add_ordine.clicked.connect(self.vista_ordine)
+            #self.home.btn_add_ordine.clicked.connect(self.vista_ordine)
             self.home.btn_statistiche.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.StatistichePage))
             self.home.btn_home.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.TavoliPage))
             self.home.btn_home_top.clicked.connect(lambda: self.home.Pages_widget.setCurrentWidget(self.home.TavoliPage))

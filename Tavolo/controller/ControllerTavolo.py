@@ -27,6 +27,7 @@ class ControllerTavolo:
     def total_price(self):
         prezzo = 0
         for x in self.tavolo.ordini_tavolo:
+            print(str(x.get_prezzo_ordine()))
             prezzo += x.get_prezzo_ordine()
         return prezzo
 

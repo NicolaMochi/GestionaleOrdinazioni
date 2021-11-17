@@ -29,9 +29,7 @@ class UIFunctions():
             self.animation.start()
 
 
-    ## Faccio le funzioni per:
-        #riempire la tabella da zero con o senza il flag dato un numero di colonne
-        #inserire un nuovo widget in una data tabella passato il testo
+
 
     def inizialize_ui_table(self, nome_tabella, numero_colonne, lista_da_usare, flag):
         if len(lista_da_usare) / numero_colonne <= 1: nome_tabella.setColumnCount(len(lista_da_usare))
@@ -44,11 +42,11 @@ class UIFunctions():
             self.row = 0
             self.column = 0
         for x in lista_da_usare:
+            print("var x" + str(x))
             nuovo_item = QTableWidgetItem()
             nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
             nuovo_item.setTextAlignment(Qt.AlignHCenter)
             nuovo_item.setText(x.__str__())
-            print(x.__str__())
             nome_tabella.setItem(self.row, self.column, nuovo_item)
             self.column += 1
             if self.column % numero_colonne == 0:
@@ -108,7 +106,38 @@ class UIFunctions():
                 return True
         return False
 
+    def fill_categorie_to_order(self, home, lista_da_usare):
+        ## Determino la tabella di categorie che devo modificare
+        self.table = None
+        if home.Pages_widget.currentWidget() == home.OrdiniPage: self.table = home.table_categorie
+        elif home.Pages_widget.currentWidget() == home.MenuPage: self.table = home.table_categorie_menu
+        ## Aggiungo tutte le categorie nella tabella corretta
+        column = 0
+        self.table.clear()
+        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.table.setColumnCount(len(lista_da_usare)+1)
+        for x in range(len(lista_da_usare)+1):
+            nuovo_item = QTableWidgetItem()
+            if x == 0: nuovo_item.setText("Vedi Tutti")
+            else:
+                nuovo_item.setText(lista_da_usare[x-1].__str__())
+            font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
+            nuovo_item.setFont(font_nuovo_item)
+            nuovo_item.setTextAlignment(Qt.AlignHCenter)
+            self.table.setItem(0, column, nuovo_item)
+            column += 1
 
+    def check_prezzo_portata(self, gui, prezzo):
+        if not prezzo.isnumeric():
+            gui.lineEdit_prezzo.setText("Scrivi un numero")
+            gui.lineEdit_prezzo.setStyleSheet(
+                "font: 8pt 'Poppins';"
+                "color: rgb(120, 120, 120);"
+                "border: solid;"
+                "border-bottom: 2px solid black;"
+            )
+            return True
+        else: return False
 
 
 

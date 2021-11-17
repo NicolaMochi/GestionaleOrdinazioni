@@ -1,16 +1,16 @@
-from PySide2.QtCore import Qt
-from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QTableWidgetItem, QTableWidget, QAbstractItemView
+from Utilities.UIFunctions import UIFunctions
+
 
 class tavolo_list_view:
-    def __init__(self, home, lista_tavoli_controller, uifunctions):
+    def __init__(self, home, lista_tavoli_controller, vista_ordine):
         self.row = 0
         self.column = 0
         self.home = home
-        self.uifunctions = uifunctions
+        self.uifunctions = UIFunctions()
         self.lista_tavoli_controller = lista_tavoli_controller
         self.nuovo_item = None
         self.flag = False
+        self.vista_ordine = vista_ordine
 
     def add_tavolo_to_widget(self, tavolo_to_add):
         self.uifunctions.add_to_table(self.home.tableWidget_tavoli, tavolo_to_add, self.flag, 4, len(self.lista_tavoli_controller.get_lista()))
@@ -51,27 +51,33 @@ class tavolo_list_view:
         except:
             self.home.label_ordine_tavolo.setText("Devi prima aggiungere un nuovo Tavolo")
 
+
+    def go_to_order(self):
+        self.vista_ordine.view(self.tavolo_selected.get_codice_tavolo())
+        print(self.tavolo_selected.get_codice_tavolo())
+
     def show_tavolo(self):
         item_clicked = self.home.tableWidget_tavoli.currentItem()
         try:
-            tavolo = self.lista_tavoli_controller.get_tavolo_by_index(int(item_clicked.text().split()[1]) - 1)
+            self.tavolo_selected = self.lista_tavoli_controller.get_tavolo_by_index(int(item_clicked.text().split()[1]) - 1)
+            self.home.btn_add_ordine.clicked.connect(self.go_to_order)
         except:
-            self.home.label_ordine_tavolo.setText("Devi prima aggiungere un nuovo Tavolo")
+            self.home.label_ordine_tavolo.setText("Per visualizzare un nuovo tavolo\n devi prima aggiungerlo")
             return
         ordine_tavolo = 0
         self.home.label_ordine_tavolo.clear()
         self.home.label_ordine_tavolo.setText('')
-        for ordine in tavolo.get_lista_ordini_tavolo():
+        for ordine in self.tavolo_selected.get_lista_ordini_tavolo():
             self.home.label_ordine_tavolo.setText(
                 self.home.label_ordine_tavolo.text() + "Ordine: " + str(ordine_tavolo) +
                 ordine.get_descrizione_ordine() + '\n\n')
             ordine_tavolo += 1
         try:
-            index = len(tavolo.get_lista_ordini_tavolo()) - 1
+            index = len(self.tavolo_selected.get_lista_ordini_tavolo()) - 1
             self.home.label_datetime_ordine_tavolo.setText(
-                tavolo.get_lista_ordini_tavolo()[index].get_data_ora_ordine())
+                self.tavolo_selected.get_lista_ordini_tavolo()[index].get_data_ora_ordine())
         except:
-            self.home.label_ordine_tavolo.setText("Devi prima aggiungere un ordine")
+            self.home.label_ordine_tavolo.setText("Non ci sono ordini per questo tavolo")
 
         self.home.btn_stampa_scontrino.setText("Totale:  " + str(self.lista_tavoli_controller.total_price_from_id(int(item_clicked.text().split()[1]) - 1)) + '€')
 

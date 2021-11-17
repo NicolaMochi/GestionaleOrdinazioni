@@ -20,7 +20,6 @@ class new_tavolo_view(QDialog):
 
         self.tavoli_widget_view = tavolo_view
 
-
     def check_posti_tavolo(self):
         stringa = self.gui.lineEdit_posti_tavolo.text()
         #if isinstance(stringa, int):

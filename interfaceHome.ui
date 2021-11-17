@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1208</width>
-    <height>591</height>
+    <height>572</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -301,41 +301,10 @@ QPushButton:hover {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QPushButton" name="btn_delete_tavolo">
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{ border: none;
-background-color: transparent;
-font: 500 10pt &quot;Poppins&quot;;
-color: rgb(43, 43, 43);
-padding-left: 10px;
-letter-spacing:0.2px ;
-border-radius: 5px;
-margin-right: 5px;}
-QPushButton:focus:pressed{font: 500 10pt &quot;Poppins&quot;;
-	background-color: rgb(255, 170, 0);}
-QPushButton:focus{ border: none;
-background-color: transparent;
-font: 500 10pt &quot;Poppins&quot;;
-padding: 10px; 
-border: 2px solid rgb(255, 170, 0);
-border-radius: 5px;
-margin-right: 5px;}
-QPushButton:hover{ font: 500 10pt &quot;Poppins&quot;;
-	border: 2px solid rgb(255, 170, 0);}</string>
-                     </property>
-                     <property name="text">
-                      <string>Elimina Tavolo</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
                     <widget class="QPushButton" name="btn_add_tavolo">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{ border: none;
 background-color: #ff8c00;
@@ -354,6 +323,9 @@ margin-right: 5px;}</string>
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_logout">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{ border: none;
 background-color: #ff8c00;
@@ -619,7 +591,7 @@ QPushButton:hover {
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <property name="spacing">
-                     <number>100</number>
+                     <number>10</number>
                     </property>
                     <property name="leftMargin">
                      <number>0</number>
@@ -633,6 +605,34 @@ QPushButton:hover {
                     <property name="bottomMargin">
                      <number>10</number>
                     </property>
+                    <item alignment="Qt::AlignLeft">
+                     <widget class="QPushButton" name="btn_delete_tavolo">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{ border: none;
+background-color: transparent;
+font: 500 10pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
+letter-spacing:0.2px ;
+margin-left: 20px;}
+QPushButton:focus:pressed{
+	font: 500 10pt &quot;Poppins&quot;;
+	border-bottom: 2px solid rgb(255, 170, 0);
+	color:rgb(255, 170, 0);
+}
+QPushButton:hover{ font: 500 10pt &quot;Poppins&quot;;
+	border-bottom: 2px solid rgb(255, 170, 0);}</string>
+                      </property>
+                      <property name="text">
+                       <string>Elimina ultimo tavolo della lista</string>
+                      </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QTableWidget" name="tableWidget_tavoli">
                       <property name="sizePolicy">
@@ -649,7 +649,7 @@ QPushButton:hover {
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QTableView {
-	margin-left: 20px;
+	margin-left: 10px;
 }
 QScrollBar:vertical {
 width: 7px;
@@ -697,7 +697,7 @@ QTableView::item:hover {background-color: rgb(255, 170, 0); color: white;}</stri
                        <number>0</number>
                       </property>
                       <property name="columnCount">
-                       <number>4</number>
+                       <number>0</number>
                       </property>
                       <attribute name="horizontalHeaderVisible">
                        <bool>false</bool>
@@ -723,26 +723,6 @@ QTableView::item:hover {background-color: rgb(255, 170, 0); color: white;}</stri
                       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                        <bool>false</bool>
                       </attribute>
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
-                      <column>
-                       <property name="text">
-                        <string>New Column</string>
-                       </property>
-                      </column>
                      </widget>
                     </item>
                    </layout>
@@ -796,6 +776,9 @@ border-radius: 20px;</string>
                         <height>80</height>
                        </size>
                       </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
                       <property name="frameShape">
                        <enum>QFrame::NoFrame</enum>
                       </property>
@@ -823,26 +806,24 @@ border-radius: 20px;</string>
                            <height>16777215</height>
                           </size>
                          </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="styleSheet">
-                          <string notr="true">QPushButton{ border: none;
+                          <string notr="true">QPushButton{ border-bottom: 2px solid black;
+border-radius: 0px;
+padding: 0px;
 background-color: transparent;
-font: 500 10pt &quot;Poppins&quot;;
-padding: 10px;
+font: 500 11pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
 letter-spacing:0.2px ;
-border: 2px solid rgb(255, 170, 0);
-border-radius: 5px;
-margin-right: 5px;}
-QPushButton:focus:pressed{font: 500 10pt &quot;Poppins&quot;;
-	background-color: rgb(255, 170, 0);}
-QPushButton:focus{ border: none;
-background-color: transparent;
-font: 500 10.5pt &quot;Poppins&quot;;
-padding: 10px; 
-border: 2px solid rgb(255, 170, 0);
-border-radius: 5px;
-margin-right: 5px;}
-QPushButton:hover{ font: 500 11pt &quot;Poppins&quot;;
-	border: 2px solid rgb(255, 170, 0);}</string>
+margin-left: 10px;}
+QPushButton:focus:pressed{
+	border-bottom: 2px solid rgb(255, 170, 0) ;
+}
+QPushButton:hover{ 
+	border-bottom: 2px solid rgb(255, 170, 0);
+}</string>
                          </property>
                          <property name="text">
                           <string>Icona Cancella Ordini</string>
@@ -851,16 +832,24 @@ QPushButton:hover{ font: 500 11pt &quot;Poppins&quot;;
                        </item>
                        <item row="0" column="1">
                         <widget class="QPushButton" name="btn_add_ordine">
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="styleSheet">
-                          <string notr="true">QPushButton{ border: none;
-background-color: #ff8c00;
-font: 500 9pt &quot;Poppins&quot;;
-color: white;
-padding: 5px;
+                          <string notr="true">QPushButton{ border-bottom: 2px solid black;
+border-radius: 0px;
+padding: 0px;
+background-color: transparent;
+font: 500 11pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
 letter-spacing:0.2px ;
-/*border: 2px solid rgb(255, 170, 0);*/
-border-radius: 5px;
-margin-right: 5px;}</string>
+margin-left: 10px;}
+QPushButton:focus:pressed{
+	border-bottom: 2px solid rgb(255, 170, 0) ;
+}
+QPushButton:hover{ 
+	border-bottom: 2px solid rgb(255, 170, 0);
+}</string>
                          </property>
                          <property name="text">
                           <string>icona Aggiungi Ordine</string>
@@ -918,7 +907,7 @@ QScrollBar::handle {
                             <x>0</x>
                             <y>0</y>
                             <width>380</width>
-                            <height>410</height>
+                            <height>411</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -1438,7 +1427,7 @@ border-radius: 20px;</string>
                             <property name="maximumSize">
                              <size>
                               <width>16777215</width>
-                              <height>25</height>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="styleSheet">
@@ -1466,10 +1455,35 @@ border-radius: 20px;</string>
                              <property name="bottomMargin">
                               <number>0</number>
                              </property>
-                             <item>
-                              <widget class="QToolButton" name="icon_edit_portata">
+                             <item alignment="Qt::AlignLeft">
+                              <widget class="QPushButton" name="btn_edit_portata">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{ border-bottom: 2px solid black;
+border-radius: 0px;
+padding: 0px;
+background-color: transparent;
+font: 500 11pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
+letter-spacing:0.2px ;
+margin-left: 10px;}
+QPushButton:focus:pressed{
+	border-bottom: 2px solid rgb(255, 170, 0) ;
+}
+QPushButton:hover{ 
+	border-bottom: 2px solid rgb(255, 170, 0);
+}</string>
+                               </property>
                                <property name="text">
-                                <string>...</string>
+                                <string>Modifica portata</string>
                                </property>
                               </widget>
                              </item>
@@ -2421,35 +2435,7 @@ border-radius: 20px;</string>
                              <string notr="true">font: 500 12pt &quot;Poppins&quot;;</string>
                             </property>
                             <property name="text">
-                             <string>Aggiungi Ordine</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-                           <widget class="QComboBox" name="comboBox_seleziona_tavolo">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>150</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">border: 2px solid #ff8c00;
-border-radius: 10px;
-background-color:transparent;
-box-shadow: none;</string>
+                             <string/>
                             </property>
                            </widget>
                           </item>
@@ -2800,8 +2786,8 @@ QScrollBar::handle {
                               <rect>
                                <x>0</x>
                                <y>0</y>
-                               <width>293</width>
-                               <height>16</height>
+                               <width>300</width>
+                               <height>408</height>
                               </rect>
                              </property>
                              <layout class="QVBoxLayout" name="verticalLayout_22">

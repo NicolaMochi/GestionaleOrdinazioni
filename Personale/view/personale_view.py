@@ -16,11 +16,12 @@ class personale_view(QDialog):
         self.uifunction = UIFunctions()
         self.credenziali_utente_selected = []
         self.lista_personale_controller = lista_personale
+        self.gui.setupUi(self)
+
     # self.gui.btn_close_new_personale(self.close)
     # self.gui.btn_elimina_utente(self.delete_user)
 
     def display_new_personale(self):
-        self.gui.setupUi(self)
         self.gui.lineEdit_nome_personale.clear()
         self.gui.lineEdit_cognome_personale.clear()
         self.gui.checkBox_amministratore.setChecked(False)
@@ -34,6 +35,7 @@ class personale_view(QDialog):
         self.gui_modifica.lineEdit_cognome_personale.setText(self.credenziali_utente_selected[1])
         if self.credenziali_utente_selected[3] == "Amministr.": self.gui_modifica.checkBox_amministratore.setChecked(True)
         self.gui_modifica.btn_confirm_new_personale.clicked.connect(self.modify_user)
+        self.gui_modifica.btn_elimina_personale.clicked.connect(self.delete_user)
         self.show()
 
     def add_personale_to_list(self):
@@ -67,8 +69,9 @@ class personale_view(QDialog):
         new_credenziali_utente_selected = [nome, cognome, password, amministratore]
         self.lista_personale_controller.modifica_utente(user, new_credenziali_utente_selected)
         self.uifunction.inizialize_ui_table(self.gui_home.table_personale, 6, self.lista_personale_controller.get_lista(), True)
+
+    def delete_user(self):
+        user = self.lista_personale_controller.find_user(self.credenziali_utente_selected)
+        self.lista_personale_controller.remove_personale(user)
         self.close()
-
-
-
-    #def delete_user(self):
+        self.uifunction.inizialize_ui_table(self.gui_home.table_personale, 6, self.lista_personale_controller.get_lista(), True)

@@ -5,6 +5,7 @@ from Categorie.model.categoria_model import categoria_model
 from Menu.view.gui_add_piatto import gui_add_piatto
 from Portata.controller.portataController import portataController
 from Portata.model.portata import portata
+from Utilities.UIFunctions import UIFunctions
 
 
 class new_portata_view(QDialog):
@@ -19,7 +20,7 @@ class new_portata_view(QDialog):
         self.gui = gui_add_piatto()
         self.gui.setupUi(self)
 
-        self.gui.btn_add_to_menu.clicked.connect(self.check_prezzo_portata)
+        self.gui.btn_add_to_menu.clicked.connect(self.aggiungi_portata)
 
     # def ingredienti_are_not_in_list(self, ingrediente):
     #     if len(self.lista_ingredienti_controller.get_lista_ingredienti()) == 0: return True
@@ -40,15 +41,12 @@ class new_portata_view(QDialog):
     #def modifica_portata(self):
 
 
-    def check_prezzo_portata(self):
-        prezzo = self.gui.lineEdit_prezzo.text()
-        if not prezzo.isnumeric():
-            self.gui.lineEdit_prezzo.setText("Scrivi un numero")
-            self.gui.lineEdit_prezzo.setStyleSheet("color:rgb(255, 85, 0); font: 8pt 'Dubai'; border: 2px solid black;border-radius: 5px;background-color:transparent;")
-        else: self.aggiungi_portata(prezzo)
+
 
     #devo passare alla funzione la lista degli ingredienti già esistenti
     def aggiungi_portata(self, prezzo):
+        prezzo = self.gui.lineEdit_prezzo.text()
+        if UIFunctions().check_prezzo_portata(self.gui, prezzo): return
         self.close()
         nome_portata = self.gui.lineEdit_nome_piatto.text()
         categoria = self.gui.lineEdit_categoria.text()

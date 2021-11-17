@@ -19,6 +19,9 @@ class personale_list_controller:
     def get_lista(self):
         return self.lista.lista_personale
 
+    def remove_personale(self, personale):
+        self.lista.lista_personale.remove(personale)
+
     def find_user(self, credenziali):
         nome = credenziali[0]
         cognome = credenziali[1]
@@ -36,5 +39,7 @@ class personale_list_controller:
             if nuove_credenziali[3] == True:
                 user.set_ruolo_personale("Amministr.")
             else: user.set_ruolo_personale("Dipendente")
+
+
 
 

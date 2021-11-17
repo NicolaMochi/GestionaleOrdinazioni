@@ -1,4 +1,6 @@
 from Categorie_list.model.categorie_list_model import categorie_list_model
+from Categorie.model.categoria_model import categoria_model
+from Categorie.controller.categoria_controller import categoria_controller
 
 class categorie_list_controller:
     def __init__(self):
@@ -10,7 +12,8 @@ class categorie_list_controller:
         return self.list_model.lista_categorie(index)
 
     def delete_categoria(self, categoria):
-        if categoria in self.list_model.lista_categorie:
+        # if categoria in self.list_model.lista_categorie:
+        #     print("entrato")
             self.list_model.lista_categorie.remove(categoria)
 
     def add_categoria(self, categoria):
@@ -24,13 +27,29 @@ class categorie_list_controller:
 
     def categoria_esiste(self, categoria):
         for x in self.list_model.lista_categorie:
-            if x.get_nome_categoria() == categoria: return True
+            if x.__str__() == categoria: return True
         return False
+
+
+    def update_categoria(self, categoria_new, categoria_old, menu):
+        count_old = 0
+        count_new = 0
+        flag = False
+        for x in menu:
+            if x.get_categoria() == categoria_old: count_old +=1
+            if x.get_categoria() == categoria_new: count_new +=1
+        if count_new==0:
+            flag = True
+        if count_old==1:
+            self.delete_categoria(self.get_categoria_from_text(categoria_old))
+            print("categoria cancellata")
+        return flag
+
 
     def get_categoria_from_text(self, nome_categoria):
         categoria = None
         for x in self.list_model.lista_categorie:
-            if x.get_nome_categoria() == nome_categoria:
+            if x.__str__() == nome_categoria:
                 categoria = x
         return categoria
 
