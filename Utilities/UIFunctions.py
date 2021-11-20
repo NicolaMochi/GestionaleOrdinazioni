@@ -85,7 +85,7 @@ class UIFunctions():
             i = 1
             diff = 0
             while i:
-                if length_lista - i*tabella_da_usare.columnCount() >= 0:
+                if length_lista - i*tabella_da_usare.columnCount() > 0:
                     diff = length_lista - i*tabella_da_usare.columnCount()
                     numero_riga += 1
                     i+=1

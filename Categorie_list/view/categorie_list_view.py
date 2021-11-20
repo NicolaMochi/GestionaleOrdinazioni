@@ -8,7 +8,13 @@ from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView
 
 
 class categorie_list_view:
-    # def __init__(self):
+    def __init__(self, home, menu_view, lista_categorie, menu):
+        self.home = home
+        self.menu_view = menu_view
+        self.lista_categorie =  lista_categorie
+        self.menu = menu
+
+        #self.home.table_categorie.cellClicked.connect(self.show_categorie_in_table)
         # self.lista_categorie = lista_categorie
         # self.home = home
         # self.menu = menu
@@ -40,20 +46,20 @@ class categorie_list_view:
 #     #         column += 1
 
 
-    def show_categorie_in_table(self, home, menu_view, lista_categorie, menu):
-            clicked = home.table_categorie.currentItem()
+    def show_categorie_in_table(self):
+            clicked = self.home.table_categorie.currentItem()
             if clicked.text() == "Vedi Tutti":
-                menu_view.fill_table_to_order()
+                self.menu_view.fill_table_to_order()
                 return
 
-            categoria_selected = lista_categorie.get_categoria_from_text(clicked.text())
+            categoria_selected = self.lista_categorie.get_categoria_from_text(clicked.text())
             nome_categoria = categoria_selected.get_nome_categoria()
             row = 0
             column = 0
-            home.tableWidget.clear()
+            self.home.tableWidget.clear()
 
             ## Visualizzo le portate della categoria cliccata sulla tabella
-            for x in menu.get_menu():
+            for x in self.menu.get_menu():
                 print(x.get_categoria())
                 if x.get_categoria() == nome_categoria:
                     nome_portata = x.__str__()
@@ -61,7 +67,7 @@ class categorie_list_view:
                     nuovo_item.setText(nome_portata)
                     nuovo_item.setTextAlignment(Qt.AlignHCenter)
                     nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
-                    home.tableWidget.setItem(row, column, nuovo_item)
+                    self.home.tableWidget.setItem(row, column, nuovo_item)
                     column += 1
                     if column % 5 == 0:
                         row += 1

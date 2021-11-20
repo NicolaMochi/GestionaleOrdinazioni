@@ -11,6 +11,7 @@ from Ordine.controller.ordine_controller import ordine_controller
 from Ordine.model.ordine import ordine
 from Ordini_list.view.label_ordine import label_ordine
 from Utilities.UIFunctions import UIFunctions
+from Utilities.utilities import utilities
 
 
 class nuovo_ordine_view:
@@ -21,6 +22,7 @@ class nuovo_ordine_view:
         self.lista_categorie = lista_categorie
         self.menu = menu
 
+        self.utility = utilities(self.lista_tavoli, self.home)
         self.lista_label_ordine = []
         self.conta_label = 0
         self.codice_ordine = 0
@@ -110,7 +112,8 @@ class nuovo_ordine_view:
         self.prezzo_ordine = 0
         #TypeError: 'int' object is not callable
         #crea oggetto utility
-        #utility.posti_rimanenti()
+        self.utility.set_codice_tavolo_selected(self.codice_tavolo_selected)
+        self.utility.update_posti()
         print(descrizione)
         print(prezzo)
         print(data_ora)
@@ -151,9 +154,10 @@ class nuovo_ordine_view:
         self.menu_view = menu_view(self.home, self.menu, self.lista_categorie)
         self.menu_view.fill_table_to_order()
         uifunctions = UIFunctions()
-        uifunctions.fill_categorie_to_order(self.home, self.lista_categorie)
+        uifunctions.fill_categorie_to_order(self.home, self.lista_categorie.get_lista())
         #self.categorie_view.fill_categorie_to_order()
-        self.home.table_categorie.cellClicked.connect(categorie_list_view().show_categorie_in_table(self.home, self.menu_view, self.lista_categorie, self.menu))
+        self.categorie_list_view = categorie_list_view(self.home, self.menu_view, self.lista_categorie, self.menu)
+        self.home.table_categorie.cellClicked.connect(self.categorie_list_view.show_categorie_in_table)
 
 
 

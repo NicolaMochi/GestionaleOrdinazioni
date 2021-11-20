@@ -72,6 +72,23 @@ letter-spacing: 0.5px;</string>
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="label_message">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 10pt &quot;Poppins&quot;;
+color: rgb(120, 120, 120);</string>
+        </property>
+        <property name="text">
+         <string>Crea una nuova portata</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QFrame" name="frame_3">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>

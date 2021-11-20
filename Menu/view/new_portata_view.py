@@ -20,7 +20,21 @@ class new_portata_view(QDialog):
         self.gui = gui_add_piatto()
         self.gui.setupUi(self)
 
-        self.gui.btn_add_to_menu.clicked.connect(self.aggiungi_portata)
+        self.gui.btn_add_to_menu.clicked.connect(self.check_inserimento)
+
+    def check_inserimento(self):
+        nome_portata = self.gui.lineEdit_nome_piatto.text()
+        if self.gui.lineEdit_categoria.text() == "" or nome_portata == "":
+            self.gui.label_message.setText("Compila tutti i campi")
+            return
+        flag = True
+        for x in self.menu_to_update:
+            if x.__str__() == nome_portata:
+                self.gui.label_message.setText("Nome non disponibile")
+                flag = False
+        if flag: self.aggiungi_portata()
+        else: return
+
 
     # def ingredienti_are_not_in_list(self, ingrediente):
     #     if len(self.lista_ingredienti_controller.get_lista_ingredienti()) == 0: return True
@@ -44,7 +58,7 @@ class new_portata_view(QDialog):
 
 
     #devo passare alla funzione la lista degli ingredienti già esistenti
-    def aggiungi_portata(self, prezzo):
+    def aggiungi_portata(self):
         prezzo = self.gui.lineEdit_prezzo.text()
         if UIFunctions().check_prezzo_portata(self.gui, prezzo): return
         self.close()

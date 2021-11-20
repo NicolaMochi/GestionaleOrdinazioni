@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gui_add_tavoloJAyQdt.ui'
+## Form generated from reading UI file 'gui_add_tavolotInyyO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -17,7 +17,7 @@ class gui_add_tavolo(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(359, 220)
+        Dialog.resize(374, 220)
         Dialog.setMaximumSize(QSize(16777215, 220))
         Dialog.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.verticalLayout_2 = QVBoxLayout(Dialog)
@@ -34,6 +34,12 @@ class gui_add_tavolo(object):
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout.addWidget(self.label, 0, Qt.AlignHCenter)
+
+        self.label_2 = QLabel(self.frame_insert)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setStyleSheet(u"font: 9pt \"Poppins\"; color: rgb(120, 120, 120);")
+
+        self.verticalLayout.addWidget(self.label_2, 0, Qt.AlignHCenter)
 
         self.lineEdit_posti_tavolo = QLineEdit(self.frame_insert)
         self.lineEdit_posti_tavolo.setObjectName(u"lineEdit_posti_tavolo")
@@ -100,7 +106,8 @@ class gui_add_tavolo(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("Dialog", u"Scrivi i posti disponibili sul nuovo tavolo", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"Posti disponibili in questo tavolo?", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"Scrivi un numero intero", None))
         self.lineEdit_posti_tavolo.setText(QCoreApplication.translate("Dialog", u"0", None))
         self.btn_ok_add_tavolo.setText(QCoreApplication.translate("Dialog", u"Aggiungi", None))
         self.btn_close_dialog.setText(QCoreApplication.translate("Dialog", u"Annulla", None))

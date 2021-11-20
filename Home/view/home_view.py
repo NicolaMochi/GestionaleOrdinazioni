@@ -1,5 +1,9 @@
+from datetime import datetime, timedelta, date, time
+from tkinter import *
+import time
+
 from PyQt5.QtWidgets import QMainWindow
-from PySide2.QtCore import QSize
+from PySide2.QtCore import QSize, QTimer, QDateTime
 
 from Categorie_list.controller.categorie_list_controller import categorie_list_controller
 #from Categorie_list.view.categorie_list_view import categorie_list_view
@@ -21,10 +25,6 @@ from Login.view.login_view import login_view
 from Personale_list.controller.personale_list_controller import personale_list_controller
 from PySide2.QtWidgets import *
 
-## Cambiare concettualmente i controller e model di ogni entità come fatto con ordine.
-## C'è un problema con le portate, fixarlo
-## Resize della schermata all'avvio da aggiungere e nuovo design pronto da upgreidare
-## Rivedere la home partendo dal progetto esempio
 
 class home_view(QMainWindow):
     def __init__(self):
@@ -38,7 +38,7 @@ class home_view(QMainWindow):
         self.personale_view = personale_list_view(self.home, self.controller_lista_personale, self.add_personale_view, self.uifunctions)
 
         self.lista_tavoli_controller = tavolo_list_controller()
-
+        self.utility = utilities(self.lista_tavoli_controller, self.home)
         self.lista_categorie = categorie_list_controller()
         self.lista_ingredienti = ingredienti_list_controller()
         self.menu = menu_controller()
@@ -50,6 +50,9 @@ class home_view(QMainWindow):
         self.vista_nuovo_ordine = nuovo_ordine_view(self.lista_categorie, self.home, self.lista_ordini, self.lista_tavoli_controller, self.menu)
         self.tavolo_view = tavolo_list_view(self.home, self.lista_tavoli_controller, self.vista_nuovo_ordine)
         self.add_tavolo_view = new_tavolo_view(self.home, self.lista_tavoli_controller, self.tavolo_view)
+
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.start_date_time)
 
         self.partenza()
 
@@ -74,6 +77,15 @@ class home_view(QMainWindow):
         self.vista_nuovo_ordine.invia_ordine()
         #self.utility.posti_rimanenti()
 
+    def prova(self):
+        self.start_date_time()
+
+    def start_date_time(self):
+        time = QDateTime.currentDateTime()
+        timeDisplay = time.toString("dddd, d MMMM hh:mm:ss")
+        self.home.label_date_time.setText(timeDisplay)
+
+
     def controllo_login(self):
         username = self.vista_login.login.lineEdit_username.text()
         password = self.vista_login.login.lineEdit_password.text()
@@ -83,6 +95,7 @@ class home_view(QMainWindow):
         #if controllo_result != False:
             self.home.setupUi(self)
             self.show()
+            self.timer.start(1000)
             ## Posiziono la schermata al centro del desktop
             qr = self.frameGeometry()
             cp = QDesktopWidget().availableGeometry().center()
@@ -113,7 +126,7 @@ class home_view(QMainWindow):
             self.home.btn_invio_ordine.clicked.connect(self.send_order)
             self.home.btn_delete_ordine_tavolo.clicked.connect(self.tavolo_view.delete_ordine)
             self.home.btn_delete_tavolo.clicked.connect(self.tavolo_view.delete_tavolo)
-            #self.utility.posti()
+            self.utility.start_posti()
 
         else:
             self.vista_login.login.label_message.setText("Dati non validi, riprova")

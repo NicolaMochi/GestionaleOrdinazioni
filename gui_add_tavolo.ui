@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>359</width>
+    <width>374</width>
     <height>220</height>
    </rect>
   </property>
@@ -38,10 +38,20 @@
          <string notr="true">font: 500 11pt &quot;Poppins&quot;;</string>
         </property>
         <property name="text">
-         <string>Scrivi i posti disponibili sul nuovo tavolo</string>
+         <string>Posti disponibili in questo tavolo?</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">font: 9pt &quot;Poppins&quot;; color: rgb(120, 120, 120);</string>
+        </property>
+        <property name="text">
+         <string>Scrivi un numero intero</string>
         </property>
        </widget>
       </item>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gui_add_piattoqBFuMg.ui'
+## Form generated from reading UI file 'gui_add_piattoVAChJt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -39,6 +39,14 @@ class gui_add_piatto(object):
 "letter-spacing: 0.5px;")
 
         self.verticalLayout_2.addWidget(self.label)
+
+        self.label_message = QLabel(self.frame)
+        self.label_message.setObjectName(u"label_message")
+        self.label_message.setMaximumSize(QSize(16777215, 20))
+        self.label_message.setStyleSheet(u"font: 10pt \"Poppins\";\n"
+"color: rgb(120, 120, 120);")
+
+        self.verticalLayout_2.addWidget(self.label_message)
 
         self.frame_3 = QFrame(self.frame)
         self.frame_3.setObjectName(u"frame_3")
@@ -182,6 +190,7 @@ class gui_add_piatto(object):
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"Nuova Portata", None))
+        self.label_message.setText(QCoreApplication.translate("Dialog", u"Crea una nuova portata", None))
         self.label_nome_piatto.setText(QCoreApplication.translate("Dialog", u"Nome del piatto", None))
         self.label_categoria.setText(QCoreApplication.translate("Dialog", u"Categoria", None))
         self.label_prezzo.setText(QCoreApplication.translate("Dialog", u"Prezzo", None))

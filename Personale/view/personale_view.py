@@ -36,6 +36,7 @@ class personale_view(QDialog):
         if self.credenziali_utente_selected[3] == "Amministr.": self.gui_modifica.checkBox_amministratore.setChecked(True)
         self.gui_modifica.btn_confirm_new_personale.clicked.connect(self.modify_user)
         self.gui_modifica.btn_elimina_personale.clicked.connect(self.delete_user)
+        self.gui_modifica.btn_close_new_personale.clicked.connect(self.close)
         self.show()
 
     def add_personale_to_list(self):
