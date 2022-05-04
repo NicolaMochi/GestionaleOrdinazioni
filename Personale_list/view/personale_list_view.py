@@ -10,14 +10,14 @@ class personale_list_view:
         self.home = home
         self.lista_personale = personale_controller
         self.nuovo_item = None
-        self.add_personale_view = personale_view(home, personale_controller)
+        self.personale_view = personale_view(home, personale_controller)
         self.uifunctions = uifunctions
 
 
     def view(self):
         self.home.Pages_widget.setCurrentWidget(self.home.PersonalePage)
         self.uifunctions.inizialize_ui_table(self.home.table_personale, 6, self.lista_personale.lista.lista_personale, True)
-        self.home.table_personale.cellClicked.connect(self.add_personale_view.display_edit_item)
-        self.home.add_nuovo_personale.clicked.connect(self.add_personale_view.display_new_personale)
+        self.home.table_personale.cellClicked.connect(self.personale_view.display_edit_item)
+        self.home.add_nuovo_personale.clicked.connect(self.personale_view.display_new_personale)
 
 

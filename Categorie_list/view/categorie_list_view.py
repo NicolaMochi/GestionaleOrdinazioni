@@ -46,6 +46,7 @@ class categorie_list_view:
 #     #         column += 1
 
 
+
     def show_categorie_in_table(self):
             clicked = self.home.table_categorie.currentItem()
             if clicked.text() == "Vedi Tutti":

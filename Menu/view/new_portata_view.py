@@ -86,5 +86,8 @@ class new_portata_view(QDialog):
         nuova_portata = portataController(portata(id_piatto, nome_portata, categoria, prezzo, lista_nuovi_ingredienti))
         id_piatto += 1
         self.menu_controller.add_portata(nuova_portata)
+        print("Le portate adesso sono: \n")
+        for x in self.menu_controller.get_menu():
+            print(x.__str__()+'\n')
         #self.menu.SALVAMENU
         self.vista_menu.add_to_menu_widget_list(nuova_portata)

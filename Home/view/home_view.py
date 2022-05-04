@@ -7,6 +7,7 @@ from PySide2.QtCore import QSize, QTimer, QDateTime
 
 from Categorie_list.controller.categorie_list_controller import categorie_list_controller
 #from Categorie_list.view.categorie_list_view import categorie_list_view
+from Categorie_list.view.categorie_list_view import categorie_list_view
 from Ingredienti_list.controller.ingredienti_list_controller import ingredienti_list_controller
 from Menu.controller.menu_controller import menu_controller
 from Menu.view.menu_view import menu_view
@@ -57,6 +58,7 @@ class home_view(QMainWindow):
         self.partenza()
 
     def partenza(self):
+        self.timer.stop()
         self.vista_login.login.setupUi(self)
         self.vista_login.login.btn_enter.clicked.connect(self.controllo_login)
         self.setMinimumSize(QSize(353, 326))
@@ -76,6 +78,9 @@ class home_view(QMainWindow):
     def send_order(self):
         self.vista_nuovo_ordine.invia_ordine()
         #self.utility.posti_rimanenti()
+
+    # def display_stats(self):
+    #     self.
 
     def prova(self):
         self.start_date_time()

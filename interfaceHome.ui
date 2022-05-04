@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1208</width>
-    <height>572</height>
+    <width>1149</width>
+    <height>577</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -236,8 +236,14 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QLabel" name="label_date_time">
+                     <property name="styleSheet">
+                      <string notr="true">font: 400 10pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
+letter-spacing:0.2px ;
+margin-left: 20px;</string>
+                     </property>
                      <property name="text">
-                      <string>Date and Time</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -246,8 +252,14 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QLabel" name="label_posti">
+                     <property name="styleSheet">
+                      <string notr="true">font: 400 10pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
+letter-spacing:0.2px ;
+margin-left: 20px;</string>
+                     </property>
                      <property name="text">
-                      <string>25/50</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -300,27 +312,6 @@ QPushButton:hover {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <item>
-                    <widget class="QPushButton" name="btn_add_tavolo">
-                     <property name="cursor">
-                      <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{ border: none;
-background-color: #ff8c00;
-font: 500 9pt &quot;Poppins&quot;;
-color: white;
-padding: 5px;
-letter-spacing:0.2px ;
-/*border: 2px solid rgb(255, 170, 0);*/
-border-radius: 5px;
-margin-right: 5px;}</string>
-                     </property>
-                     <property name="text">
-                      <string>iconaAggiungi Tavolo</string>
-                     </property>
-                    </widget>
-                   </item>
                    <item>
                     <widget class="QPushButton" name="btn_logout">
                      <property name="cursor">
@@ -589,10 +580,7 @@ QPushButton:hover {
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_11">
-                    <property name="spacing">
-                     <number>10</number>
-                    </property>
+                   <layout class="QGridLayout" name="gridLayout_8">
                     <property name="leftMargin">
                      <number>0</number>
                     </property>
@@ -605,13 +593,16 @@ QPushButton:hover {
                     <property name="bottomMargin">
                      <number>10</number>
                     </property>
-                    <item alignment="Qt::AlignLeft">
+                    <item row="0" column="0">
                      <widget class="QPushButton" name="btn_delete_tavolo">
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
                         <height>16777215</height>
                        </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton{ border: none;
@@ -633,13 +624,44 @@ QPushButton:hover{ font: 500 10pt &quot;Poppins&quot;;
                       </property>
                      </widget>
                     </item>
-                    <item>
+                    <item row="0" column="1">
+                     <widget class="QPushButton" name="btn_add_tavolo">
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{ border: none;
+background-color: transparent;
+font: 500 10pt &quot;Poppins&quot;;
+color: rgb(43, 43, 43);
+letter-spacing:0.2px ;
+margin-left: 20px;}
+QPushButton:focus:pressed{
+	font: 500 10pt &quot;Poppins&quot;;
+	border-bottom: 2px solid rgb(255, 170, 0);
+	color:rgb(255, 170, 0);
+}
+QPushButton:hover{ font: 500 10pt &quot;Poppins&quot;;
+	border-bottom: 2px solid rgb(255, 170, 0);}</string>
+                      </property>
+                      <property name="text">
+                       <string>Aggiungi nuovo Tavolo</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0" colspan="2">
                      <widget class="QTableWidget" name="tableWidget_tavoli">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>600</width>
+                        <height>0</height>
+                       </size>
                       </property>
                       <property name="baseSize">
                        <size>
@@ -651,7 +673,7 @@ QPushButton:hover{ font: 500 10pt &quot;Poppins&quot;;
                        <string notr="true">QTableView {
 	margin-left: 10px;
 }
-QScrollBar:vertical {
+QScrollBar:horizontal {
 width: 7px;
 		background-color: white;
 		margin: 0px 0px 0px 0px;
@@ -694,10 +716,10 @@ QTableView::item:hover {background-color: rgb(255, 170, 0); color: white;}</stri
                        <enum>Qt::NoPen</enum>
                       </property>
                       <property name="rowCount">
-                       <number>0</number>
+                       <number>10</number>
                       </property>
                       <property name="columnCount">
-                       <number>0</number>
+                       <number>9</number>
                       </property>
                       <attribute name="horizontalHeaderVisible">
                        <bool>false</bool>
@@ -723,6 +745,101 @@ QTableView::item:hover {background-color: rgb(255, 170, 0); color: white;}</stri
                       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                        <bool>false</bool>
                       </attribute>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>New Row</string>
+                       </property>
+                      </row>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>New Column</string>
+                       </property>
+                      </column>
                      </widget>
                     </item>
                    </layout>
@@ -856,6 +973,13 @@ QPushButton:hover{
                          </property>
                         </widget>
                        </item>
+                       <item row="1" column="1" colspan="2">
+                        <widget class="QLabel" name="label_ordine_tavolo">
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                     </item>
@@ -907,7 +1031,7 @@ QScrollBar::handle {
                             <x>0</x>
                             <y>0</y>
                             <width>380</width>
-                            <height>411</height>
+                            <height>388</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -927,35 +1051,14 @@ QScrollBar::handle {
                             <number>0</number>
                            </property>
                            <item>
-                            <widget class="QLabel" name="label_ordine_tavolo">
-                             <property name="sizePolicy">
-                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                               <horstretch>0</horstretch>
-                               <verstretch>0</verstretch>
-                              </sizepolicy>
+                            <widget class="QFrame" name="frame_ordini_tavolo">
+                             <property name="frameShape">
+                              <enum>QFrame::StyledPanel</enum>
                              </property>
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>0</height>
-                              </size>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
                              </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">font: 500 12pt &quot;Dubai&quot;;
-padding: 10px;</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="alignment">
-                              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                             </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_18"/>
                             </widget>
                            </item>
                            <item>
@@ -2786,8 +2889,8 @@ QScrollBar::handle {
                               <rect>
                                <x>0</x>
                                <y>0</y>
-                               <width>300</width>
-                               <height>408</height>
+                               <width>293</width>
+                               <height>16</height>
                               </rect>
                              </property>
                              <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -2890,6 +2993,12 @@ margin-top: 10px;
                   </widget>
                  </item>
                 </layout>
+               </widget>
+               <widget class="QWidget" name="Asportopage">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11"/>
                </widget>
               </widget>
              </item>

@@ -2,6 +2,7 @@ from PySide2.QtCore import Qt
 from PySide2.QtGui import QFont
 from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView
 
+from Categorie_list.view.categorie_list_view import categorie_list_view
 from Menu.view.edit_portata_view import edit_portata_view
 from Utilities.UIFunctions import UIFunctions
 
@@ -17,6 +18,7 @@ class menu_view:
         self.edit_portata_view = edit_portata_view(self.categorie_controller, self.home, self.menu)
         #self.categoria_view = categorie_list_view(self.lista_categorie, self.home, self.menu)
 
+        self.categorie_view = categorie_list_view(self.home, self, self.categorie_controller, self.menu)
         self.row = 0
         self.column = 0
 
@@ -25,12 +27,21 @@ class menu_view:
             self.home.list_piatti.addItem(str(i.__str__()))
 
     def delete_portata(self):
-        self.menu.delete_portata(self.portata_selected)
         portata_deleted = self.home.list_piatti.takeItem(self.portata_selected.get_portata_id())
         self.home.label_ingredienti_portata.clear()
         self.home.label_id_portata.clear()
         self.home.label_prezzo_portata.clear()
         self.home.label_categoria_portata.clear()
+        if(self.menu.check_categorie_after_delete(self.portata_selected.get_categoria(), self.menu.get_menu()))==1:
+            self.categorie_controller.delete_categoria(self.categorie_controller.get_categoria_from_text(self.portata_selected.get_categoria()))
+            self.uifunctions.fill_categorie_to_order(self.home, self.categorie_controller.get_lista())
+        self.menu.delete_portata(self.portata_selected)
+        print("Dopo aver eliminato le portate sono: \n")
+        for x in self.menu.get_menu():
+            print(x.__str__()+'\n')
+        #self.update_menu_widget_list()
+        #self.fill_menu_to_order()
+
 
     def show_portata(self):
         self.portata_id = self.home.list_piatti.currentItem().text()
@@ -49,20 +60,20 @@ class menu_view:
 
     ## Questa funzione riempie la tabella delle portate con i dati
     # def fill_menu_to_order(self):
-    #     self.row = 0
-    #     self.column = 0
-    #     for x in range(len(self.menu.get_menu())):
-    #         font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
-    #         nome_portata = self.menu.get_menu()[x].get_nome_portata()
-    #         nuovo_item = QTableWidgetItem()
-    #         nuovo_item.setText(nome_portata)
-    #         nuovo_item.setTextAlignment(Qt.AlignHCenter)
-    #         nuovo_item.setFont(font_nuovo_item)
-    #         self.home.tableWidget.setItem(self.row, self.column, nuovo_item)
-    #         self.column += 1
-    #         if self.column % 5 == 0:
-    #             self.row += 1
-    #             self.column = 0
+    #      self.row = 0
+    #      self.column = 0
+    #      for x in range(len(self.menu.get_menu())):
+    #          font_nuovo_item = QFont("Dubai", 14, QFont.Medium)
+    #          nome_portata = self.menu.get_menu()[x].__str__()
+    #          nuovo_item = QTableWidgetItem()
+    #          nuovo_item.setText(nome_portata)
+    #          nuovo_item.setTextAlignment(Qt.AlignHCenter)
+    #          nuovo_item.setFont(font_nuovo_item)
+    #          self.home.tableWidget.setItem(self.row, self.column, nuovo_item)
+    #          self.column += 1
+    #          if self.column % 5 == 0:
+    #              self.row += 1
+    #              self.column = 0
 
     ## Questa funzione setta le impostazioni grafiche della tabella e
     ## fa partire la funzione di inserimento dei dati

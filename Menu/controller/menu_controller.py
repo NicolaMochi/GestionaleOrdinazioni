@@ -16,7 +16,9 @@ class menu_controller:
 
     def delete_portata(self, portata):
         if portata in self.lista_portate.menu:
+            print("entrato")
             self.lista_portate.menu.remove(portata)
+        else: print("non entrato")
 
     def get_menu(self):
         return self.lista_portate.menu
@@ -34,6 +36,14 @@ class menu_controller:
            if x.__str__() == nome:
                 portata = x
         return portata
+
+    #dimmi quante portate di questa categoria ci sono ancora
+    def check_categorie_after_delete(self, nome_categoria, menu):
+        count = 0
+        for x in menu:
+           if x.get_categoria() == nome_categoria: count+=1
+        print("il count è" + str(count))
+        return count
 
 
 
