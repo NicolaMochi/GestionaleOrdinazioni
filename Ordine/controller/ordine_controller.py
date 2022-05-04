@@ -20,3 +20,6 @@ class ordine_controller:
 
     def get_tipo_ordine(self):
         return self.ordine.tipo
+
+    def set_stato(self, stato):
+        self.ordine.stato = stato

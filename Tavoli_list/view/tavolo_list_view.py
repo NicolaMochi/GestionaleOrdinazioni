@@ -16,6 +16,8 @@ class tavolo_list_view:
         self.flag = False
         self.vista_ordine = vista_ordine
 
+        self.buttons_order_list = {}
+
     def add_tavolo_to_widget(self, tavolo_to_add):
         self.uifunctions.add_to_table(self.home.tableWidget_tavoli, tavolo_to_add, self.flag, 4, len(self.lista_tavoli_controller.get_lista()))
         # if self.flag == True: self.home.tableWidget_tavoli.setRowCount(self.home.tableWidget_tavoli.rowCount()+1)
@@ -62,7 +64,12 @@ class tavolo_list_view:
         print(self.tavolo_selected.get_codice_tavolo())
 
     def show_tavolo(self):
+        # delete all widget in layout
+        for i in reversed(range(self.home.verticalLayout_18.count())):
+            self.home.verticalLayout_18.itemAt(i).widget().setParent(None)
         item_clicked = self.home.tableWidget_tavoli.currentItem()
+
+
         try:
             self.tavolo_selected = self.lista_tavoli_controller.get_tavolo_by_index(int(item_clicked.text().split()[1]) - 1)
             self.home.btn_add_ordine.clicked.connect(self.go_to_order)
@@ -84,13 +91,10 @@ class tavolo_list_view:
             self.home.label_ordine_tavolo.setText("Non ci sono ordini per questo tavolo")
             return
 
-        #QUESTO NON FUNZIONAAAAA
-        print(str(len(self.home.verticalLayout_18.children())))
-        for i in range(len(self.home.verticalLayout_18.children())):
-            self.home.verticalLayout_18.children()[i].deleteLater()
 
         if len(self.tavolo_selected.get_lista_ordini_tavolo()) != 0:
             for ordine in self.tavolo_selected.get_lista_ordini_tavolo():
+                nome_button = ""
                 frame_ordine = QFrame(self.home.frame_ordini_tavolo)
                 frame_ordine.setObjectName(u"frame_ordine")
                 frame_ordine.setMaximumSize(QSize(16777213, 16777215))
@@ -107,7 +111,6 @@ class tavolo_list_view:
                 ordine_tavolo += 1
                 verticalLayout_23.addWidget(label_text_ordine)
 
-
                 btn_ordine_evaso = QPushButton(frame_ordine)
                 btn_ordine_evaso.setObjectName(u"btn_ordine_evaso")
                 btn_ordine_evaso.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;"
@@ -118,17 +121,34 @@ class tavolo_list_view:
                     "color: rgb(43, 43, 43);"
                     "letter-spacing:0.2px ;"
                     "margin-left: 10px;}")
-                btn_ordine_evaso.setText("Ordine Consegnato")
+
+                btn_ordine_evaso.setText("Consegna Ordine " + str(ordine.get_codice_ordine()))
+                self.buttons_order_list[ordine]=nome_button
+
                 verticalLayout_23.addWidget(btn_ordine_evaso)
-
-
                 self.home.verticalLayout_18.addWidget(frame_ordine)
-                print("dopo: " + str(len(self.home.verticalLayout_18.children())))
-
-            #AGGIUNGI UN BOTTONE EVASO
-            #AL CLICK PASSO L'ORDINE AD UNA FUN CHE LO ELIMINA
+                btn_ordine_evaso.clicked.connect(lambda: self.manage_order(btn_ordine_evaso))
+                #btn_ordine_evaso.clicked.connect(ordine.get_descrizione_ordine)
+                #btn_ordine_evaso.clicked.connect(self.manage_ordine(ordine))
 
         self.home.btn_stampa_scontrino.setText("Totale:  " + str(self.lista_tavoli_controller.total_price_from_id(int(item_clicked.text().split()[1]) - 1)) + '€')
+
+    # AGGIUNGI UN BOTTONE EVASO
+    # AL CLICK PASSO L'ORDINE AD UNA FUN CHE LO ELIMINA
+    def manage_order(self, button):
+        if button.text() != "Consegnato":
+            self.change_order_state(button.text())
+            button.setText("Consegnato")
+
+    def change_order_state(self, btn_text):
+        ordine_text = btn_text.split()[2]
+        for ordine in self.tavolo_selected.get_lista_ordini_tavolo():
+            if ordine.get_codice_ordine == ordine_text:
+                # NON ENTRA MAI STO STRONZO
+                print("entrato")
+        print("pipo")
+
+
 
     def scontrino_tavolo(self):
         self.delete_ordine()

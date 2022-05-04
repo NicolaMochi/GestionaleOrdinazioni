@@ -102,7 +102,7 @@ class nuovo_ordine_view:
         descrizione = self.testo_ordine_from_labels()
         self.lista_label_ordine.clear()
         prezzo = self.prezzo_ordine
-        stato = "Inviato"
+        stato = "Consegna"
         tipo = "Locale"
         data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
         #tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
