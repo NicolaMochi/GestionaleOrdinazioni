@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomePlQVpg.ui'
+## Form generated from reading UI file 'interfaceHomezAsixX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -12,13 +12,12 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-
 class ui_home(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1149, 577)
+        MainWindow.resize(1273, 572)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -510,7 +509,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 388))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 383))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -520,7 +519,43 @@ class ui_home(object):
         self.frame_ordini_tavolo.setFrameShape(QFrame.StyledPanel)
         self.frame_ordini_tavolo.setFrameShadow(QFrame.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_ordini_tavolo)
+        self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.lista_ordini_tavolo = QListWidget(self.frame_ordini_tavolo)
+        self.lista_ordini_tavolo.setObjectName(u"lista_ordini_tavolo")
+        self.lista_ordini_tavolo.setMaximumSize(QSize(16777215, 16777215))
+        self.lista_ordini_tavolo.setStyleSheet(u"\n"
+" QListWidget::item {\n"
+"	color: black;\n"
+"	border-radius: 10px;\n"
+"	border-bottom: 1px solid rgb(120, 120, 120);\n"
+"	border: 1px solid black;\n"
+"	font: 400 11pt \"Poppins\", sans-serif;\n"
+"	padding: 10px;\n"
+"	max-width: 100px;\n"
+"}\n"
+"QListWidget::item:hover {box-shadow: 2px 0px 1px 1px grey;}\n"
+"QListWidget {\n"
+"	font: 400 11pt \"Poppins\";\n"
+"	margin-top: 10px;\n"
+"}\n"
+"\n"
+"  QScrollBar:vertical {\n"
+"        min-width: 8px;\n"
+"        height: 7px;\n"
+"		background-color: white;\n"
+"		margin: 0px 0px 0px 0px;\n"
+"		border-radius: 3px;\n"
+"    }\n"
+"QScrollBar::handle {\n"
+"        background: rgb(125, 125, 125);\n"
+"        border-radius: 3px;\n"
+"    }")
+        self.lista_ordini_tavolo.setFrameShape(QFrame.NoFrame)
+
+        self.verticalLayout_18.addWidget(self.lista_ordini_tavolo)
+
 
         self.verticalLayout_14.addWidget(self.frame_ordini_tavolo)
 
@@ -1062,129 +1097,6 @@ class ui_home(object):
         self.verticalLayout_8.addWidget(self.main_frame_personal_page)
 
         self.Pages_widget.addWidget(self.PersonalePage)
-        self.StatistichePage = QWidget()
-        self.StatistichePage.setObjectName(u"StatistichePage")
-        self.verticalLayout_3 = QVBoxLayout(self.StatistichePage)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(10, 10, 10, 0)
-        self.frame_top_statistiche = QFrame(self.StatistichePage)
-        self.frame_top_statistiche.setObjectName(u"frame_top_statistiche")
-        self.frame_top_statistiche.setMinimumSize(QSize(0, 60))
-        self.frame_top_statistiche.setStyleSheet(u"background-color: #fff;\n"
-"border-radius: 15px;")
-        self.frame_top_statistiche.setFrameShape(QFrame.NoFrame)
-        self.frame_top_statistiche.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_5 = QHBoxLayout(self.frame_top_statistiche)
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(10, 10, 0, 0)
-        self.label_title_statistiche = QLabel(self.frame_top_statistiche)
-        self.label_title_statistiche.setObjectName(u"label_title_statistiche")
-        self.label_title_statistiche.setStyleSheet(u"font: 700 25pt \"Poppins\";\n"
-"color: #00BC22;\n"
-"letter-spacing: 1px;\n"
-"")
-
-        self.horizontalLayout_5.addWidget(self.label_title_statistiche)
-
-
-        self.verticalLayout_3.addWidget(self.frame_top_statistiche)
-
-        self.frame_2 = QFrame(self.StatistichePage)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setMinimumSize(QSize(0, 450))
-        self.frame_2.setStyleSheet(u"border-radius: 10px;")
-        self.frame_2.setFrameShape(QFrame.NoFrame)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_12 = QHBoxLayout(self.frame_2)
-        self.horizontalLayout_12.setSpacing(10)
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(0, 10, 0, 0)
-        self.frame_stat_portate = QFrame(self.frame_2)
-        self.frame_stat_portate.setObjectName(u"frame_stat_portate")
-        self.frame_stat_portate.setStyleSheet(u"background-color: #fff;\n"
-"")
-        self.frame_stat_portate.setFrameShape(QFrame.NoFrame)
-        self.frame_stat_portate.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.frame_stat_portate)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 10, 10, 10)
-        self.frame_stat_portate_titolo = QFrame(self.frame_stat_portate)
-        self.frame_stat_portate_titolo.setObjectName(u"frame_stat_portate_titolo")
-        self.frame_stat_portate_titolo.setMaximumSize(QSize(16777215, 30))
-        self.frame_stat_portate_titolo.setStyleSheet(u"")
-        self.frame_stat_portate_titolo.setFrameShape(QFrame.NoFrame)
-        self.frame_stat_portate_titolo.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_17 = QHBoxLayout(self.frame_stat_portate_titolo)
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalLayout_17.setContentsMargins(10, 0, 0, 0)
-        self.label_2 = QLabel(self.frame_stat_portate_titolo)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"font: 10pt \"Poppins\";\n"
-"color: rgb(120, 120, 120)")
-        self.label_2.setLineWidth(0)
-
-        self.horizontalLayout_17.addWidget(self.label_2)
-
-
-        self.verticalLayout_4.addWidget(self.frame_stat_portate_titolo)
-
-        self.frame_5 = QFrame(self.frame_stat_portate)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_4.addWidget(self.frame_5)
-
-
-        self.horizontalLayout_12.addWidget(self.frame_stat_portate)
-
-        self.frame_3 = QFrame(self.frame_2)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setStyleSheet(u"background-color: #fff;")
-        self.frame_3.setFrameShape(QFrame.NoFrame)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.frame_3)
-        self.verticalLayout_9.setSpacing(0)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(10, 10, 10, 0)
-        self.frame = QFrame(self.frame_3)
-        self.frame.setObjectName(u"frame")
-        self.frame.setMaximumSize(QSize(16777215, 30))
-        self.frame.setFrameShape(QFrame.NoFrame)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.frame)
-        self.verticalLayout_10.setSpacing(0)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.label_3 = QLabel(self.frame)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"font: 10pt \"Poppins\";\n"
-"color: rgb(120, 120, 120)")
-        self.label_3.setLineWidth(0)
-
-        self.verticalLayout_10.addWidget(self.label_3)
-
-
-        self.verticalLayout_9.addWidget(self.frame)
-
-        self.frame_4 = QFrame(self.frame_3)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_9.addWidget(self.frame_4)
-
-
-        self.horizontalLayout_12.addWidget(self.frame_3)
-
-
-        self.verticalLayout_3.addWidget(self.frame_2)
-
-        self.Pages_widget.addWidget(self.StatistichePage)
         self.OrdiniPage = QWidget()
         self.OrdiniPage.setObjectName(u"OrdiniPage")
         self.horizontalLayout_6 = QHBoxLayout(self.OrdiniPage)
@@ -1388,7 +1300,7 @@ class ui_home(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 293, 16))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 408))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1444,12 +1356,6 @@ class ui_home(object):
         self.horizontalLayout_6.addWidget(self.frame_aggiungi_ordine)
 
         self.Pages_widget.addWidget(self.OrdiniPage)
-        self.Asportopage = QWidget()
-        self.Asportopage.setObjectName(u"Asportopage")
-        self.Asportopage.setStyleSheet(u"")
-        self.verticalLayout_11 = QVBoxLayout(self.Asportopage)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.Pages_widget.addWidget(self.Asportopage)
 
         self.horizontalLayout_21.addWidget(self.Pages_widget)
 
@@ -1545,9 +1451,6 @@ class ui_home(object):
         self.label_titolo_personal_page.setText(QCoreApplication.translate("MainWindow", u"Team", None))
         self.add_nuovo_personale.setText(QCoreApplication.translate("MainWindow", u"Aggiungi", None))
         self.label_message_personale.setText(QCoreApplication.translate("MainWindow", u"Clicca un membro del team per modificare o eliminare", None))
-        self.label_title_statistiche.setText(QCoreApplication.translate("MainWindow", u"Statistiche", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Qual \u00e8 la portata pi\u00f9 richiesta per ogni categoria?", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Qual \u00e8 lo scontrino medio del tuo ristorante?", None))
         self.label_tavolo.setText("")
         ___qtablewidgetitem20 = self.table_categorie.verticalHeaderItem(0)
         ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"New Row", None));

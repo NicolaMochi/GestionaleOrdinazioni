@@ -12,9 +12,9 @@ class ordini_list_model:
             self.lista_ordini = []
 
     # esporta lista su file pickle
-    def salva_ordini_list(self):
-        with open('Ordini_list/data/data_lista_ordini.pickle', 'wb') as handle:
-            pickle.dump(self.lista_ordini, handle, pickle.HIGHEST_PROTOCOL)
+    # def salva_ordini_list(self):
+    #     with open('Ordini_list/data/data_lista_ordini.pickle', 'wb') as handle:
+    #         pickle.dump(self.lista_ordini, handle, pickle.HIGHEST_PROTOCOL)
 
     def add_ordine(self, tavolo):
         self.lista_ordini.append(tavolo)

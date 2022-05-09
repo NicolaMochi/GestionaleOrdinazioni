@@ -100,23 +100,35 @@ class nuovo_ordine_view:
         for i in reversed(range(self.home.verticalLayout_22.count())):
             self.home.verticalLayout_22.itemAt(i).widget().deleteLater()
         descrizione = self.testo_ordine_from_labels()
-        self.lista_label_ordine.clear()
-        prezzo = self.prezzo_ordine
-        stato = "Consegna"
-        tipo = "Locale"
-        data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
-        #tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
-        nuovo_ordine = ordine_controller(ordine(self.codice_ordine, stato, prezzo, descrizione, data_ora, tipo))
-        self.lista_tavoli.add_ordine_from_id(self.codice_tavolo_selected, nuovo_ordine)
-        self.codice_ordine += 1
-        self.prezzo_ordine = 0
-        #TypeError: 'int' object is not callable
-        #crea oggetto utility
-        self.utility.set_codice_tavolo_selected(self.codice_tavolo_selected)
-        self.utility.update_posti()
-        print(descrizione)
-        print(prezzo)
-        print(data_ora)
+        if descrizione!='':
+            self.lista_label_ordine.clear()
+            prezzo = self.prezzo_ordine
+            stato = "Consegna"
+            tipo = "Locale"
+            data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
+            #tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
+            nuovo_ordine = ordine_controller(ordine(len(self.tavolo_selected.get_lista_ordini_tavolo()), stato, prezzo, descrizione, data_ora, tipo))
+            self.lista_tavoli.add_ordine_from_id(self.tavolo_selected.get_codice_tavolo(), nuovo_ordine)
+            #self.codice_ordine += 1
+            self.prezzo_ordine = 0
+            #TypeError: 'int' object is not callable
+            #crea oggetto utility
+            self.utility.set_codice_tavolo_selected(self.tavolo_selected.get_codice_tavolo())
+            self.utility.update_posti()
+
+    # def deliver_ordine_button(self):
+    #     btn_ordine_evaso = QPushButton()
+    #     btn_ordine_evaso.setObjectName(u"btn_ordine_evaso")
+    #     btn_ordine_evaso.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;"
+    #                                    "border-radius: 0px;"
+    #                                    "padding: 0px;"
+    #                                    "background-color: transparent;"
+    #                                    "font: 500 11pt 'Poppins';"
+    #                                    "color: rgb(43, 43, 43);"
+    #                                    "letter-spacing:0.2px ;"
+    #                                    "margin-left: 10px;}")
+    #
+    #     btn_ordine_evaso.setText("Consegna Ordine " + str(ordine.get_codice_ordine()))
 
 ## Si può mettere nella UIFunctions
     # def show_categorie_in_table(self):
@@ -148,8 +160,10 @@ class nuovo_ordine_view:
 
 
     def view(self, codice_tavolo):
-        self.codice_tavolo_selected = codice_tavolo
-        self.home.label_tavolo.setText("Aggiungi ordini al Tavolo " + str(self.codice_tavolo_selected+1))
+        self.tavolo_selected = self.lista_tavoli.get_tavolo_by_index(codice_tavolo)
+        # tavolo = self.lista_tavoli.get_tavolo_by_index(self.codice_tavolo_selected)
+        # self.codice_ordine = len(tavolo.get_lista_ordini_tavolo())-1
+        self.home.label_tavolo.setText("Aggiungi ordini al Tavolo " + str(codice_tavolo+1))
         self.home.Pages_widget.setCurrentWidget(self.home.OrdiniPage)
         self.menu_view = menu_view(self.home, self.menu, self.lista_categorie)
         self.menu_view.fill_table_to_order()
