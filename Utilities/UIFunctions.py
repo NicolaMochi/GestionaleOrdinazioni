@@ -44,7 +44,7 @@ class UIFunctions():
         for x in lista_da_usare:
             print("var x" + str(x))
             nuovo_item = QTableWidgetItem()
-            nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
+            nuovo_item.setFont(QFont("Poppins", 12, QFont.Medium))
             nuovo_item.setTextAlignment(Qt.AlignHCenter)
             nuovo_item.setText(x.__str__())
             nome_tabella.setItem(self.row, self.column, nuovo_item)
@@ -69,7 +69,7 @@ class UIFunctions():
             colonna = int(length_lista % numero_colonne)-1 ## Il conteggio delle colonne parte da zero
         nuovo_item = QTableWidgetItem()
         nuovo_item.setText(oggetto_da_aggiungere.__str__())
-        nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
+        nuovo_item.setFont(QFont("Poppins", 12, QFont.Medium))
         nuovo_item.setTextAlignment(Qt.AlignHCenter)
         tabella_da_usare.setItem(riga, colonna, nuovo_item)
 

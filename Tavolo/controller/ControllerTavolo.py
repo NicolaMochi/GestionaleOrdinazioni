@@ -7,7 +7,7 @@ class ControllerTavolo:
     # def get_nome(self):
     #     return self.tavolo.codice_tavolo
     def __str__(self):
-        return 'Tavolo' + ' ' + str(self.tavolo.codice_tavolo + 1)
+        return '\n Tavolo' + ' ' + str(self.tavolo.codice_tavolo + 1) + '\n' + str(self.get_posti_tavolo()) + 'posti \n'
 
     def get_codice_tavolo(self):
         return self.tavolo.codice_tavolo

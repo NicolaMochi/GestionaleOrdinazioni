@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomezAsixX.ui'
+## Form generated from reading UI file 'interfaceHomeamrDiT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -17,13 +17,13 @@ class ui_home(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1273, 572)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        MainWindow.resize(1136, 607)
+        sizePolicy = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QSize(0, 0))
+        MainWindow.setMinimumSize(QSize(1133, 600))
         MainWindow.setMaximumSize(QSize(16777215, 16777215))
         MainWindow.setStyleSheet(u"background-color: #F8F8F8;\n"
 "color: black;\n"
@@ -70,36 +70,47 @@ class ui_home(object):
         self.top.setObjectName(u"top")
         self.top.setEnabled(True)
         self.top.setStyleSheet(u"")
-        self.top.setFrameShape(QFrame.StyledPanel)
+        self.top.setFrameShape(QFrame.NoFrame)
         self.top.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.top)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.blank_top = QFrame(self.top)
         self.blank_top.setObjectName(u"blank_top")
-        self.blank_top.setMinimumSize(QSize(400, 0))
+        self.blank_top.setMinimumSize(QSize(0, 0))
         self.blank_top.setFrameShape(QFrame.NoFrame)
         self.blank_top.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_16 = QHBoxLayout(self.blank_top)
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.btn_toggle = QPushButton(self.blank_top)
+        self.btn_toggle = QToolButton(self.blank_top)
         self.btn_toggle.setObjectName(u"btn_toggle")
-        sizePolicy.setHeightForWidth(self.btn_toggle.sizePolicy().hasHeightForWidth())
-        self.btn_toggle.setSizePolicy(sizePolicy)
-        self.btn_toggle.setMinimumSize(QSize(0, 40))
-        self.btn_toggle.setMaximumSize(QSize(60, 50))
-        self.btn_toggle.setStyleSheet(u"QPushButton {\n"
-"	color: black;\n"
-"	background-color: transparent\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(123, 114, 255);\n"
-"}")
+        self.btn_toggle.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_toggle.setStyleSheet(u"background-color: transparent;")
+        icon = QIcon()
+        icon.addFile(u"images/icon_toggle.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_toggle.setIcon(icon)
+        self.btn_toggle.setIconSize(QSize(25, 20))
 
-        self.horizontalLayout_16.addWidget(self.btn_toggle)
+        self.horizontalLayout_16.addWidget(self.btn_toggle, 0, Qt.AlignLeft)
 
-        self.label_date_time = QLabel(self.blank_top)
+
+        self.horizontalLayout_3.addWidget(self.blank_top, 0, Qt.AlignLeft)
+
+        self.frame = QFrame(self.top)
+        self.frame.setObjectName(u"frame")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy1)
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_5 = QHBoxLayout(self.frame)
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.label_date_time = QLabel(self.frame)
         self.label_date_time.setObjectName(u"label_date_time")
         self.label_date_time.setStyleSheet(u"font: 400 10pt \"Poppins\";\n"
 "color: rgb(43, 43, 43);\n"
@@ -107,19 +118,9 @@ class ui_home(object):
 "margin-left: 20px;")
         self.label_date_time.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_16.addWidget(self.label_date_time)
+        self.horizontalLayout_5.addWidget(self.label_date_time)
 
-        self.label_posti = QLabel(self.blank_top)
-        self.label_posti.setObjectName(u"label_posti")
-        self.label_posti.setStyleSheet(u"font: 400 10pt \"Poppins\";\n"
-"color: rgb(43, 43, 43);\n"
-"letter-spacing:0.2px ;\n"
-"margin-left: 20px;")
-        self.label_posti.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_16.addWidget(self.label_posti)
-
-        self.btn_home_top = QPushButton(self.blank_top)
+        self.btn_home_top = QPushButton(self.frame)
         self.btn_home_top.setObjectName(u"btn_home_top")
         self.btn_home_top.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home_top.setStyleSheet(u"QPushButton {font: 700 16pt \"Poppins\";\n"
@@ -130,10 +131,20 @@ class ui_home(object):
 "}\n"
 "")
 
-        self.horizontalLayout_16.addWidget(self.btn_home_top)
+        self.horizontalLayout_5.addWidget(self.btn_home_top)
+
+        self.label_posti = QLabel(self.frame)
+        self.label_posti.setObjectName(u"label_posti")
+        self.label_posti.setStyleSheet(u"font: 400 10pt \"Poppins\";\n"
+"color: rgb(43, 43, 43);\n"
+"letter-spacing:0.2px ;\n"
+"margin-left: 20px;")
+        self.label_posti.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_5.addWidget(self.label_posti)
 
 
-        self.horizontalLayout_3.addWidget(self.blank_top)
+        self.horizontalLayout_3.addWidget(self.frame)
 
         self.top_menu = QFrame(self.top)
         self.top_menu.setObjectName(u"top_menu")
@@ -143,23 +154,22 @@ class ui_home(object):
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.btn_logout = QPushButton(self.top_menu)
+        self.btn_logout = QToolButton(self.top_menu)
         self.btn_logout.setObjectName(u"btn_logout")
         self.btn_logout.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_logout.setStyleSheet(u"QPushButton{ border: none;\n"
-"background-color: #ff8c00;\n"
-"font: 500 9pt \"Poppins\";\n"
-"color: white;\n"
-"padding: 5px;\n"
-"letter-spacing:0.2px ;\n"
-"/*border: 2px solid rgb(255, 170, 0);*/\n"
-"border-radius: 5px;\n"
-"margin-right: 5px;}")
+        self.btn_logout.setStyleSheet(u"QPushButton:hover{ \n"
+"	color: rgb(255, 170, 0);\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u"images/icon_logout.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_logout.setIcon(icon1)
+        self.btn_logout.setIconSize(QSize(25, 25))
+        self.btn_logout.setAutoRaise(True)
 
         self.horizontalLayout_4.addWidget(self.btn_logout)
 
 
-        self.horizontalLayout_3.addWidget(self.top_menu)
+        self.horizontalLayout_3.addWidget(self.top_menu, 0, Qt.AlignRight)
 
 
         self.horizontalLayout.addWidget(self.top)
@@ -177,8 +187,11 @@ class ui_home(object):
         self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
         self.frame_left_menu = QFrame(self.frame_all)
         self.frame_left_menu.setObjectName(u"frame_left_menu")
-        sizePolicy.setHeightForWidth(self.frame_left_menu.sizePolicy().hasHeightForWidth())
-        self.frame_left_menu.setSizePolicy(sizePolicy)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.frame_left_menu.sizePolicy().hasHeightForWidth())
+        self.frame_left_menu.setSizePolicy(sizePolicy2)
         self.frame_left_menu.setMinimumSize(QSize(0, 0))
         self.frame_left_menu.setMaximumSize(QSize(0, 16777215))
         self.frame_left_menu.setStyleSheet(u"background-color: white;\n"
@@ -192,9 +205,10 @@ class ui_home(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.btn_home = QPushButton(self.frame_left_menu)
         self.btn_home.setObjectName(u"btn_home")
-        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
+        self.btn_home.setSizePolicy(sizePolicy2)
         self.btn_home.setMinimumSize(QSize(0, 0))
+        self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
 "	background-color: transparent;\n"
@@ -205,14 +219,22 @@ class ui_home(object):
 "	background-color: #ff8c00;\n"
 "}\n"
 "")
+        icon2 = QIcon()
+        icon2.addFile(u"images/icon_table.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_home.setIcon(icon2)
+        self.btn_home.setIconSize(QSize(15, 15))
+        self.btn_home.setCheckable(False)
+        self.btn_home.setAutoRepeatInterval(100)
+        self.btn_home.setFlat(True)
 
         self.verticalLayout_2.addWidget(self.btn_home)
 
         self.btn_menu = QPushButton(self.frame_left_menu)
         self.btn_menu.setObjectName(u"btn_menu")
-        sizePolicy.setHeightForWidth(self.btn_menu.sizePolicy().hasHeightForWidth())
-        self.btn_menu.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.btn_menu.sizePolicy().hasHeightForWidth())
+        self.btn_menu.setSizePolicy(sizePolicy2)
         self.btn_menu.setMinimumSize(QSize(0, 0))
+        self.btn_menu.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_menu.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
 "	background-color: transparent;\n"
@@ -223,14 +245,19 @@ class ui_home(object):
 "	color: white;\n"
 "	background-color: #ff8c00;\n"
 "}")
+        icon3 = QIcon()
+        icon3.addFile(u"images/icon_menu.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_menu.setIcon(icon3)
+        self.btn_menu.setIconSize(QSize(15, 15))
 
         self.verticalLayout_2.addWidget(self.btn_menu)
 
         self.btn_personale = QPushButton(self.frame_left_menu)
         self.btn_personale.setObjectName(u"btn_personale")
-        sizePolicy.setHeightForWidth(self.btn_personale.sizePolicy().hasHeightForWidth())
-        self.btn_personale.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.btn_personale.sizePolicy().hasHeightForWidth())
+        self.btn_personale.setSizePolicy(sizePolicy2)
         self.btn_personale.setMinimumSize(QSize(0, 0))
+        self.btn_personale.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_personale.setStyleSheet(u"QPushButton {\n"
 "	color: black;\n"
 "	background-color: transparent;\n"
@@ -240,25 +267,12 @@ class ui_home(object):
 "	background-color: #1921FA;\n"
 "	color: white;\n"
 "}")
+        icon4 = QIcon()
+        icon4.addFile(u"images/icon_team.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_personale.setIcon(icon4)
+        self.btn_personale.setIconSize(QSize(15, 15))
 
         self.verticalLayout_2.addWidget(self.btn_personale)
-
-        self.btn_statistiche = QPushButton(self.frame_left_menu)
-        self.btn_statistiche.setObjectName(u"btn_statistiche")
-        sizePolicy.setHeightForWidth(self.btn_statistiche.sizePolicy().hasHeightForWidth())
-        self.btn_statistiche.setSizePolicy(sizePolicy)
-        self.btn_statistiche.setMinimumSize(QSize(0, 0))
-        self.btn_statistiche.setStyleSheet(u"QPushButton {\n"
-"	color: black;\n"
-"	background-color: transparent;\n"
-"	font: 400 10pt \"Poppins\";\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: #00BC22;\n"
-"	color: white;\n"
-"}")
-
-        self.verticalLayout_2.addWidget(self.btn_statistiche)
 
 
         self.horizontalLayout_21.addWidget(self.frame_left_menu)
@@ -291,12 +305,10 @@ class ui_home(object):
 "letter-spacing:0.2px ;\n"
 "margin-left: 20px;}\n"
 "QPushButton:focus:pressed{\n"
-"	font: 500 10pt \"Poppins\";\n"
-"	border-bottom: 2px solid rgb(255, 170, 0);\n"
 "	color:rgb(255, 170, 0);\n"
 "}\n"
-"QPushButton:hover{ font: 500 10pt \"Poppins\";\n"
-"	border-bottom: 2px solid rgb(255, 170, 0);}")
+"QPushButton:hover{ \n"
+"	color: rgb(255, 170, 0);}")
 
         self.gridLayout_8.addWidget(self.btn_delete_tavolo, 0, 0, 1, 1)
 
@@ -310,61 +322,17 @@ class ui_home(object):
 "letter-spacing:0.2px ;\n"
 "margin-left: 20px;}\n"
 "QPushButton:focus:pressed{\n"
-"	font: 500 10pt \"Poppins\";\n"
-"	border-bottom: 2px solid rgb(255, 170, 0);\n"
 "	color:rgb(255, 170, 0);\n"
 "}\n"
-"QPushButton:hover{ font: 500 10pt \"Poppins\";\n"
-"	border-bottom: 2px solid rgb(255, 170, 0);}")
+"QPushButton:hover{ \n"
+"	color: rgb(255, 170, 0);}")
 
         self.gridLayout_8.addWidget(self.btn_add_tavolo, 0, 1, 1, 1)
 
         self.tableWidget_tavoli = QTableWidget(self.frame_table_widget_tavoli)
-        if (self.tableWidget_tavoli.columnCount() < 9):
-            self.tableWidget_tavoli.setColumnCount(9)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(6, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(7, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget_tavoli.setHorizontalHeaderItem(8, __qtablewidgetitem8)
-        if (self.tableWidget_tavoli.rowCount() < 10):
-            self.tableWidget_tavoli.setRowCount(10)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(0, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(1, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(2, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(3, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(4, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(5, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(6, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(7, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(8, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.tableWidget_tavoli.setVerticalHeaderItem(9, __qtablewidgetitem18)
         self.tableWidget_tavoli.setObjectName(u"tableWidget_tavoli")
-        sizePolicy.setHeightForWidth(self.tableWidget_tavoli.sizePolicy().hasHeightForWidth())
-        self.tableWidget_tavoli.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.tableWidget_tavoli.sizePolicy().hasHeightForWidth())
+        self.tableWidget_tavoli.setSizePolicy(sizePolicy2)
         self.tableWidget_tavoli.setMinimumSize(QSize(600, 0))
         self.tableWidget_tavoli.setBaseSize(QSize(0, 0))
         self.tableWidget_tavoli.setStyleSheet(u"QTableView {\n"
@@ -376,18 +344,21 @@ class ui_home(object):
 "		margin: 0px 0px 0px 0px;\n"
 "		border-radius: 10px;\n"
 "    }\n"
+"QScrollBar:vertical {\n"
+"width: 7px;\n"
+"		background-color: white;\n"
+"		margin: 0px 0px 0px 0px;\n"
+"		border-radius: 10px;\n"
+"    }\n"
 "QScrollBar::handle {\n"
 "        background: rgb(125, 125, 125);\n"
 "        border-radius: 2px;\n"
 "    }\n"
 "\n"
 "QTableView::item {\n"
-"    /*border:2px solid  rgb(255, 170, 0);*/\n"
 "	border-radius: 10px;\n"
 "	color: black;\n"
-"	/*margin-left: 10px;*/\n"
 "	height: 20px!important;\n"
-"	/*margin-top: 10px;*/\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
@@ -399,8 +370,8 @@ class ui_home(object):
         self.tableWidget_tavoli.setSelectionMode(QAbstractItemView.NoSelection)
         self.tableWidget_tavoli.setShowGrid(True)
         self.tableWidget_tavoli.setGridStyle(Qt.NoPen)
-        self.tableWidget_tavoli.setRowCount(10)
-        self.tableWidget_tavoli.setColumnCount(9)
+        self.tableWidget_tavoli.setRowCount(0)
+        self.tableWidget_tavoli.setColumnCount(0)
         self.tableWidget_tavoli.horizontalHeader().setVisible(False)
         self.tableWidget_tavoli.horizontalHeader().setMinimumSectionSize(52)
         self.tableWidget_tavoli.horizontalHeader().setDefaultSectionSize(160)
@@ -435,52 +406,63 @@ class ui_home(object):
         self.frame_buttons_tavolo.setFrameShadow(QFrame.Raised)
         self.gridLayout_7 = QGridLayout(self.frame_buttons_tavolo)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_7.setHorizontalSpacing(20)
         self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.btn_delete_ordine_tavolo = QPushButton(self.frame_buttons_tavolo)
-        self.btn_delete_ordine_tavolo.setObjectName(u"btn_delete_ordine_tavolo")
-        self.btn_delete_ordine_tavolo.setMaximumSize(QSize(250, 16777215))
-        self.btn_delete_ordine_tavolo.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_delete_ordine_tavolo.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;\n"
-"border-radius: 0px;\n"
-"padding: 0px;\n"
-"background-color: transparent;\n"
-"font: 500 11pt \"Poppins\";\n"
-"color: rgb(43, 43, 43);\n"
-"letter-spacing:0.2px ;\n"
-"margin-left: 10px;}\n"
-"QPushButton:focus:pressed{\n"
-"	border-bottom: 2px solid rgb(255, 170, 0) ;\n"
-"}\n"
-"QPushButton:hover{ \n"
-"	border-bottom: 2px solid rgb(255, 170, 0);\n"
-"}")
+        self.label_ordine_tavolo = QLabel(self.frame_buttons_tavolo)
+        self.label_ordine_tavolo.setObjectName(u"label_ordine_tavolo")
+        self.label_ordine_tavolo.setStyleSheet(u"font: 9pt \"Poppins\";")
 
-        self.gridLayout_7.addWidget(self.btn_delete_ordine_tavolo, 0, 2, 1, 1)
+        self.gridLayout_7.addWidget(self.label_ordine_tavolo, 1, 1, 1, 2)
 
         self.btn_add_ordine = QPushButton(self.frame_buttons_tavolo)
         self.btn_add_ordine.setObjectName(u"btn_add_ordine")
         self.btn_add_ordine.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_add_ordine.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;\n"
+        self.btn_add_ordine.setStyleSheet(u"QPushButton{\n"
 "border-radius: 0px;\n"
 "padding: 0px;\n"
 "background-color: transparent;\n"
-"font: 500 11pt \"Poppins\";\n"
+"font: 400 11pt \"Poppins\";\n"
 "color: rgb(43, 43, 43);\n"
 "letter-spacing:0.2px ;\n"
 "margin-left: 10px;}\n"
 "QPushButton:focus:pressed{\n"
-"	border-bottom: 2px solid rgb(255, 170, 0) ;\n"
+"	color: rgb(255, 170, 0) ;\n"
 "}\n"
 "QPushButton:hover{ \n"
-"	border-bottom: 2px solid rgb(255, 170, 0);\n"
+"	color: rgb(255, 170, 0);\n"
 "}")
+        icon5 = QIcon()
+        icon5.addFile(u"images/icon_add_order.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_add_ordine.setIcon(icon5)
+        self.btn_add_ordine.setIconSize(QSize(35, 35))
+        self.btn_add_ordine.setFlat(False)
 
-        self.gridLayout_7.addWidget(self.btn_add_ordine, 0, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.btn_add_ordine, 0, 1, 1, 1, Qt.AlignHCenter|Qt.AlignVCenter)
 
-        self.label_ordine_tavolo = QLabel(self.frame_buttons_tavolo)
-        self.label_ordine_tavolo.setObjectName(u"label_ordine_tavolo")
+        self.btn_delete_ordine_tavolo = QPushButton(self.frame_buttons_tavolo)
+        self.btn_delete_ordine_tavolo.setObjectName(u"btn_delete_ordine_tavolo")
+        self.btn_delete_ordine_tavolo.setMaximumSize(QSize(250, 16777215))
+        self.btn_delete_ordine_tavolo.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_delete_ordine_tavolo.setStyleSheet(u"QPushButton{\n"
+"border-radius: 0px;\n"
+"padding: 0px;\n"
+"background-color: transparent;\n"
+"font: 500 9pt \"Poppins\";\n"
+"color: rgb(43, 43, 43);\n"
+"letter-spacing:0.2px ;\n"
+"}\n"
+"QPushButton:focus:pressed{\n"
+"	color: rgb(255, 170, 0) ;\n"
+"}\n"
+"QPushButton:hover{ \n"
+"	color: rgb(255, 170, 0);\n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u"images/icon_delete_order.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_delete_ordine_tavolo.setIcon(icon6)
+        self.btn_delete_ordine_tavolo.setIconSize(QSize(25, 25))
 
-        self.gridLayout_7.addWidget(self.label_ordine_tavolo, 1, 1, 1, 2)
+        self.gridLayout_7.addWidget(self.btn_delete_ordine_tavolo, 0, 3, 1, 1)
 
 
         self.verticalLayout_6.addWidget(self.frame_buttons_tavolo)
@@ -509,7 +491,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 383))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 411))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -649,13 +631,12 @@ class ui_home(object):
 " QListWidget::item {\n"
 "	color: black;\n"
 "	border-bottom: 1px solid rgb(120, 120, 120);\n"
-"	font: 400 11pt \"Poppins\";\n"
 "	padding-bottom: 0px;\n"
 "	margin-top: 10px;\n"
 "	max-width: 100px;\n"
 "}\n"
 "QListWidget {\n"
-"	font-size: 22px;\n"
+"	font: 400 13pt \"Poppins\";\n"
 "	margin-top: 10px;\n"
 "}\n"
 "\n"
@@ -677,8 +658,8 @@ class ui_home(object):
 
         self.btn_new_piatto = QPushButton(self.frame_list_menu)
         self.btn_new_piatto.setObjectName(u"btn_new_piatto")
-        sizePolicy.setHeightForWidth(self.btn_new_piatto.sizePolicy().hasHeightForWidth())
-        self.btn_new_piatto.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.btn_new_piatto.sizePolicy().hasHeightForWidth())
+        self.btn_new_piatto.setSizePolicy(sizePolicy2)
         self.btn_new_piatto.setMinimumSize(QSize(0, 40))
         self.btn_new_piatto.setMaximumSize(QSize(16777215, 50))
         self.btn_new_piatto.setCursor(QCursor(Qt.PointingHandCursor))
@@ -802,28 +783,30 @@ class ui_home(object):
         self.horizontalLayout_20.setContentsMargins(10, 0, 10, 0)
         self.btn_edit_portata = QPushButton(self.frame_edit_portata)
         self.btn_edit_portata.setObjectName(u"btn_edit_portata")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.btn_edit_portata.sizePolicy().hasHeightForWidth())
-        self.btn_edit_portata.setSizePolicy(sizePolicy1)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.btn_edit_portata.sizePolicy().hasHeightForWidth())
+        self.btn_edit_portata.setSizePolicy(sizePolicy3)
         self.btn_edit_portata.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_edit_portata.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;\n"
+        self.btn_edit_portata.setStyleSheet(u"QPushButton{ \n"
 "border-radius: 0px;\n"
 "padding: 0px;\n"
 "background-color: transparent;\n"
-"font: 500 11pt \"Poppins\";\n"
 "color: rgb(43, 43, 43);\n"
-"letter-spacing:0.2px ;\n"
-"margin-left: 10px;}\n"
+"letter-spacing:0.2px ;}\n"
 "QPushButton:focus:pressed{\n"
-"	border-bottom: 2px solid rgb(255, 170, 0) ;\n"
+"	color: rgb(255, 170, 0) ;\n"
 "}\n"
 "QPushButton:hover{ \n"
-"	border-bottom: 2px solid rgb(255, 170, 0);\n"
+"	color: rgb(255, 170, 0);\n"
 "}")
+        icon7 = QIcon()
+        icon7.addFile(u"images/icon_edit.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_edit_portata.setIcon(icon7)
+        self.btn_edit_portata.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_20.addWidget(self.btn_edit_portata, 0, Qt.AlignLeft)
+        self.horizontalLayout_20.addWidget(self.btn_edit_portata, 0, Qt.AlignRight)
 
 
         self.gridLayout.addWidget(self.frame_edit_portata, 0, 0, 1, 2)
@@ -842,8 +825,8 @@ class ui_home(object):
         self.horizontalLayout_19.setContentsMargins(10, 0, 10, 10)
         self.btn_delete_piatto = QPushButton(self.frame_delete_portata)
         self.btn_delete_piatto.setObjectName(u"btn_delete_piatto")
-        sizePolicy.setHeightForWidth(self.btn_delete_piatto.sizePolicy().hasHeightForWidth())
-        self.btn_delete_piatto.setSizePolicy(sizePolicy)
+        sizePolicy2.setHeightForWidth(self.btn_delete_piatto.sizePolicy().hasHeightForWidth())
+        self.btn_delete_piatto.setSizePolicy(sizePolicy2)
         self.btn_delete_piatto.setMaximumSize(QSize(16777215, 50))
         self.btn_delete_piatto.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_delete_piatto.setStyleSheet(u"QPushButton{ border: none;\n"
@@ -885,8 +868,8 @@ class ui_home(object):
         self.table_categorie_menu = QTableWidget(self.frame_categorie_menu)
         if (self.table_categorie_menu.rowCount() < 1):
             self.table_categorie_menu.setRowCount(1)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.table_categorie_menu.setVerticalHeaderItem(0, __qtablewidgetitem19)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.table_categorie_menu.setVerticalHeaderItem(0, __qtablewidgetitem)
         self.table_categorie_menu.setObjectName(u"table_categorie_menu")
         self.table_categorie_menu.setStyleSheet(u"QTableView::item {\n"
 "	border-radius: 18px;\n"
@@ -1155,8 +1138,8 @@ class ui_home(object):
         self.table_categorie = QTableWidget(self.frame_seleziona_categoria)
         if (self.table_categorie.rowCount() < 1):
             self.table_categorie.setRowCount(1)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.table_categorie.setVerticalHeaderItem(0, __qtablewidgetitem20)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.table_categorie.setVerticalHeaderItem(0, __qtablewidgetitem1)
         self.table_categorie.setObjectName(u"table_categorie")
         self.table_categorie.setStyleSheet(u"QTableView::item {\n"
 "	border-radius: 10px;\n"
@@ -1196,22 +1179,22 @@ class ui_home(object):
         self.tableWidget = QTableWidget(self.frame_seleziona_portata)
         if (self.tableWidget.columnCount() < 5):
             self.tableWidget.setColumnCount(5)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem24)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem25)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem6)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(200)
-        sizePolicy2.setVerticalStretch(200)
-        sizePolicy2.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy2)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(200)
+        sizePolicy4.setVerticalStretch(200)
+        sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy4)
         self.tableWidget.setLayoutDirection(Qt.LeftToRight)
         self.tableWidget.setStyleSheet(u"QScrollBar:vertical {\n"
 "width: 7px;\n"
@@ -1300,7 +1283,7 @@ class ui_home(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 408))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 300, 443))
         self.verticalLayout_22 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1372,7 +1355,7 @@ class ui_home(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_widget.setCurrentIndex(0)
+        self.Pages_widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1380,58 +1363,19 @@ class ui_home(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.btn_toggle.setText(QCoreApplication.translate("MainWindow", u"TOGGLE", None))
+        self.btn_toggle.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.label_date_time.setText("")
-        self.label_posti.setText("")
         self.btn_home_top.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Icona Logout", None))
+        self.label_posti.setText("")
+        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Tavoli", None))
         self.btn_menu.setText(QCoreApplication.translate("MainWindow", u"Menu", None))
         self.btn_personale.setText(QCoreApplication.translate("MainWindow", u"Team", None))
-        self.btn_statistiche.setText(QCoreApplication.translate("MainWindow", u"Statistiche", None))
         self.btn_delete_tavolo.setText(QCoreApplication.translate("MainWindow", u"Elimina ultimo tavolo della lista", None))
         self.btn_add_tavolo.setText(QCoreApplication.translate("MainWindow", u"Aggiungi nuovo Tavolo", None))
-        ___qtablewidgetitem = self.tableWidget_tavoli.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem1 = self.tableWidget_tavoli.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem2 = self.tableWidget_tavoli.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem3 = self.tableWidget_tavoli.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem4 = self.tableWidget_tavoli.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem5 = self.tableWidget_tavoli.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem6 = self.tableWidget_tavoli.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem7 = self.tableWidget_tavoli.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem8 = self.tableWidget_tavoli.horizontalHeaderItem(8)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem9 = self.tableWidget_tavoli.verticalHeaderItem(0)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem10 = self.tableWidget_tavoli.verticalHeaderItem(1)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem11 = self.tableWidget_tavoli.verticalHeaderItem(2)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem12 = self.tableWidget_tavoli.verticalHeaderItem(3)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem13 = self.tableWidget_tavoli.verticalHeaderItem(4)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem14 = self.tableWidget_tavoli.verticalHeaderItem(5)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem15 = self.tableWidget_tavoli.verticalHeaderItem(6)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem16 = self.tableWidget_tavoli.verticalHeaderItem(7)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem17 = self.tableWidget_tavoli.verticalHeaderItem(8)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem18 = self.tableWidget_tavoli.verticalHeaderItem(9)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        self.btn_delete_ordine_tavolo.setText(QCoreApplication.translate("MainWindow", u"Icona Cancella Ordini", None))
-        self.btn_add_ordine.setText(QCoreApplication.translate("MainWindow", u"icona Aggiungi Ordine", None))
         self.label_ordine_tavolo.setText("")
+        self.btn_add_ordine.setText(QCoreApplication.translate("MainWindow", u"Aggiungi Ordine", None))
+        self.btn_delete_ordine_tavolo.setText("")
         self.label_datetime_ordine_tavolo.setText("")
         self.btn_stampa_scontrino.setText(QCoreApplication.translate("MainWindow", u"Totale: 0\u20ac", None))
         self.label_menu_info.setText(QCoreApplication.translate("MainWindow", u"Clicca le portate per visualizzare le informazioni", None))
@@ -1444,26 +1388,26 @@ class ui_home(object):
         self.label_categoria.setText(QCoreApplication.translate("MainWindow", u"Categoria Portata", None))
         self.label_ingredienti.setText(QCoreApplication.translate("MainWindow", u"Ingredienti Portata", None))
         self.label_prezzo.setText(QCoreApplication.translate("MainWindow", u"Prezzo", None))
-        self.btn_edit_portata.setText(QCoreApplication.translate("MainWindow", u"Modifica portata", None))
+        self.btn_edit_portata.setText("")
         self.btn_delete_piatto.setText(QCoreApplication.translate("MainWindow", u"Elimina Piatto", None))
-        ___qtablewidgetitem19 = self.table_categorie_menu.verticalHeaderItem(0)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem = self.table_categorie_menu.verticalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         self.label_titolo_personal_page.setText(QCoreApplication.translate("MainWindow", u"Team", None))
         self.add_nuovo_personale.setText(QCoreApplication.translate("MainWindow", u"Aggiungi", None))
         self.label_message_personale.setText(QCoreApplication.translate("MainWindow", u"Clicca un membro del team per modificare o eliminare", None))
         self.label_tavolo.setText("")
-        ___qtablewidgetitem20 = self.table_categorie.verticalHeaderItem(0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem21 = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem22 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem23 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem24 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
-        ___qtablewidgetitem25 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem1 = self.table_categorie.verticalHeaderItem(0)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
         self.btn_elimina_ordine.setText(QCoreApplication.translate("MainWindow", u"Elimina ultima aggiunta", None))
         self.btn_invio_ordine.setText(QCoreApplication.translate("MainWindow", u"Invia Ordine", None))
     # retranslateUi
