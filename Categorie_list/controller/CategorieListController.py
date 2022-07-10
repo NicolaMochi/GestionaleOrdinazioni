@@ -16,6 +16,7 @@ class CategorieListController:
 
     def add_categoria(self, categoria):
         self.list_model.lista_categorie.append(categoria)
+        self.save_categoria_list()
 
     def get_lista(self):
         return self.list_model.lista_categorie
@@ -40,6 +41,7 @@ class CategorieListController:
             flag = True
         if count_old==1 and count_old!=count_new:
             self.delete_categoria(self.get_categoria_from_text(categoria_old))
+            self.save_categoria_list()
             print("categoria cancellata")
         return flag
 

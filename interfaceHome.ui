@@ -594,7 +594,7 @@ QPushButton:hover {
                 </size>
                </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="TavoliPage">
                 <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -1011,7 +1011,7 @@ QScrollBar::handle {
                             <x>0</x>
                             <y>0</y>
                             <width>380</width>
-                            <height>411</height>
+                            <height>410</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_14">

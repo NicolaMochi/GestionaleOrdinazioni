@@ -17,9 +17,6 @@ class PersonaleView(QDialog):
         self.credenziali_utente_selected = []
         self.lista_personale_controller = lista_personale
 
-    # self.gui.btn_close_new_personale(self.close)
-    # self.gui.btn_elimina_utente(self.delete_user)
-
     def display_new_personale(self):
         self.gui.setupUi(self)
         self.gui.lineEdit_nome_personale.clear()
@@ -27,7 +24,7 @@ class PersonaleView(QDialog):
         self.gui.checkBox_amministratore.setChecked(False)
         self.gui.btn_confirm_new_personale.clicked.connect(self.add_personale_to_list)
         self.gui.btn_close_new_personale.clicked.connect(self.close)
-        self.show()
+        self.open()
 
     def display_edit_item(self):
         self.gui_modifica.setupUi(self)

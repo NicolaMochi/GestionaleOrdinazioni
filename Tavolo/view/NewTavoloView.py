@@ -9,8 +9,7 @@ from Utilities.Utilities import Utilities
 class NewTavoloView(QDialog):
     def __init__(self, home, tavoli_controller, tavolo_view):
         super().__init__()
-        #super(new_tavolo_view, self).__init__()
-        #subclass(parent)
+
         self.gui = gui_add_tavolo()
         self.gui.setupUi(self)
         self.gui_home = home

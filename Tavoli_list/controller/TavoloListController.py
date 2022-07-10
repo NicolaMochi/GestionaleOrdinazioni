@@ -36,3 +36,9 @@ class TavoloListController:
                 prezzo = x.total_price()
         return prezzo
 
+    def elimina_ordini_tavolo(self, id):
+        for x in self.tavolo_list.lista_tavoli:
+            if x.get_codice_tavolo() == id:
+                x.clear_ordini_tavolo()
+                # x.ordini_tavolo.clear()
+

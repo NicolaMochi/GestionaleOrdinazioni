@@ -11,7 +11,7 @@ class ScontrinoRistorante(object):
         current_date = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         path_wkhtmltopdf = r'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'
         config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-        Html_file = open("HTML/Scontrini/scontrino_ristorante.html", "r")
+        Html_file = open("Ricevute/ricevuta.html", "r")
         html = Html_file.read()
         for elemento in lista:
             html += f"<tr><td> {elemento.get_codice_ordine()} X {elemento.get_descrizione_ordine()}</td><td><p>10%</p></td><td><p>{elemento.get_data_ora_ordine()} €</p></td></tr>"

@@ -3,9 +3,6 @@ class PortataController:
     def __init__(self, portata):
         self.portata = portata
 
-    ## GETTER ##
-    # def get_nome(self):
-    #     return self.tavolo.codice_tavolo
     def __str__(self):
         return self.portata.nome
 
@@ -26,6 +23,9 @@ class PortataController:
 
     def set_prezzo(self, prezzo):
         self.portata.prezzo = prezzo
+
+    def set_ingredienti(self, ingredienti):
+        self.portata.ingredienti = ingredienti
 
     def stampa_ingredienti_portata(self):
         ingredienti_string = ''

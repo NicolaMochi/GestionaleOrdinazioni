@@ -8,8 +8,7 @@ class MenuController:
         self.lista_portate = MenuModel()
 
     def salva_menu(self):
-        with open('Menu/data/menu.pickle', 'wb') as handle:
-            pickle.dump(self.lista_portate, handle, pickle.HIGHEST_PROTOCOL)
+        self.lista_portate.salva_menu()
 
     def add_portata(self, portata):
         self.lista_portate.menu.append(portata)
@@ -37,13 +36,17 @@ class MenuController:
                 portata = x
         return portata
 
-    #dimmi quante portate di questa categoria ci sono ancora
+    #Quante portate di questa categoria sono ancora presenti
     def check_categorie_after_delete(self, nome_categoria, menu):
         count = 0
         for x in menu:
            if x.get_categoria() == nome_categoria: count+=1
         print("il count è" + str(count))
         return count
+
+    def substitute_portata(self, id, portata_modificata):
+        self.get_menu()[id] = portata_modificata
+
 
 
 

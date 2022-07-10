@@ -4,7 +4,6 @@ class PortataModel:
         self.prezzo = prezzo
         self.categoria = categoria
         self.nome = nome
-        # ingredienti dovrà essere una lista []
         self.ingredienti = ingredienti
 
 

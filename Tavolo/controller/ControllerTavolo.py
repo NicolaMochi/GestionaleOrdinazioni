@@ -3,9 +3,6 @@ class ControllerTavolo:
     def __init__(self, tavolo):
         self.tavolo = tavolo
 
-    ## GETTER ##
-    # def get_nome(self):
-    #     return self.tavolo.codice_tavolo
     def __str__(self):
         return '\n Tavolo' + ' ' + str(self.tavolo.codice_tavolo + 1) + '\n' + str(self.get_posti_tavolo()) + 'posti \n'
 
@@ -31,12 +28,14 @@ class ControllerTavolo:
             prezzo += x.get_prezzo_ordine()
         return prezzo
 
-    ## SETTER ##
     def set_tavolo_numero(self, numero):
         self.tavolo.numeroTavolo = numero
 
     def set_tavolo_posti(self, posti):
         self.tavolo.posti = posti
+
+    def clear_ordini_tavolo(self):
+        self.tavolo.ordini_tavolo.clear()
 
 
 

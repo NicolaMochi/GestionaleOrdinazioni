@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'gui_modifica_portataSVhWTu.ui'
+## Form generated from reading UI file 'gui_modifica_portataYEnwLf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -17,7 +17,7 @@ class gui_modifica_portata(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(374, 356)
+        Dialog.resize(367, 381)
         Dialog.setStyleSheet(u"background-color: white;")
         self.verticalLayout = QVBoxLayout(Dialog)
         self.verticalLayout.setSpacing(0)
@@ -145,6 +145,35 @@ class gui_modifica_portata(object):
 
         self.verticalLayout_2.addWidget(self.frame_4)
 
+        self.frame_5 = QFrame(self.frame)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMaximumSize(QSize(16777215, 80))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame_5)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.frame_5)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setStyleSheet(u"font: 500 11pt \"Poppins\";")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout.addWidget(self.label_2, 0, Qt.AlignLeft)
+
+        self.plainTextEdit = QPlainTextEdit(self.frame_5)
+        self.plainTextEdit.setObjectName(u"plainTextEdit")
+        self.plainTextEdit.setMaximumSize(QSize(200, 50))
+        self.plainTextEdit.setStyleSheet(u"color: #000;\n"
+"font: 400 9pt \"Poppins\";\n"
+"border: solid;\n"
+"border-bottom: 2px solid black;")
+
+        self.horizontalLayout.addWidget(self.plainTextEdit)
+
+
+        self.verticalLayout_2.addWidget(self.frame_5)
+
         self.btn_modifica_portata = QPushButton(self.frame)
         self.btn_modifica_portata.setObjectName(u"btn_modifica_portata")
         self.btn_modifica_portata.setStyleSheet(u"QPushButton{ border: 2px solid rgb(255, 85, 0);;\n"
@@ -176,6 +205,7 @@ class gui_modifica_portata(object):
         self.label_nome_piatto.setText(QCoreApplication.translate("Dialog", u"Nome del piatto", None))
         self.label_categoria.setText(QCoreApplication.translate("Dialog", u"Categoria", None))
         self.label_prezzo.setText(QCoreApplication.translate("Dialog", u"Prezzo", None))
-        self.btn_modifica_portata.setText(QCoreApplication.translate("Dialog", u"Aggiungi", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"Ingredienti", None))
+        self.btn_modifica_portata.setText(QCoreApplication.translate("Dialog", u"Modifica", None))
     # retranslateUi
 

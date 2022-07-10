@@ -102,7 +102,7 @@ class UIFunctions():
     def check(self, lista_campi, label_errore):
         for i in lista_campi:
             if i == "":
-                label_errore.setText("eddai su")
+                label_errore.setText("Compila i campi")
                 return True
         return False
 

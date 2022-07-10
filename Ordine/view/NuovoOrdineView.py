@@ -1,23 +1,21 @@
 import datetime
 
-from PySide2.QtCore import Qt, QCoreApplication
-from PySide2.QtGui import QFont
-from PySide2.QtWidgets import QTableWidgetItem, QAbstractItemView, QLabel, QCheckBox, QPushButton
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QLabel
 
 #from Categorie_list.view.categorie_list_view import categorie_list_view
 from Categorie_list.view.CategorieListView import CategorieListView
 from Menu.view.MenuView import MenuView
 from Ordine.controller.OrdineController import OrdineController
 from Ordine.model.Ordine import Ordine
-from Ordini_list.view.LabelOrdine import LabelOrdine
+from Ordine.view.LabelOrdine import LabelOrdine
 from Utilities.UIFunctions import UIFunctions
 from Utilities.Utilities import Utilities
 
 
 class NuovoOrdineView:
-    def __init__(self, lista_categorie, home, lista_ordini, lista_tavoli, menu):
+    def __init__(self, lista_categorie, home, lista_tavoli, menu):
         self.home = home
-        self.lista_ordini = lista_ordini
         self.lista_tavoli = lista_tavoli
         self.lista_categorie = lista_categorie
         self.menu = menu
@@ -38,6 +36,7 @@ class NuovoOrdineView:
             if x.get_nome() == categoria:
                 return x
         return False
+
 
     def add_to_order(self):
         portata = self.menu.get_portata_from_name(self.home.tableWidget.currentItem().text())
@@ -103,75 +102,29 @@ class NuovoOrdineView:
         if descrizione!='':
             self.lista_label_ordine.clear()
             prezzo = self.prezzo_ordine
-            stato = "Consegna"
             tipo = "Locale"
             data_ora = datetime.datetime.now() .strftime("%d/%m/%Y %H:%M:%S")
-            #tavolo_id = self.home.comboBox_seleziona_tavolo.currentIndex()
-            nuovo_ordine = OrdineController(Ordine(len(self.tavolo_selected.get_lista_ordini_tavolo()), stato, prezzo, descrizione, data_ora, tipo))
+            nuovo_ordine = OrdineController(Ordine(len(self.tavolo_selected.get_lista_ordini_tavolo()), False, prezzo, descrizione, data_ora, tipo))
             self.lista_tavoli.add_ordine_from_id(self.tavolo_selected.get_codice_tavolo(), nuovo_ordine)
-            #self.codice_ordine += 1
+
+            self.lista_tavoli.save_tavoli_list()
             self.prezzo_ordine = 0
-            #TypeError: 'int' object is not callable
-            #crea oggetto utility
+
             self.utility.set_codice_tavolo_selected(self.tavolo_selected.get_codice_tavolo())
             self.utility.update_posti()
-
-    # def deliver_ordine_button(self):
-    #     btn_ordine_evaso = QPushButton()
-    #     btn_ordine_evaso.setObjectName(u"btn_ordine_evaso")
-    #     btn_ordine_evaso.setStyleSheet(u"QPushButton{ border-bottom: 2px solid black;"
-    #                                    "border-radius: 0px;"
-    #                                    "padding: 0px;"
-    #                                    "background-color: transparent;"
-    #                                    "font: 500 11pt 'Poppins';"
-    #                                    "color: rgb(43, 43, 43);"
-    #                                    "letter-spacing:0.2px ;"
-    #                                    "margin-left: 10px;}")
-    #
-    #     btn_ordine_evaso.setText("Consegna Ordine " + str(ordine.get_codice_ordine()))
-
-## Si può mettere nella UIFunctions
-    # def show_categorie_in_table(self):
-    #     clicked = self.home.table_categorie.currentItem()
-    #     if clicked.text() == "Vedi Tutti":
-    #         self.menu_view.fill_table_to_order()
-    #         return
-    #
-    #     categoria_selected = self.lista_categorie.get_categoria_from_text(clicked.text())
-    #     nome_categoria = categoria_selected.get_nome_categoria()
-    #     row = 0
-    #     column = 0
-    #     self.home.tableWidget.clear()
-    #
-    #     ## Visualizzo le portate della categoria cliccata sulla tabella
-    #     for x in self.menu.get_menu():
-    #         print(x.get_categoria())
-    #         if x.get_categoria() == nome_categoria:
-    #             nome_portata = x.__str__()
-    #             nuovo_item = QTableWidgetItem()
-    #             nuovo_item.setText(nome_portata)
-    #             nuovo_item.setTextAlignment(Qt.AlignHCenter)
-    #             nuovo_item.setFont(QFont("Poppins", 14, QFont.Medium))
-    #             self.home.tableWidget.setItem(row, column, nuovo_item)
-    #             column += 1
-    #             if column % 5 == 0:
-    #                 row += 1
-    #                 column = 0
 
 
     def view(self, codice_tavolo):
         self.tavolo_selected = self.lista_tavoli.get_tavolo_by_index(codice_tavolo)
-        # tavolo = self.lista_tavoli.get_tavolo_by_index(self.codice_tavolo_selected)
-        # self.codice_ordine = len(tavolo.get_lista_ordini_tavolo())-1
         self.home.label_tavolo.setText("Aggiungi ordini al Tavolo " + str(codice_tavolo+1))
         self.home.Pages_widget.setCurrentWidget(self.home.OrdiniPage)
         self.menu_view = MenuView(self.home, self.menu, self.lista_categorie)
         self.menu_view.fill_table_to_order()
         uifunctions = UIFunctions()
         uifunctions.fill_categorie_to_order(self.home, self.lista_categorie.get_lista())
-        #self.categorie_view.fill_categorie_to_order()
         self.categorie_list_view = CategorieListView(self.home, self.menu_view, self.lista_categorie, self.menu)
         self.home.table_categorie.cellClicked.connect(self.categorie_list_view.show_categorie_in_table)
+        self.home.btn_invio_ordine.clicked.connect(lambda: self.invia_ordine())
 
 
 

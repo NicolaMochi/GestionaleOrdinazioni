@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceHomeamrDiT.ui'
+## Form generated from reading UI file 'interfaceHomeeVbidi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.0.4
 ##
@@ -491,7 +491,7 @@ class ui_home(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 411))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 380, 410))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
@@ -880,8 +880,6 @@ class ui_home(object):
 "	margin-top: 10px;\n"
 "}\n"
 "\n"
-"QTableView::item:focus {background-color: #ff8c00; color: #fff;}\n"
-"QTableView::item:active {background-color: #ff8c00; color: #fff;}\n"
 "QTableView::item:hover {background-color: #ff8c00; color: #fff;}\n"
 "\n"
 " QScrollBar:horizontal {\n"
@@ -1150,7 +1148,6 @@ class ui_home(object):
 "	margin-top: 10px;\n"
 "}\n"
 "\n"
-"QTableView::item:focus {background-color: #ff8c00; color: #fff;}\n"
 "QTableView::item:hover {background-color: #ff8c00; color: #fff;}")
         self.table_categorie.setFrameShape(QFrame.NoFrame)
         self.table_categorie.setDefaultDropAction(Qt.IgnoreAction)
@@ -1355,7 +1352,7 @@ class ui_home(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_widget.setCurrentIndex(1)
+        self.Pages_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
